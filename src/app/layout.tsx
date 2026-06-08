@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrandWeb — Tvorba moderních webů",
+  title: "BrandWeb: Tvorba moderních webů",
   description:
     "Navrhuji a vytvářím jednoduché, moderní weby pro lidi a malé firmy, kteří je nemají nebo mají zastaralé.",
+  icons: {
+    icon: "/images/logo/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
       lang="cs"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-neutral-900">
+      <body className="min-h-full flex flex-col bg-neutral-950 text-white">
         {children}
       </body>
     </html>

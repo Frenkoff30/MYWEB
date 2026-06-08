@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Reveal from "./components/Reveal";
+import ScrollProgress from "./components/ScrollProgress";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -9,21 +11,21 @@ const stats = [
 const process = [
   {
     step: "01",
-    title: "Probereme váš záměr",
+    title: "Nejdřív si zdarma promluvíme",
     description:
-      "Krátký rozhovor o tom, co potřebujete, komu má web sloužit a co má dokázat.",
+      "Nejprve si nezávazně promluvíme o tom, co potřebujete, a zdarma vám připravím návrh řešení na míru.",
   },
   {
     step: "02",
-    title: "Navrhnu a vytvořím",
+    title: "Doladíme detaily a domluvíme cenu",
     description:
-      "Připravím design a postavím web tak, aby byl rychlý, přehledný a fungoval na mobilu i počítači.",
+      "Návrh si společně projdeme a zapracuji do něj vaše připomínky. Teprve potom, když budete spokojení, se domluvíme na konečné ceně.",
   },
   {
     step: "03",
-    title: "Spustíme a doladíme",
+    title: "Web doladím a spustím",
     description:
-      "Web nasadím naživo a podle zpětné vazby doladíme poslední detaily k dokonalosti.",
+      "Vše dotáhnu k dokonalosti, nasadím web naživo a postarám se, aby od prvního dne fungoval tak, jak má.",
   },
 ];
 
@@ -32,7 +34,7 @@ const services = [
     title: "Nový web na míru",
     price: "od 6 990 Kč",
     description:
-      "Kompletní návrh a vytvoření webu — od první skici po nasazení online.",
+      "Kompletní návrh a vytvoření webu od první skici až po jeho nasazení online.",
   },
   {
     title: "Redesign starého webu",
@@ -51,74 +53,171 @@ const services = [
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 z-10 border-b border-neutral-200 bg-white/85 backdrop-blur-md">
+      <ScrollProgress />
+      <header className="sticky top-0 z-10 border-b border-white/10 bg-neutral-950/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#hero" className="text-lg font-semibold tracking-tight text-neutral-900">
-            Brand<span className="text-blue-700">Web</span>
+          <a href="#hero" className="group flex items-center gap-3">
+            <Image src="/images/logo/logo.png" alt="BrandWeb logo" width={36} height={36} className="h-9 w-9 transition duration-300 group-hover:scale-105" />
+
+            <span className="text-lg font-semibold tracking-tight text-white">
+              Brand<span className="text-blue-500">Web</span>
+            </span>
           </a>
-          <div className="hidden gap-8 text-sm font-medium text-neutral-500 sm:flex">
-            <a href="#o-mne" className="transition hover:text-neutral-900">O mně</a>
-            <a href="#proces" className="transition hover:text-neutral-900">Jak pracuji</a>
-            <a href="#sluzby" className="transition hover:text-neutral-900">Služby</a>
-            <a href="#kontakt" className="transition hover:text-neutral-900">Kontakt</a>
+          <div className="hidden gap-8 text-sm font-medium text-neutral-200 sm:flex">
+            <a href="#o-mne" className="transition hover:text-white">O mně</a>
+            <a href="#proces" className="transition hover:text-white">Jak pracuji</a>
+            <a href="#sluzby" className="transition hover:text-white">Služby</a>
+            <a href="#reference" className="transition hover:text-white">Recenze</a>
+            <a href="#faq" className="transition hover:text-white">Často kladené otázky</a>
           </div>
           <a
             href="#kontakt"
-            className="rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-800"
+            className="rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-blue-500 hover:text-white"
           >
-            Nezávazná poptávka
+            Kontakt
           </a>
         </nav>
       </header>
 
       <main className="flex-1">
         {/* Hero */}
-        <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-28 text-center sm:pt-36">
+        <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-28 sm:pt-36">
           <span className="bg-grid" />
           <span className="bg-blob bg-blob-blue -left-40 -top-40 h-[28rem] w-[28rem]" />
           <span className="bg-blob bg-blob-red -right-32 top-0 h-96 w-96" />
           <span className="bg-blob bg-blob-navy left-1/2 bottom-0 h-80 w-80 -translate-x-1/2" />
-          <div className="relative z-[1] mx-auto max-w-4xl">
-          <Reveal>
-            <h1 className="mx-auto text-5xl font-extrabold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl">
-              Web, který vypadá tak dobře,{" "}
-              <span className="text-gradient">jak dobrá je vaše práce</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={150}>
-            <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-neutral-500">
-              Pomáhám lidem a malým firmám, kteří web nemají nebo mají zastaralý,
-              získat jednoduchou a moderní prezentaci — takovou, na kterou budou
-              hrdí a která jim přivede nové zákazníky.
-            </p>
-          </Reveal>
-          <Reveal delay={300}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#kontakt"
-                className="rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-800"
-              >
-                Domluvit konzultaci
-              </a>
-              <a
-                href="#proces"
-                className="rounded-full border border-neutral-300 px-8 py-4 text-base font-semibold text-neutral-700 transition hover:-translate-y-0.5 hover:border-blue-700/40 hover:text-blue-800"
-              >
-                Jak spolupráce probíhá
-              </a>
+          <div className="relative z-[1] mx-auto grid max-w-6xl gap-16 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
+            <div className="text-center sm:text-left">
+              <Reveal delay={100}>
+                <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-7xl">
+                  Weby, co{" "}
+                  <span className="text-gradient">prodávají</span>.<br className="hidden sm:block" />{" "}
+                  Ne jen visí na internetu.
+                </h1>
+              </Reveal>
+              <Reveal delay={200}>
+                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-white sm:mx-0">
+                  Pomáhám živnostníkům a malým firmám získat nebo upravit jejich stávající web tak, aby{" "}
+                  <span className="text-white">prodávali</span>.{" "}
+                  Srozumitelný obsah, rychlé načítání, moderní vzhled a tlačítko, na které lidé skutečně kliknou.
+                </p>
+              </Reveal>
+              <Reveal delay={300}>
+                <div className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+                  <a
+                    href="#kontakt"
+                    className="rounded-full bg-white px-8 py-4 text-base font-semibold text-neutral-950 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white"
+                  >
+                    Domluvit konzultaci zdarma
+                  </a>
+                  <a
+                    href="#proces"
+                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-300 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
+                  >
+                    Jak spolupráce probíhá
+                  </a>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+
+            <Reveal delay={250}>
+              <div className="relative mx-auto w-full max-w-md float-slow">
+                <span className="bg-blob bg-blob-blue -right-12 -top-12 h-56 w-56 opacity-50" />
+                <span className="bg-blob bg-blob-red -left-12 -bottom-12 h-56 w-56 opacity-40" />
+                <div className="group relative z-[1] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:shadow-blue-500/10">
+                  <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/60" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
+                    <span className="ml-3 h-5 flex-1 max-w-[60%] rounded-full bg-white/5" />
+                  </div>
+                  <div className="space-y-4 p-6">
+                    <div className="flex items-center gap-3">
+                      <Image src="/images/logo/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg" />
+                      <div className="space-y-1.5">
+                        <span className="block h-2.5 w-28 rounded-full bg-white/20" />
+                        <span className="block h-2 w-16 rounded-full bg-white/10" />
+                      </div>
+                    </div>
+                    <span className="relative block h-28 w-full overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/25 via-white/[0.03] to-red-500/20">
+                      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
+                    </span>
+                    <div className="grid grid-cols-3 gap-3">
+                      <span className="h-14 rounded-lg bg-white/5 transition duration-300 group-hover:bg-blue-500/10" />
+                      <span className="h-14 rounded-lg bg-white/5 transition delay-75 duration-300 group-hover:bg-white/10" />
+                      <span className="h-14 rounded-lg bg-white/5 transition delay-150 duration-300 group-hover:bg-red-500/10" />
+                    </div>
+                    <div className="flex items-center justify-between pt-1">
+                      <span className="block h-2 w-24 rounded-full bg-white/10" />
+                      <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Koupit →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Problém */}
+        <section className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
+          <span className="bg-blob bg-blob-red -right-40 -top-24 h-72 w-72 opacity-30" />
+          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
+            <Reveal>
+              <div className="mx-auto max-w-2xl text-center">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Poznáváte se?</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Bez dobrého webu jste pro spoustu lidí prakticky neviditelní
+                </h2>
+                <p className="mt-4 text-neutral-200">
+                  Bez kvalitní prezentace na internetu vám dnes lidé jednoduše nevěří,
+                  že existujete, a tak raději zamíří ke konkurenci, která web má.
+                </p>
+              </div>
+            </Reveal>
+            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+              {[
+                {
+                  title: "Žádný web",
+                  text: "Lidé vás nedohledají na Googlu a vaše služby tak míjí ty, kteří by je nejvíc ocenili.",
+                },
+                {
+                  title: "Zastaralý vzhled",
+                  text: "Starý nebo nepřehledný web spíš odrazuje, než aby budil důvěru a přiváděl zákazníky.",
+                },
+                {
+                  title: "Nefunguje na mobilu",
+                  text: "Většina lidí dnes prochází web z telefonu. Pokud tam nevypadá dobře, ztrácíte je hned na startu.",
+                },
+              ].map((item, i) => (
+                <Reveal key={item.title} delay={i * 100}>
+                  <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/30 hover:bg-red-500/[0.06] hover:shadow-lg hover:shadow-red-500/10">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-red-500/10 text-sm font-bold text-red-400 transition duration-300 group-hover:bg-red-500/20 group-hover:text-red-300">
+                      !
+                    </span>
+                    <h3 className="mt-4 text-base font-semibold text-white transition duration-300 group-hover:text-red-300">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={200}>
+              <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-neutral-200">
+                Pojďme to změnit. Postavíme web, který bude vypadat skvěle a začne pro vás reálně pracovat.
+              </p>
+            </Reveal>
           </div>
         </section>
 
         {/* Statistiky */}
-        <section className="bg-neutral-950">
-          <div className="mx-auto grid max-w-6xl divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <section className="relative overflow-hidden bg-neutral-950">
+          <span className="bg-grid" />
+          <span className="bg-blob bg-blob-blue left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+          <div className="relative z-[1] mx-auto grid max-w-6xl divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 100}>
-                <div className="px-6 py-10 text-center">
-                  <p className="text-4xl font-bold text-white">{stat.value}</p>
-                  <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500" />
+                <div className="group px-6 py-10 text-center transition duration-300 hover:bg-white/[0.03]">
+                  <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">{stat.value}</p>
+                  <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
                   <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
                 </div>
               </Reveal>
@@ -127,37 +226,46 @@ export default function Home() {
         </section>
 
         {/* O mně */}
-        <section id="o-mne" className="relative overflow-hidden border-b border-neutral-200">
+        <section id="o-mne" className="relative overflow-hidden border-b border-white/10">
           <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
+          <Image
+            src="/images/logo/logo.png"
+            alt=""
+            width={520}
+            height={520}
+            className="pointer-events-none absolute -right-24 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
+          />
           <div className="relative z-[1] mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
             <Reveal>
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Kdo za tím stojí</span>
-                <h2 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">O mně</h2>
-                <p className="mt-4 text-neutral-500">
-                  Jmenuji se Jiří Švec a tvorbě webů se věnuji naplno. Založil jsem
-                  si vlastní živnost, abych pomáhal lidem a menším firmám —
-                  živnostníkům, řemeslníkům, provozovnám — kteří dosud žádný web
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo za tím stojí</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Ahoj, jmenuji se Jiří 
+                </h2>
+                <p className="mt-4 text-neutral-200">
+                  Tvorbě webů se věnuji naplno a založil jsem si kvůli tomu
+                  vlastní živnost. Pomáhám lidem a menším firmám, ať už jsou to
+                  živnostníci, řemeslníci nebo provozovny, kteří dosud žádný web
                   nemají nebo jim ten současný už neslouží tak, jak by měl.
                 </p>
-                <p className="mt-4 text-neutral-500">
+                <p className="mt-4 text-neutral-200">
                   Cílem je vždy stejný: jednoduchý, přehledný a hezký web, který
-                  návštěvníky zaujme a přivede vám nové zákazníky — bez zbytečných
+                  návštěvníky zaujme a přivede vám nové zákazníky, a to bez zbytečných
                   komplikací na vaší straně.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="relative overflow-hidden rounded-2xl bg-neutral-950 p-8 text-white">
-                <span className="bg-blob bg-blob-red -right-12 -top-12 h-40 w-40 opacity-40 mix-blend-screen" />
-                <div className="relative z-[1] flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/5 text-2xl font-bold">
+              <div className="relative overflow-hidden rounded-2xl bg-white/[0.03] p-8 ring-1 ring-white/10">
+                <span className="bg-blob bg-blob-red -right-12 -top-12 h-40 w-40 opacity-40" />
+                <div className="relative z-[1] flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/5 text-2xl font-bold text-white">
                   JS
                 </div>
                 <p className="relative z-[1] mt-6 text-lg leading-relaxed text-neutral-200">
-                  „Web má jednu práci — udělat na lidi dobrý dojem a přivést vám
+                  „Web má jednu jedinou práci: udělat na lidi dobrý dojem a přivést vám
                   nové zákazníky. Na tom stavím každý projekt.“
                 </p>
-                <p className="relative z-[1] mt-4 text-sm text-neutral-400">
+                <p className="relative z-[1] mt-4 text-sm text-neutral-500">
                   Jiří Švec <span className="text-red-500">/</span> BrandWeb
                 </p>
               </div>
@@ -166,27 +274,30 @@ export default function Home() {
         </section>
 
         {/* Jak spolupráce probíhá */}
-        <section id="proces" className="border-b border-neutral-200 bg-neutral-50">
-          <div className="mx-auto max-w-6xl px-6 py-20">
+        <section id="proces" className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
+          <span className="bg-blob bg-blob-navy -left-32 -bottom-32 h-80 w-80 opacity-30" />
+          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Postup spolupráce</span>
-                <h2 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">Jak to celé probíhá</h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-500">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Postup spolupráce</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Žádné kouzlení, jen jasný a klidný postup
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-neutral-400">
                   Tři jednoduché kroky od prvního nápadu k webu, který vám bude sloužit roky.
                 </p>
               </div>
             </Reveal>
             <div className="relative mt-16 grid gap-10 sm:grid-cols-3">
-              <span className="absolute left-0 right-0 top-6 hidden h-px bg-neutral-300 sm:block" />
+              <span className="absolute left-0 right-0 top-6 hidden h-px bg-white/10 sm:block" />
               {process.map((item, i) => (
                 <Reveal key={item.step} delay={i * 120}>
-                  <div className="relative">
-                    <div className="relative z-[1] flex h-12 w-12 items-center justify-center rounded-full bg-neutral-900 text-sm font-bold text-white ring-4 ring-neutral-50">
+                  <div className="group relative">
+                    <div className="relative z-[1] flex h-12 w-12 items-center justify-center rounded-full bg-white text-sm font-bold text-neutral-950 ring-4 ring-neutral-950 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/30">
                       {item.step}
                     </div>
-                    <h3 className="mt-5 text-lg font-semibold text-neutral-900">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.description}</p>
+                    <h3 className="mt-5 text-lg font-semibold text-white transition group-hover:text-blue-400">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-200">{item.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -195,38 +306,40 @@ export default function Home() {
         </section>
 
         {/* Portfolio */}
-        <section id="portfolio" className="border-b border-neutral-200">
+        <section id="portfolio" className="border-b border-white/10">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Ukázky prací</span>
-                <h2 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">Portfolio se právě tvoří</h2>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky prací</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Tady už brzy uvidíte mou práci naživo
+                </h2>
               </div>
             </Reveal>
             <Reveal delay={100}>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="relative overflow-hidden rounded-2xl bg-neutral-950 p-6 sm:col-span-2 sm:row-span-2 sm:min-h-[260px]">
-                  <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50 mix-blend-screen" />
+                <div className="relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 sm:col-span-2 sm:row-span-2 sm:min-h-[260px]">
+                  <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50" />
                   <div className="relative z-[1] flex h-full flex-col justify-between">
                     <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
                       Připravuje se
                     </span>
                     <p className="max-w-sm text-lg leading-relaxed text-neutral-200">
-                      Portfolio teprve buduji — první realizace tu brzy přibudou.
+                      Portfolio teprve buduji, první realizace tu brzy přibudou.
                       Ozvěte se mi a budete mezi prvními, na kom si vybrousím styl
                       k dokonalosti.
                     </p>
                   </div>
                 </div>
-                <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-                  <p className="text-sm font-semibold text-neutral-900">Redesign webu</p>
-                  <p className="mt-1 text-sm text-neutral-500">Modernizace zastaralé prezentace.</p>
-                  <span className="mt-4 block h-1 w-10 rounded-full bg-blue-700" />
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <p className="text-sm font-semibold text-white">Redesign webu</p>
+                  <p className="mt-1 text-sm text-neutral-400">Modernizace zastaralé prezentace.</p>
+                  <span className="mt-4 block h-1 w-10 rounded-full bg-blue-500" />
                 </div>
-                <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-                  <p className="text-sm font-semibold text-neutral-900">Web na míru</p>
-                  <p className="mt-1 text-sm text-neutral-500">Od skici po nasazení online.</p>
-                  <span className="mt-4 block h-1 w-10 rounded-full bg-red-600" />
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <p className="text-sm font-semibold text-white">Web na míru</p>
+                  <p className="mt-1 text-sm text-neutral-400">Od skici po nasazení online.</p>
+                  <span className="mt-4 block h-1 w-10 rounded-full bg-red-500" />
                 </div>
               </div>
             </Reveal>
@@ -234,14 +347,14 @@ export default function Home() {
         </section>
 
         {/* Služby a ceník */}
-        <section id="sluzby" className="border-b border-neutral-200 bg-neutral-50">
+        <section id="sluzby" className="border-b border-white/10 bg-white/[0.02]">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Co nabízím</span>
-                <h2 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">Služby a ceník</h2>
-                <p className="mt-3 text-neutral-500">
-                  Orientační ceny — finální nabídka se vždy odvíjí od rozsahu a
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízím</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebuje</h2>
+                <p className="mt-3 text-neutral-400">
+                  Jde o orientační ceny, finální nabídka se vždy odvíjí od rozsahu a
                   potřeb konkrétního projektu.
                 </p>
               </div>
@@ -250,28 +363,128 @@ export default function Home() {
               {services.map((service, i) => (
                 <Reveal key={service.title} delay={i * 100}>
                   <div
-                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition duration-300 hover:-translate-y-1.5 ${
+                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-1.5 ${
                       i === 0
-                        ? "bg-neutral-950 text-white shadow-xl shadow-neutral-900/20"
-                        : "border border-neutral-200 bg-white hover:border-blue-700/30 hover:shadow-lg hover:shadow-blue-900/5"
+                        ? "border border-blue-400/30 bg-gradient-to-b from-blue-500/[0.08] to-white/[0.02] shadow-xl shadow-blue-500/10 ring-1 ring-blue-400/20"
+                        : "border border-white/10 bg-white/[0.03] hover:border-blue-400/30 hover:bg-white/[0.05]"
                     }`}
                   >
                     {i === 0 && (
-                      <span className="bg-blob bg-blob-blue -right-14 -top-14 h-40 w-40 opacity-50 mix-blend-screen" />
+                      <span className="bg-blob bg-blob-blue -right-14 -top-14 h-40 w-40 opacity-30" />
                     )}
                     {i === 0 && (
                       <span className="relative z-[1] mb-3 inline-block w-fit rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white">
                         Nejoblíbenější
                       </span>
                     )}
-                    <h3 className={`relative z-[1] text-lg font-semibold ${i === 0 ? "text-white" : "text-neutral-900"}`}>{service.title}</h3>
-                    <p className={`relative z-[1] mt-1 text-xl font-bold ${i === 0 ? "text-white" : "text-blue-800"}`}>{service.price}</p>
-                    <p className={`relative z-[1] mt-3 flex-1 text-sm ${i === 0 ? "text-neutral-300" : "text-neutral-500"}`}>{service.description}</p>
-                    <span className={`relative z-[1] mt-4 block h-px w-full ${i === 0 ? "bg-white/10" : "bg-neutral-100"}`} />
-                    <span className={`relative z-[1] mt-4 text-sm font-medium ${i === 0 ? "text-red-400" : "text-blue-700"}`}>
+                    <h3 className="relative z-[1] text-lg font-semibold text-white">{service.title}</h3>
+                    <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
+                    <p className="relative z-[1] mt-3 flex-1 text-sm text-neutral-200">{service.description}</p>
+                    <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
+                    <span className={`relative z-[1] mt-4 text-sm font-medium ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
                       Mám zájem →
                     </span>
                   </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Reference */}
+        <section id="reference" className="relative overflow-hidden border-b border-white/10">
+          <span className="bg-blob bg-blob-blue -right-40 top-0 h-72 w-72 opacity-25" />
+          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
+            <Reveal>
+              <div className="text-center">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Reference</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Tohle nejsou jen moje slova</h2>
+              </div>
+            </Reveal>
+            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+              {[
+                {
+                  quote:
+                    "Konečně web, na který se nestydím poslat odkaz. Poptávek nám výrazně přibylo a celá spolupráce byla bez stresu.",
+                  name: "Petra N.",
+                  role: "majitelka kadeřnictví",
+                },
+                {
+                  quote:
+                    "Měl jsem starý web ještě z roku 2015. Jiří mi ho kompletně předělal a vysvětlil úplně všechno srozumitelně, bez odborného žargonu.",
+                  name: "Tomáš K.",
+                  role: "OSVČ, truhlářství",
+                },
+                {
+                  quote:
+                    "Rychlá komunikace, dodrženy termíny a výsledek přesně podle představ. Můžu jen doporučit.",
+                  name: "Markéta S.",
+                  role: "majitelka kavárny",
+                },
+              ].map((t, i) => (
+                <Reveal key={t.name} delay={i * 100}>
+                  <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                    <span className="text-2xl font-bold text-blue-400">”</span>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-300">{t.quote}</p>
+                    <div className="mt-6 flex items-center gap-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xs font-semibold text-white">
+                        {t.name.split(" ").map((p) => p[0]).join("")}
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-white">{t.name}</p>
+                        <p className="text-xs text-neutral-500">{t.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
+          <span className="bg-blob bg-blob-red left-1/2 -bottom-40 h-72 w-72 -translate-x-1/2 opacity-20" />
+          <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20">
+            <Reveal>
+              <div className="text-center">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">FAQ</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Možná tu odpověď už je</h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+              {[
+                {
+                  q: "Jak dlouho trvá vytvoření webu?",
+                  a: "U jednodušší prezentace obvykle 1–3 týdny od schválení návrhu, u rozsáhlejších projektů domluvíme termín individuálně.",
+                },
+                {
+                  q: "Kolik bude stát web pro mě?",
+                  a: "Cena se vždy odvíjí od rozsahu, orientační ceny najdete výše v sekci Služby. Finální nabídku ale rád připravím na míru po krátkém rozhovoru.",
+                },
+                {
+                  q: "Bude web fungovat i na mobilu?",
+                  a: "Ano, každý web stavím tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači.",
+                },
+                {
+                  q: "Pomůžete mi i s texty a obsahem?",
+                  a: "Rád poradím se strukturou a finálním zněním textů tak, aby web dobře komunikoval to, co potřebujete sdělit.",
+                },
+                {
+                  q: "Co když budu chtít web později upravit?",
+                  a: "Žádný problém, nabízím i následnou údržbu a drobné úpravy, případně vás naučím spravovat si obsah sami.",
+                },
+              ].map((item) => (
+                <Reveal key={item.q}>
+                  <details className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-medium text-white">
+                      {item.q}
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/15 text-sm text-neutral-400 transition group-open:rotate-45 group-open:border-blue-400/50 group-open:text-blue-400">
+                        +
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-400">{item.a}</p>
+                  </details>
                 </Reveal>
               ))}
             </div>
@@ -282,71 +495,119 @@ export default function Home() {
         <section id="kontakt" className="relative overflow-hidden">
           <span className="bg-blob bg-blob-blue -left-32 top-1/4 h-80 w-80" />
           <span className="bg-blob bg-blob-red -right-32 bottom-1/4 h-80 w-80" />
+          <Image
+            src="/images/logo/logo.png"
+            alt=""
+            width={520}
+            height={520}
+            className="pointer-events-none absolute -left-24 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
+          />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Kontakt</span>
-                <h2 className="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">Pojďme to probrat</h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-500">
-                  Napište mi pár slov o vašem nápadu a ozvu se vám zpět s návrhem řešení.
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kontakt</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-5xl">
+                  Kontaktujte mě{" "}
+                  <span className="text-gradient">ještě dnes</span>
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-neutral-400">
+                  Popište mi krátce váš projekt nebo nápad. Ozvu se Vám do 48 hodin s návrhem řešení.
                 </p>
               </div>
             </Reveal>
 
-            <div className="mt-12 grid gap-10 sm:grid-cols-[1fr_1.3fr]">
+            <div className="mt-12 grid gap-10 sm:grid-cols-[0.9fr_1.1fr]">
               <Reveal delay={100}>
-                <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl bg-neutral-950 p-8 text-white">
-                  <span className="bg-blob bg-blob-blue -right-16 -top-16 h-48 w-48 opacity-40 mix-blend-screen" />
-                  <span className="absolute bottom-0 left-0 h-1.5 w-full bg-gradient-to-r from-blue-600 to-red-600" />
-                  <div className="relative z-[1]">
-                    <h3 className="text-lg font-semibold">Spojte se se mnou přímo</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-blue-100/80">
-                      Raději si zavoláte nebo napíšete e-mail? Klidně — ozvu se
-                      zpátky obvykle do dvou pracovních dnů.
-                    </p>
-                  </div>
-                  <div className="relative z-[1] mt-8 space-y-4 text-sm">
-                    <div>
-                      <p className="text-blue-100/60">E-mail</p>
-                      <a href="mailto:info@brandweb.cz" className="font-medium text-white hover:underline">
-                        info@brandweb.cz
-                      </a>
+                <div className="space-y-4">
+                  {[
+                    { icon: "☎", label: "Telefon", value: "+420 608 462 557", href: "tel:+420000000000" },
+                    { icon: "✉", label: "E-mail", value: "info@brandweb.cz", href: "mailto:info@brandweb.cz" },
+                    { icon: "▣", label: "Instagram", value: "@brandweb.cz", href: "#" },
+                    { icon: "⚲", label: "Působiště", value: "Pardubice", href: undefined },
+                    { icon: "◷", label: "Dostupnost", value: "Po–Pá, dle telefonické domluvy", href: undefined },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-blue-400/30 hover:bg-white/[0.05]"
+                    >
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg text-blue-400 transition group-hover:border-blue-400/40 group-hover:bg-blue-500/10 group-hover:text-blue-300">
+                        {item.icon}
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-widest text-neutral-500">{item.label}</p>
+                        {item.href ? (
+                          <a href={item.href} className="font-medium text-white hover:text-blue-400 hover:underline">
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="font-medium text-white">{item.value}</p>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-blue-100/60">Telefon</p>
-                      <a href="tel:+420000000000" className="font-medium text-white hover:underline">
-                        +420 000 000 000
-                      </a>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </Reveal>
 
               <Reveal delay={200}>
-                <form className="grid gap-4 sm:grid-cols-2">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Jméno"
-                    className="rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition focus:border-blue-700/50 focus:ring-2 focus:ring-blue-700/10"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                    className="rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition focus:border-blue-700/50 focus:ring-2 focus:ring-blue-700/10"
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Pár slov o vašem projektu..."
-                    rows={5}
-                    className="sm:col-span-2 rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition focus:border-blue-700/50 focus:ring-2 focus:ring-blue-700/10"
-                  />
+                <form className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/10 sm:p-8">
+                  <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-white to-red-500" />
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <label className="block">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Jméno a příjmení *</span>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Jan Novák"
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Telefon *</span>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+420 777 000 000"
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">E-mail</span>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="vas@email.cz"
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Typ projektu</span>
+                      <select
+                        name="type"
+                        defaultValue=""
+                        className="mt-2 w-full appearance-none rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-neutral-400 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
+                      >
+                        <option value="" disabled>Vyberte…</option>
+                        <option value="novy-web">Nový web na míru</option>
+                        <option value="redesign">Redesign stávajícího webu</option>
+                        <option value="udrzba">Údržba a úpravy</option>
+                        <option value="jine">Jiné / nevím přesně</option>
+                      </select>
+                    </label>
+                    <label className="block sm:col-span-2">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Popište, co přesně potřebujete</span>
+                      <textarea
+                        name="message"
+                        placeholder="Pár vět o vašem podnikání a o tom, co byste od webu očekávali…"
+                        rows={5}
+                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
+                      />
+                    </label>
+                  </div>
                   <button
                     type="submit"
-                    className="sm:col-span-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-800"
+                    className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-sm font-semibold uppercase tracking-widest text-neutral-950 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white"
                   >
-                    Odeslat poptávku
+                    Nezávazně odeslat <span aria-hidden>→</span>
                   </button>
                 </form>
               </Reveal>
@@ -355,8 +616,18 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-neutral-200 py-8 text-center text-sm text-neutral-400">
-        © {new Date().getFullYear()} BrandWeb — Jiří Švec. Všechna práva vyhrazena.
+      <footer className="border-t border-white/10 py-10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="flex items-center gap-3">
+            <Image src="/images/logo/logo.png" alt="BrandWeb logo" width={32} height={32} className="h-8 w-8" />
+            <span className="text-sm font-semibold tracking-tight text-white">
+              Brand<span className="text-blue-500">Web</span>
+            </span>
+          </div>
+          <p className="text-sm text-neutral-200">
+            © {new Date().getFullYear()} BrandWeb, Jiří Švec. Všechna práva vyhrazena.
+          </p>
+        </div>
       </footer>
     </>
   );
