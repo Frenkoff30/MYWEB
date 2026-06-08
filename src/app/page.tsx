@@ -264,7 +264,7 @@ export default function Home() {
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Postup spolupráce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Žádné kouzlení, jen jasný a klidný postup
+                  Žádné kouzlení, jen jasný a jednoduchý postup
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-neutral-400">
                   Tři jednoduché kroky od prvního nápadu k webu, který vám bude sloužit roky.
@@ -339,9 +339,9 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky prací</span>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky mé práce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Pár ukázek, jak to u mě vypadá v praxi
+                  Pár ukázek, jak web ode mě vypadá v praxi
                 </h2>
               </div>
             </Reveal>
@@ -383,47 +383,13 @@ export default function Home() {
             <Reveal>
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Reference</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Tohle nejsou jen moje slova</h2>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Recenze od klientů budou brzy tady</h2>
+                <p className="mt-3 text-neutral-400">
+                  Aktuálně sbírám reference od svých klientů, takže tady už brzy
+                  uvidíte jejich reálné zkušenosti.
+                </p>
               </div>
             </Reveal>
-            <div className="mt-12 grid gap-6 sm:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "Konečně web, na který se nestydím poslat odkaz. Poptávek nám výrazně přibylo a celá spolupráce byla bez stresu.",
-                  name: "Petra N.",
-                  role: "majitelka kadeřnictví",
-                },
-                {
-                  quote:
-                    "Měl jsem starý web ještě z roku 2015. Jiří mi ho kompletně předělal a vysvětlil úplně všechno srozumitelně, bez odborného žargonu.",
-                  name: "Tomáš K.",
-                  role: "OSVČ, truhlářství",
-                },
-                {
-                  quote:
-                    "Rychlá komunikace, dodrženy termíny a výsledek přesně podle představ. Můžu jen doporučit.",
-                  name: "Markéta S.",
-                  role: "majitelka kavárny",
-                },
-              ].map((t, i) => (
-                <Reveal key={t.name} delay={i * 100}>
-                  <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                    <span className="text-2xl font-bold text-blue-400">”</span>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-300">{t.quote}</p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xs font-semibold text-white">
-                        {t.name.split(" ").map((p) => p[0]).join("")}
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-white">{t.name}</p>
-                        <p className="text-xs text-neutral-500">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -433,7 +399,7 @@ export default function Home() {
           <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">FAQ</span>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Často kladené otázky</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Možná tu odpověď už je</h2>
               </div>
             </Reveal>
@@ -610,7 +576,7 @@ export default function Home() {
             </span>
           </div>
           <p className="text-sm text-neutral-200">
-            © {new Date().getFullYear()} BrandWeb, Jiří Švec. Všechna práva vyhrazena.
+            © {new Date().getFullYear()} BrandWeb, Jiří Švec
           </p>
         </div>
       </footer>
