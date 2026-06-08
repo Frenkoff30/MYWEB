@@ -11,9 +11,9 @@ const stats = [
 const process = [
   {
     step: "01",
-    title: "Nejdřív si zdarma promluvíme",
+    title: "Nejdřív si promluvíme",
     description:
-      "Nejprve si nezávazně promluvíme o tom, co potřebujete, a zdarma vám připravím návrh řešení na míru.",
+      "Nejprve si nezávazně promluvíme o tom, co potřebujete, a ZDARMA vám připravím návrh řešení na míru.",
   },
   {
     step: "02",
@@ -23,7 +23,7 @@ const process = [
   },
   {
     step: "03",
-    title: "Web doladím a spustím",
+    title: "Web dokončím a spustím",
     description:
       "Vše dotáhnu k dokonalosti, nasadím web naživo a postarám se, aby od prvního dne fungoval tak, jak má.",
   },
@@ -304,8 +304,9 @@ export default function Home() {
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
               {services.map((service, i) => (
                 <Reveal key={service.title} delay={i * 100}>
-                  <div
-                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-1.5 ${
+                  <a
+                    href="#kontakt"
+                    className={`group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-1.5 ${
                       i === 0
                         ? "border border-blue-400/30 bg-gradient-to-b from-blue-500/[0.08] to-white/[0.02] shadow-xl shadow-blue-500/10 ring-1 ring-blue-400/20"
                         : "border border-white/10 bg-white/[0.03] hover:border-blue-400/30 hover:bg-white/[0.05]"
@@ -323,10 +324,10 @@ export default function Home() {
                     <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
                     <p className="relative z-[1] mt-3 flex-1 text-sm text-neutral-200">{service.description}</p>
                     <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
-                    <span className={`relative z-[1] mt-4 text-sm font-medium ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
-                      Mám zájem →
+                    <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
+                      Mám zájem <span>→</span>
                     </span>
-                  </div>
+                  </a>
                 </Reveal>
               ))}
             </div>
@@ -484,7 +485,7 @@ export default function Home() {
             alt=""
             width={520}
             height={520}
-            className="pointer-events-none absolute -left-24 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
+            className="pointer-events-none absolute -left-56 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
           />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
