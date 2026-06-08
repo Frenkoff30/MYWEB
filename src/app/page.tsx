@@ -4,8 +4,8 @@ import ScrollProgress from "./components/ScrollProgress";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
-  { value: "< 48 h", label: "reakce na poptávku" },
-  { value: "1–3 týdny", label: "od nápadu k webu na ostro" },
+  { value: "< 24 h", label: "reakce na Vaši zprávu" },
+  { value: "1–2 týdny", label: "od nápadu k webu na ostro" },
 ];
 
 const process = [
@@ -158,6 +158,37 @@ export default function Home() {
           </div>
         </section>
 
+        {/* O mně */}
+        <section id="o-mne" className="relative overflow-hidden border-b border-white/10">
+          <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
+          <Image
+            src="/images/logo/logo.png"
+            alt=""
+            width={520}
+            height={520}
+            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.12] blur-[2px] sm:block"
+          />
+          <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20 text-center">
+            <Reveal>
+              <div>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsem ?</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Ahoj, jmenuji se Jirka
+                </h2>
+                <p className="mt-4 text-neutral-200">
+                  Navrhuji a vytvářím weby pro živnostníky, řemeslníky a malé
+                  provozovny. Nejčastěji pomáhám lidem, kteří ještě žádný web
+                  nemají, nebo jim ten současný už neslouží tak, jak by měl.
+                </p>
+                <p className="mt-4 text-neutral-200">
+                  Cíl je vždy stejný a to udělat jednoduchý, přehledný a moderní web, který
+                  návštěvníky zaujme a přivede Vám nové zákazníky.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         {/* Problém */}
         <section className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
           <span className="bg-blob bg-blob-red -right-40 -top-24 h-72 w-72 opacity-30" />
@@ -195,7 +226,7 @@ export default function Home() {
                       !
                     </span>
                     <h3 className="mt-4 text-base font-semibold text-white transition duration-300 group-hover:text-red-300">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-200">{item.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -222,54 +253,6 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
-          </div>
-        </section>
-
-        {/* O mně */}
-        <section id="o-mne" className="relative overflow-hidden border-b border-white/10">
-          <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
-          <Image
-            src="/images/logo/logo.png"
-            alt=""
-            width={520}
-            height={520}
-            className="pointer-events-none absolute -right-24 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
-          />
-          <div className="relative z-[1] mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
-            <Reveal>
-              <div>
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo za tím stojí</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Ahoj, jmenuji se Jiří 
-                </h2>
-                <p className="mt-4 text-neutral-200">
-                  Tvorbě webů se věnuji naplno a založil jsem si kvůli tomu
-                  vlastní živnost. Pomáhám lidem a menším firmám, ať už jsou to
-                  živnostníci, řemeslníci nebo provozovny, kteří dosud žádný web
-                  nemají nebo jim ten současný už neslouží tak, jak by měl.
-                </p>
-                <p className="mt-4 text-neutral-200">
-                  Cílem je vždy stejný: jednoduchý, přehledný a hezký web, který
-                  návštěvníky zaujme a přivede vám nové zákazníky, a to bez zbytečných
-                  komplikací na vaší straně.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="relative overflow-hidden rounded-2xl bg-white/[0.03] p-8 ring-1 ring-white/10">
-                <span className="bg-blob bg-blob-red -right-12 -top-12 h-40 w-40 opacity-40" />
-                <div className="relative z-[1] flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/5 text-2xl font-bold text-white">
-                  JS
-                </div>
-                <p className="relative z-[1] mt-6 text-lg leading-relaxed text-neutral-200">
-                  „Web má jednu jedinou práci: udělat na lidi dobrý dojem a přivést vám
-                  nové zákazníky. Na tom stavím každý projekt.“
-                </p>
-                <p className="relative z-[1] mt-4 text-sm text-neutral-500">
-                  Jiří Švec <span className="text-red-500">/</span> BrandWeb
-                </p>
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -302,47 +285,6 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Portfolio */}
-        <section id="portfolio" className="border-b border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <Reveal>
-              <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky prací</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Tady už brzy uvidíte mou práci naživo
-                </h2>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="relative overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 sm:col-span-2 sm:row-span-2 sm:min-h-[260px]">
-                  <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50" />
-                  <div className="relative z-[1] flex h-full flex-col justify-between">
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
-                      Připravuje se
-                    </span>
-                    <p className="max-w-sm text-lg leading-relaxed text-neutral-200">
-                      Portfolio teprve buduji, první realizace tu brzy přibudou.
-                      Ozvěte se mi a budete mezi prvními, na kom si vybrousím styl
-                      k dokonalosti.
-                    </p>
-                  </div>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                  <p className="text-sm font-semibold text-white">Redesign webu</p>
-                  <p className="mt-1 text-sm text-neutral-400">Modernizace zastaralé prezentace.</p>
-                  <span className="mt-4 block h-1 w-10 rounded-full bg-blue-500" />
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                  <p className="text-sm font-semibold text-white">Web na míru</p>
-                  <p className="mt-1 text-sm text-neutral-400">Od skici po nasazení online.</p>
-                  <span className="mt-4 block h-1 w-10 rounded-full bg-red-500" />
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -388,6 +330,48 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Portfolio */}
+        <section id="portfolio" className="border-b border-white/10">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <Reveal>
+              <div className="text-center">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky prací</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                  Pár ukázek, jak to u mě vypadá v praxi
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="mt-10">
+                <a
+                  href="https://frenkoff30.github.io/KAMASTRECHYWEB/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative mx-auto block max-w-2xl overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] sm:min-h-[260px]"
+                >
+                  <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50" />
+                  <div className="relative z-[1] flex h-full flex-col justify-between">
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
+                      Hotová realizace
+                    </span>
+                    <div>
+                      <p className="text-lg font-semibold text-white">KAMA Střechy</p>
+                      <p className="mt-2 max-w-sm text-sm leading-relaxed text-neutral-200">
+                        Web pro klempířskou a pokrývačskou firmu, postavený tak,
+                        aby na první pohled ukázal zkušenosti a vzbudil důvěru
+                        u nových zákazníků.
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-400 transition group-hover:text-blue-300">
+                        Zobrazit web <span className="transition group-hover:translate-x-1">→</span>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -452,7 +436,7 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Možná tu odpověď už je</h2>
               </div>
             </Reveal>
-            <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+            <div className="mt-10 space-y-4">
               {[
                 {
                   q: "Jak dlouho trvá vytvoření webu?",
@@ -476,14 +460,14 @@ export default function Home() {
                 },
               ].map((item) => (
                 <Reveal key={item.q}>
-                  <details className="group py-5">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-medium text-white">
+                  <details className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition duration-300 open:border-blue-400/30 open:bg-white/[0.05] hover:border-white/20">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-white transition group-hover:text-blue-300">
                       {item.q}
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/15 text-sm text-neutral-400 transition group-open:rotate-45 group-open:border-blue-400/50 group-open:text-blue-400">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-300 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
                         +
                       </span>
                     </summary>
-                    <p className="mt-3 text-sm leading-relaxed text-neutral-400">{item.a}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-white">{item.a}</p>
                   </details>
                 </Reveal>
               ))}
