@@ -61,17 +61,38 @@ html {
 
 .bg-blob-blue {
   background: radial-gradient(circle, #3b82f6, transparent 70%);
-  animation: drift-one 20s ease-in-out infinite;
+  animation: drift-one 20s ease-in-out infinite, morph-a 12s ease-in-out infinite;
 }
 
 .bg-blob-red {
   background: radial-gradient(circle, #ef4444, transparent 70%);
-  animation: drift-two 24s ease-in-out infinite;
+  animation: drift-two 24s ease-in-out infinite, morph-b 15s ease-in-out infinite;
 }
 
 .bg-blob-navy {
   background: radial-gradient(circle, #2563eb, transparent 70%);
-  animation: drift-three 30s ease-in-out infinite;
+  animation: drift-three 30s ease-in-out infinite, morph-c 18s ease-in-out infinite;
+}
+
+@keyframes morph-a {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  20%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  40%       { border-radius: 50% 30% 60% 40% / 30% 50% 70% 50%; }
+  60%       { border-radius: 70% 50% 30% 60% / 40% 70% 30% 60%; }
+  80%       { border-radius: 40% 70% 50% 30% / 70% 40% 50% 30%; }
+}
+
+@keyframes morph-b {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  25%       { border-radius: 70% 30% 40% 60% / 60% 40% 30% 70%; }
+  50%       { border-radius: 30% 70% 60% 40% / 50% 30% 70% 40%; }
+  75%       { border-radius: 60% 40% 30% 70% / 30% 60% 40% 70%; }
+}
+
+@keyframes morph-c {
+  0%, 100% { border-radius: 50% 50% 30% 70% / 50% 70% 30% 50%; }
+  33%       { border-radius: 70% 30% 50% 50% / 30% 50% 70% 50%; }
+  66%       { border-radius: 30% 70% 40% 60% / 60% 30% 50% 70%; }
 }
 
 .text-gradient {
@@ -163,6 +184,38 @@ body::before {
   0%   { opacity: 0.85; }
   50%  { opacity: 1;    }
   100% { opacity: 0.75; }
+}
+
+/* Glitch efekt na hero slovu */
+.glitch {
+  animation: glitch-anim 6s ease-in-out infinite;
+}
+
+@keyframes glitch-anim {
+  0%, 85%, 100% {
+    transform: translate(0);
+    filter: none;
+  }
+  86% {
+    transform: translate(-4px, 0);
+    filter: hue-rotate(80deg) brightness(1.3) saturate(1.5);
+  }
+  87% {
+    transform: translate(4px, 0);
+    filter: hue-rotate(-80deg) brightness(1.4) saturate(1.5);
+  }
+  88% {
+    transform: translate(-2px, 1px);
+    filter: hue-rotate(40deg) brightness(1.2);
+  }
+  89% {
+    transform: translate(2px, -1px);
+    filter: hue-rotate(-40deg) brightness(1.3);
+  }
+  90% {
+    transform: translate(0);
+    filter: none;
+  }
 }
 
 /* Jemná noise textura */

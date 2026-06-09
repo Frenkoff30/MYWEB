@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Reveal from "./components/Reveal";
 import ScrollProgress from "./components/ScrollProgress";
+import Counter from "./components/Counter";
+import TypingText from "./components/TypingText";
+import MagneticButton from "./components/MagneticButton";
+import ParallaxLogo from "./components/ParallaxLogo";
+import TiltCard from "./components/TiltCard";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -91,7 +96,7 @@ export default function Home() {
               <Reveal delay={100}>
                 <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-7xl">
                   Weby, co{" "}
-                  <span className="text-gradient">prodávají</span>.<br className="hidden sm:block" />{" "}
+                  <span className="text-gradient glitch">prodávají</span>.<br className="hidden sm:block" />{" "}
                   Ne jen visí na internetu.
                 </h1>
               </Reveal>
@@ -124,7 +129,7 @@ export default function Home() {
             </div>
 
             <Reveal delay={250}>
-              <div className="relative mx-auto w-full max-w-md float-slow">
+              <TiltCard className="relative mx-auto w-full max-w-md float-slow">
                 <span className="bg-blob bg-blob-blue -right-12 -top-12 h-56 w-56 opacity-50" />
                 <span className="bg-blob bg-blob-red -left-12 -bottom-12 h-56 w-56 opacity-40" />
                 <div className="group relative z-[1] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:shadow-blue-500/10">
@@ -132,7 +137,9 @@ export default function Home() {
                     <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
-                    <span className="ml-3 h-5 flex-1 max-w-[60%] rounded-full bg-white/5" />
+                    <span className="ml-3 flex h-5 flex-1 max-w-[60%] items-center rounded-full bg-white/5 px-3">
+                      <TypingText text="brandweb.cz" startDelay={1200} />
+                    </span>
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex items-center gap-3">
@@ -156,7 +163,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </Reveal>
           </div>
         </section>
@@ -164,12 +171,9 @@ export default function Home() {
         {/* O mně */}
         <section id="o-mne" className="relative overflow-hidden border-b border-white/10">
           <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
-          <Image
-            src="/images/logo/logo.png"
-            alt=""
-            width={520}
-            height={520}
-            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.22] blur-[1px] sm:block"
+          <ParallaxLogo
+            speed={0.25}
+            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden h-[520px] w-[520px] opacity-[0.22] blur-[1px] sm:block"
           />
           <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20 text-center">
             <Reveal>
@@ -529,7 +533,11 @@ export default function Home() {
               {stats.map((stat, i) => (
                 <Reveal key={stat.label} delay={i * 100}>
                   <div className="group px-6 py-5 text-center transition duration-300 hover:bg-white/[0.03]">
-                    <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">{stat.value}</p>
+                    <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">
+                      {stat.label === "spokojenost klientů" && <Counter to={100} suffix=" %" />}
+                      {stat.label === "reakce na Vaši zprávu" && <><span className="text-2xl">{"< "}</span><Counter to={24} suffix=" h" /></>}
+                      {stat.label === "od nápadu k webu na ostro" && stat.value}
+                    </p>
                     <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
                     <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
                   </div>
