@@ -14,7 +14,7 @@ interface P {
 // parallax speeds per layer (fraction of scroll delta applied per frame)
 const LAYER_SPEED = [0.08, 0.22, 0.42];
 // base opacity per layer — closer = brighter
-const LAYER_ALPHA = [0.55, 0.75, 1.0];
+const LAYER_ALPHA = [0.22, 0.35, 0.52];
 
 export default function Particles() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -71,7 +71,7 @@ export default function Particles() {
           : layer === 1
           ? sizeRoll * 1.0 + 0.7
           : sizeRoll * 1.4 + 1.4,
-        baseAlpha: (Math.random() * 0.45 + 0.3) * LAYER_ALPHA[layer],
+        baseAlpha: (Math.random() * 0.35 + 0.18) * LAYER_ALPHA[layer],
         type: roll < 0.78 ? "dot" : roll < 0.93 ? "star" : "cross",
         twinkleSpeed: Math.random() * 0.014 + 0.004,
         twinklePhase: Math.random() * Math.PI * 2,
