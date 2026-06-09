@@ -400,27 +400,20 @@ export default function Home() {
                   href="https://frenkoff30.github.io/KAMASTRECHYWEB/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative mx-auto block max-w-2xl overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] sm:min-h-[260px]"
+                  className="group relative block max-w-sm overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
                 >
-                  <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50" />
-                  <div className="relative z-[1] flex h-full flex-col justify-between">
+                  <div className="relative z-[1] flex h-full flex-col gap-5">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
                         Hotová realizace
                       </span>
                       <Image src="/images/others/KAMASTRECHYLOGO.png" alt="KAMA Střechy logo" width={120} height={48} className="h-10 w-auto opacity-90 transition duration-300 group-hover:opacity-100" />
                     </div>
-                    <div className="mt-6">
-                      <p className="text-lg font-semibold text-white">KAMA Střechy</p>
-                      <p className="mt-2 max-w-sm text-sm leading-relaxed text-neutral-200">
-                        Web pro klempířskou a pokrývačskou firmu, postavený tak,
-                        aby na první pohled ukázal zkušenosti a vzbudil důvěru
-                        u nových zákazníků.
-                      </p>
-                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-400 transition group-hover:text-blue-300">
-                        Zobrazit web <span className="transition group-hover:translate-x-1">→</span>
-                      </span>
+                    {/* screenshot */}
+                    <div className="overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/40 transition duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/10">
+                      <Image src="/images/others/ukazkakama.png" alt="KAMA Střechy web" width={800} height={450} className="w-full h-auto" />
                     </div>
+                    <p className="text-base font-semibold text-white">KAMA Střechy</p>
                   </div>
                 </a>
               </div>
@@ -587,13 +580,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
           <Image src="/images/logo/logo.png" alt="Webo logo" width={600} height={200} className="w-full max-w-lg h-auto" />
-          <div className="flex items-center gap-3">
-            <p className="text-xs text-neutral-500">Realizováno pro:</p>
-            <a href="https://frenkoff30.github.io/KAMASTRECHYWEB/" target="_blank" rel="noopener noreferrer">
-              <Image src="/images/others/KAMASTRECHYLOGO.png" alt="KAMA Střechy" width={80} height={32} className="h-7 w-auto opacity-50 transition hover:opacity-80" />
-            </a>
-          </div>
-          <p className="text-sm text-neutral-400">
+<p className="text-sm text-neutral-400">
             © {new Date().getFullYear()} Webo Studio
           </p>
         </div>
