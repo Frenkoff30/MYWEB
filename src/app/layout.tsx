@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrandWeb: Tvorba moderních webů",
+  title: "Webo Studio: Tvorba moderních webů",
   description:
-    "Navrhuji a vytvářím jednoduché, moderní weby pro lidi a malé firmy, kteří je nemají nebo mají zastaralé.",
+    "Navrhujeme a vytváříme jednoduché, moderní weby pro živnostníky a malé firmy. Weby, které skutečně prodávají.",
   icons: {
     icon: "/images/logo/logo.png",
   },

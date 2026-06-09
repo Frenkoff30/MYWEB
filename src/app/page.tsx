@@ -3,7 +3,6 @@ import Reveal from "./components/Reveal";
 import ScrollProgress from "./components/ScrollProgress";
 import Counter from "./components/Counter";
 import TypingText from "./components/TypingText";
-import MagneticButton from "./components/MagneticButton";
 import ParallaxLogo from "./components/ParallaxLogo";
 import TiltCard from "./components/TiltCard";
 import ContactForm from "./components/ContactForm";
@@ -19,19 +18,19 @@ const process = [
     step: "01",
     title: "Nejdřív si promluvíme",
     description:
-      "Nejprve si nezávazně promluvíme o tom, co potřebujete, a ZDARMA vám připravím návrh řešení na míru.",
+      "Nejprve si nezávazně promluvíme o tom, co potřebujete, a ZDARMA vám připravíme návrh řešení na míru.",
   },
   {
     step: "02",
     title: "Doladíme detaily a domluvíme cenu",
     description:
-      "Návrh si společně projdeme a zapracuji do něj vaše připomínky. Teprve potom, když budete spokojení, se domluvíme na konečné ceně.",
+      "Návrh si společně projdeme a zapracujeme do něj vaše připomínky. Teprve potom, když budete spokojení, se domluvíme na konečné ceně.",
   },
   {
     step: "03",
     title: "Web dokončím a spustím",
     description:
-      "Vše dotáhnu k dokonalosti, nasadím web naživo a postarám se, aby od prvního dne fungoval tak, jak má.",
+      "Vše dotáhneme k dokonalosti, nasadíme web naživo a postaráme se, aby od prvního dne fungoval tak, jak má.",
   },
 ];
 
@@ -63,11 +62,7 @@ export default function Home() {
       <header className="sticky top-0 z-10 bg-neutral-950/60 backdrop-blur-xl" style={{ borderBottom: "1px solid transparent", backgroundImage: "linear-gradient(rgba(10,12,16,0.6), rgba(10,12,16,0.6)), linear-gradient(to right, rgba(96,165,250,0.2), rgba(248,113,113,0.1), rgba(96,165,250,0.05))", backgroundOrigin: "border-box", backgroundClip: "padding-box, border-box" }}>
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#hero" className="group flex items-center gap-3">
-            <Image src="/images/logo/logo.png" alt="BrandWeb logo" width={36} height={36} className="h-9 w-9 transition duration-300 group-hover:scale-105" />
-
-            <span className="text-lg font-semibold tracking-tight text-white">
-              Brand<span className="text-blue-500">Web</span>
-            </span>
+            <Image src="/images/logo/logo.png" alt="Webo logo" width={220} height={72} className="h-20 w-auto transition duration-300 group-hover:scale-105" />
           </a>
           <div className="hidden gap-8 text-sm font-medium text-neutral-200 sm:flex">
             <a href="#o-mne" className="nav-link transition hover:text-white">O mně</a>
@@ -88,7 +83,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-28 sm:pt-36">
-          <span className="bg-grid" />
+<span className="bg-grid" />
           <span className="bg-blob bg-blob-blue -left-40 -top-40 h-[28rem] w-[28rem]" />
           <span className="bg-blob bg-blob-red -right-32 top-0 h-96 w-96" />
           <span className="bg-blob bg-blob-navy left-1/2 bottom-0 h-80 w-80 -translate-x-1/2" />
@@ -103,7 +98,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={200}>
                 <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-300 sm:mx-0">
-                  Pomáhám živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
+                  Pomáháme živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
                   <span className="text-white font-semibold">skutečně prodával</span>.{" "}
                   Srozumitelný obsah,{" "}
                   <span className="text-blue-400 font-semibold">rychlé načítání</span>,{" "}
@@ -139,7 +134,7 @@ export default function Home() {
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
                     <span className="ml-3 flex h-5 flex-1 max-w-[60%] items-center rounded-full bg-white/5 px-3">
-                      <TypingText text="brandweb.cz" startDelay={1200} />
+                      <TypingText text="webo.cz" startDelay={1200} />
                     </span>
                   </div>
                   <div className="space-y-4 p-6">
@@ -174,23 +169,23 @@ export default function Home() {
           <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
           <ParallaxLogo
             speed={0.25}
-            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden h-[520px] w-[520px] opacity-[0.22] blur-[1px] sm:block"
+            className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[480px] w-[480px] opacity-[0.18] blur-[2px] sm:block"
           />
           <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20 text-center">
             <Reveal>
               <div>
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsem ?</span>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsme ?</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Ahoj, jmenuji se Jirka
+                  Jsme Webo. Tvoříme weby, které pracují za vás
                 </h2>
                 <p className="mt-4 text-neutral-300">
-                  Navrhuji a vytvářím weby pro{" "}
+                  Navrhujeme a vytváříme weby pro{" "}
                   <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
-                  Nejčastěji pomáhám lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
+                  Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
                   <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
                 </p>
                 <p className="mt-4 text-neutral-300">
-                  Cíl je vždy stejný. Udělat{" "}
+                  Náš cíl je vždy stejný. Udělat{" "}
                   <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
                   který návštěvníky zaujme a přivede vám nové zákazníky.
                 </p>
@@ -244,7 +239,7 @@ export default function Home() {
             </div>
             <Reveal delay={200}>
               <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-neutral-200">
-                Pojďme to změnit. Postavíme web, který bude vypadat skvěle a začne pro vás reálně pracovat.
+                Pojďme to změnit. Ve Webo stavíme weby, které vypadají skvěle a začnou pro vás reálně pracovat.
               </p>
             </Reveal>
           </div>
@@ -288,8 +283,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízím</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebuje</h2>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízíme</span>
+                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebujete</h2>
                 <p className="mt-3 text-neutral-400">
                   Jde o orientační ceny, finální nabídka se vždy odvíjí od rozsahu a
                   potřeb konkrétního projektu.
@@ -393,9 +388,9 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Ukázky mé práce</span>
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Naše práce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Pár ukázek, jak web ode mě vypadá v praxi
+                  Pár ukázek, jak weby od Webo vypadají v praxi
                 </h2>
               </div>
             </Reveal>
@@ -409,10 +404,13 @@ export default function Home() {
                 >
                   <span className="bg-blob bg-blob-blue -right-16 -bottom-16 h-64 w-64 opacity-50" />
                   <div className="relative z-[1] flex h-full flex-col justify-between">
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
-                      Hotová realizace
-                    </span>
-                    <div>
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
+                        Hotová realizace
+                      </span>
+                      <Image src="/images/others/KAMASTRECHYLOGO.png" alt="KAMA Střechy logo" width={120} height={48} className="h-10 w-auto opacity-90 transition duration-300 group-hover:opacity-100" />
+                    </div>
+                    <div className="mt-6">
                       <p className="text-lg font-semibold text-white">KAMA Střechy</p>
                       <p className="mt-2 max-w-sm text-sm leading-relaxed text-neutral-200">
                         Web pro klempířskou a pokrývačskou firmu, postavený tak,
@@ -464,28 +462,28 @@ export default function Home() {
                   a: "U jednoduché prezentace obvykle 1–2 týdny od schválení návrhu. U rozsáhlejších projektů termín domluvíme individuálně.",
                 },
                 {
-                  q: "Kolik bude stát web pro mě?",
-                  a: "Cena se vždy odvíjí od rozsahu projektu. Orientační ceny najdete výše v sekci Služby. Po krátkém rozhovoru vám rád připravím konkrétní nabídku na míru — zdarma a nezávazně.",
+                  q: "Kolik bude stát web?",
+                  a: "Cena se vždy odvíjí od rozsahu projektu. Orientační ceny najdete výše v sekci Služby. Po krátkém rozhovoru vám rádi připravíme konkrétní nabídku na míru, zdarma a nezávazně.",
                 },
                 {
                   q: "Bude web fungovat i na mobilu?",
-                  a: "Ano, každý web stavím tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu, takže to je základ.",
+                  a: "Ano, každý web stavíme tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu, takže to je základ.",
                 },
                 {
                   q: "Pomůžete mi i s texty a obsahem?",
-                  a: "Rád poradím se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Pokud chcete, připravím texty i kompletně za vás.",
+                  a: "Rádi poradíme se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Pokud chcete, připravíme texty i kompletně za vás.",
                 },
                 {
                   q: "Zajistíte mi i doménu a hosting?",
-                  a: "Ano, postarám se o registraci domény i nasazení webu online. Vše zařídím za vás, ať máte vše na jednom místě.",
+                  a: "Ano, postaráme se o registraci domény i nasazení webu online. Vše zařídíme za vás, ať máte vše na jednom místě.",
                 },
                 {
                   q: "Co když budu chtít web později upravit?",
-                  a: "Žádný problém. Nabízím průběžnou údržbu a drobné úpravy, nebo vás naučím spravovat obsah samostatně.",
+                  a: "Žádný problém. Nabízíme průběžnou údržbu a drobné úpravy, nebo vás naučíme spravovat obsah samostatně.",
                 },
                 {
                   q: "Co když se na webu něco pokazí?",
-                  a: "Ozvěte se mi a problém vyřeším co nejdříve. Protože web znám od základu, oprava je obvykle rychlá.",
+                  a: "Ozvěte se nám a problém vyřešíme co nejdříve. Protože web známe od základu, oprava je obvykle rychlá.",
                 },
               ].map((item) => (
                 <Reveal key={item.q}>
@@ -520,11 +518,11 @@ export default function Home() {
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kontakt</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-5xl">
-                  Kontaktujte mě{" "}
+                  Napište nám{" "}
                   <span className="text-gradient">ještě dnes</span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-neutral-400">
-                  Popište mi krátce váš projekt nebo nápad. Ozvu se Vám do 48 hodin s návrhem řešení.
+                  Popište nám krátce váš projekt nebo nápad. Ozveme se vám do 24 hodin s návrhem řešení.
                 </p>
               </div>
             </Reveal>
@@ -551,8 +549,8 @@ export default function Home() {
                 <div className="space-y-4">
                   {[
                     { icon: "☎", label: "Telefon", value: "+420 608 462 557", href: "tel:+420000000000" },
-                    { icon: "✉", label: "E-mail", value: "info@brandweb.cz", href: "mailto:info@brandweb.cz" },
-                    { icon: "▣", label: "Instagram", value: "@brandweb.cz", href: "#" },
+                    { icon: "✉", label: "E-mail", value: "info@webo.cz", href: "mailto:info@webo.cz" },
+                    { icon: "▣", label: "Instagram", value: "@webo.cz", href: "#" },
                     { icon: "⚲", label: "Působiště", value: "Pardubice", href: undefined },
                     { icon: "◷", label: "Dostupnost", value: "Po–Pá, dle telefonické domluvy", href: undefined },
                   ].map((item) => (
@@ -587,15 +585,16 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-white/10 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
+          <Image src="/images/logo/logo.png" alt="Webo logo" width={600} height={200} className="w-full max-w-lg h-auto" />
           <div className="flex items-center gap-3">
-            <Image src="/images/logo/logo.png" alt="BrandWeb logo" width={32} height={32} className="h-8 w-8" />
-            <span className="text-sm font-semibold tracking-tight text-white">
-              Brand<span className="text-blue-500">Web</span>
-            </span>
+            <p className="text-xs text-neutral-500">Realizováno pro:</p>
+            <a href="https://frenkoff30.github.io/KAMASTRECHYWEB/" target="_blank" rel="noopener noreferrer">
+              <Image src="/images/others/KAMASTRECHYLOGO.png" alt="KAMA Střechy" width={80} height={32} className="h-7 w-auto opacity-50 transition hover:opacity-80" />
+            </a>
           </div>
-          <p className="text-sm text-neutral-200">
-            © {new Date().getFullYear()} BrandWeb, Jiří Švec
+          <p className="text-sm text-neutral-400">
+            © {new Date().getFullYear()} Webo Studio
           </p>
         </div>
       </footer>
