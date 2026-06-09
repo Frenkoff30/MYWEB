@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "./components/CursorGlow";
 import Particles from "./components/Particles";
+import SectionDots from "./components/SectionDots";
+import CardSpotlightGlobal from "./components/CardSpotlight";
+import BackToTop from "./components/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +39,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-neutral-950 text-white">
         <CursorGlow />
         <Particles />
+        <SectionDots />
+        <CardSpotlightGlobal />
+        <BackToTop />
+        <div className="vignette" aria-hidden />
         {children}
       </body>
     </html>

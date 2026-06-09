@@ -20,6 +20,55 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Page entrance */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main {
+  animation: page-enter 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Card spotlight effect */
+[data-spotlight] {
+  --sx: 50%;
+  --sy: 50%;
+}
+[data-spotlight]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(280px circle at var(--sx) var(--sy), rgba(59,130,246,0.13), transparent 70%);
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+[data-spotlight]:hover::before {
+  opacity: 1;
+}
+
+/* Nav link hover underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1.5px;
+  width: 0;
+  background: linear-gradient(90deg, #60a5fa, #f87171);
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav-link:hover::after {
+  width: 100%;
 }
 
 @keyframes drift-one {
@@ -228,4 +277,33 @@ body::after {
   opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
+}
+
+/* 3. Vignette */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 85% 80% at 50% 40%, transparent 40%, rgba(0,0,0,0.55) 100%);
+}
+
+/* Toast progress bar */
+@keyframes toast-bar {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+.animate-toast-bar {
+  animation: toast-bar linear forwards;
+}
+
+/* 6. Neon glow na CTA */
+.btn-glow {
+  position: relative;
+  box-shadow: 0 0 18px rgba(59,130,246,0.35), 0 0 40px rgba(59,130,246,0.15);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 28px rgba(59,130,246,0.55), 0 0 60px rgba(59,130,246,0.25);
+  transform: translateY(-2px);
 }

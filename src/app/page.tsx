@@ -6,6 +6,7 @@ import TypingText from "./components/TypingText";
 import MagneticButton from "./components/MagneticButton";
 import ParallaxLogo from "./components/ParallaxLogo";
 import TiltCard from "./components/TiltCard";
+import ContactForm from "./components/ContactForm";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -59,7 +60,7 @@ export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <header className="sticky top-0 z-10 border-b border-white/10 bg-neutral-950/80 backdrop-blur-md">
+      <header className="sticky top-0 z-10 bg-neutral-950/60 backdrop-blur-xl" style={{ borderBottom: "1px solid transparent", backgroundImage: "linear-gradient(rgba(10,12,16,0.6), rgba(10,12,16,0.6)), linear-gradient(to right, rgba(96,165,250,0.2), rgba(248,113,113,0.1), rgba(96,165,250,0.05))", backgroundOrigin: "border-box", backgroundClip: "padding-box, border-box" }}>
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#hero" className="group flex items-center gap-3">
             <Image src="/images/logo/logo.png" alt="BrandWeb logo" width={36} height={36} className="h-9 w-9 transition duration-300 group-hover:scale-105" />
@@ -69,11 +70,11 @@ export default function Home() {
             </span>
           </a>
           <div className="hidden gap-8 text-sm font-medium text-neutral-200 sm:flex">
-            <a href="#o-mne" className="transition hover:text-white">O mně</a>
-            <a href="#proces" className="transition hover:text-white">Jak pracuji</a>
-            <a href="#sluzby" className="transition hover:text-white">Služby</a>
-            <a href="#reference" className="transition hover:text-white">Recenze</a>
-            <a href="#faq" className="transition hover:text-white">Často kladené otázky</a>
+            <a href="#o-mne" className="nav-link transition hover:text-white">O mně</a>
+            <a href="#proces" className="nav-link transition hover:text-white">Jak pracuji</a>
+            <a href="#sluzby" className="nav-link transition hover:text-white">Služby</a>
+            <a href="#reference" className="nav-link transition hover:text-white">Recenze</a>
+            <a href="#faq" className="nav-link transition hover:text-white">Často kladené otázky</a>
           </div>
           <a
             href="#kontakt"
@@ -114,7 +115,7 @@ export default function Home() {
                 <div className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
                   <a
                     href="#kontakt"
-                    className="rounded-full bg-white px-8 py-4 text-base font-semibold text-neutral-950 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white"
+                    className="btn-glow rounded-full bg-blue-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-blue-400"
                   >
                     Domluvit konzultaci zdarma
                   </a>
@@ -231,7 +232,7 @@ export default function Home() {
                 },
               ].map((item, i) => (
                 <Reveal key={item.title} delay={i * 100}>
-                  <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/30 hover:bg-red-500/[0.06] hover:shadow-lg hover:shadow-red-500/10">
+                  <div data-spotlight className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/30 hover:bg-red-500/[0.06] hover:shadow-lg hover:shadow-red-500/10">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-red-500/10 text-sm font-bold text-red-400 transition duration-300 group-hover:bg-red-500/20 group-hover:text-red-300">
                       !
                     </span>
@@ -374,7 +375,7 @@ export default function Home() {
                   { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>, title: "Moderní design na míru", desc: "Žádná šablona — web navrhnu přesně pro vás." },
                   { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>, title: "Podpora po spuštění", desc: "Po předání webu jsem stále k dispozici pro dotazy." },
                 ].map((item) => (
-                  <div key={item.title} className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-lg hover:shadow-blue-500/5">
+                  <div key={item.title} data-spotlight className="group relative flex items-start gap-4 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-lg hover:shadow-blue-500/5">
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
                     <div>
                       <p className="text-sm font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
@@ -578,67 +579,7 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={200}>
-                <form className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/10 sm:p-8">
-                  <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-white to-red-500" />
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <label className="block">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Jméno a příjmení *</span>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Jan Novák"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Telefon *</span>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="+420 777 000 000"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">E-mail</span>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="vas@email.cz"
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Typ projektu</span>
-                      <select
-                        name="type"
-                        defaultValue=""
-                        className="mt-2 w-full appearance-none rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-neutral-400 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
-                      >
-                        <option value="" disabled>Vyberte…</option>
-                        <option value="novy-web">Nový web na míru</option>
-                        <option value="redesign">Redesign stávajícího webu</option>
-                        <option value="udrzba">Údržba a úpravy</option>
-                        <option value="jine">Jiné / nevím přesně</option>
-                      </select>
-                    </label>
-                    <label className="block sm:col-span-2">
-                      <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Popište, co přesně potřebujete</span>
-                      <textarea
-                        name="message"
-                        placeholder="Pár vět o vašem podnikání a o tom, co byste od webu očekávali…"
-                        rows={5}
-                        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-neutral-600 outline-none transition focus:border-blue-400/50 focus:ring-2 focus:ring-blue-400/10"
-                      />
-                    </label>
-                  </div>
-                  <button
-                    type="submit"
-                    className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-sm font-semibold uppercase tracking-widest text-neutral-950 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white"
-                  >
-                    Nezávazně odeslat <span aria-hidden>→</span>
-                  </button>
-                </form>
+                <ContactForm />
               </Reveal>
             </div>
           </div>
