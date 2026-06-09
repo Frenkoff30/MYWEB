@@ -96,10 +96,13 @@ export default function Home() {
                 </h1>
               </Reveal>
               <Reveal delay={200}>
-                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-white sm:mx-0">
-                  Pomáhám živnostníkům a malým firmám získat nebo upravit jejich stávající web tak, aby{" "}
-                  <span className="text-white">prodávali</span>.{" "}
-                  Srozumitelný obsah, rychlé načítání, moderní vzhled a tlačítko, na které lidé skutečně kliknou.
+                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-300 sm:mx-0">
+                  Pomáhám živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
+                  <span className="text-white font-semibold">skutečně prodával</span>.{" "}
+                  Srozumitelný obsah,{" "}
+                  <span className="text-blue-400 font-semibold">rychlé načítání</span>,{" "}
+                  moderní vzhled a tlačítko, na které lidé{" "}
+                  <span className="text-white font-semibold">opravdu kliknou</span>.
                 </p>
               </Reveal>
               <Reveal delay={300}>
@@ -166,7 +169,7 @@ export default function Home() {
             alt=""
             width={520}
             height={520}
-            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.12] blur-[2px] sm:block"
+            className="pointer-events-none absolute -right-32 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.22] blur-[1px] sm:block"
           />
           <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20 text-center">
             <Reveal>
@@ -175,14 +178,16 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
                   Ahoj, jmenuji se Jirka
                 </h2>
-                <p className="mt-4 text-neutral-200">
-                  Navrhuji a vytvářím weby pro živnostníky, řemeslníky a malé
-                  provozovny. Nejčastěji pomáhám lidem, kteří ještě žádný web
-                  nemají, nebo jim ten současný už neslouží tak, jak by měl.
+                <p className="mt-4 text-neutral-300">
+                  Navrhuji a vytvářím weby pro{" "}
+                  <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
+                  Nejčastěji pomáhám lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
+                  <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
                 </p>
-                <p className="mt-4 text-neutral-200">
-                  Cíl je vždy stejný a to udělat jednoduchý, přehledný a moderní web, který
-                  návštěvníky zaujme a přivede Vám nové zákazníky.
+                <p className="mt-4 text-neutral-300">
+                  Cíl je vždy stejný. Udělat{" "}
+                  <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
+                  který návštěvníky zaujme a přivede vám nové zákazníky.
                 </p>
               </div>
             </Reveal>
@@ -197,11 +202,12 @@ export default function Home() {
               <div className="mx-auto max-w-2xl text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Poznáváte se?</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Bez dobrého webu jste pro spoustu lidí prakticky neviditelní
+                  Bez dobrého webu jste pro spoustu lidí prakticky <span className="text-red-400">neviditelní</span>
                 </h2>
-                <p className="mt-4 text-neutral-200">
-                  Bez kvalitní prezentace na internetu vám dnes lidé jednoduše nevěří,
-                  že existujete, a tak raději zamíří ke konkurenci, která web má.
+                <p className="mt-4 text-neutral-300">
+                  Bez kvalitní prezentace na internetu vám dnes lidé jednoduše{" "}
+                  <span className="text-white font-semibold">nevěří, že existujete</span>, a tak raději zamíří ke{" "}
+                  <span className="text-red-400 font-semibold">konkurenci, která web má</span>.
                 </p>
               </div>
             </Reveal>
@@ -239,23 +245,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Statistiky */}
-        <section className="relative overflow-hidden bg-neutral-950">
-          <span className="bg-grid" />
-          <span className="bg-blob bg-blob-blue left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 opacity-20" />
-          <div className="relative z-[1] mx-auto grid max-w-6xl divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={i * 100}>
-                <div className="group px-6 py-10 text-center transition duration-300 hover:bg-white/[0.03]">
-                  <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">{stat.value}</p>
-                  <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
-                  <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
         {/* Jak spolupráce probíhá */}
         <section id="proces" className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
           <span className="bg-blob bg-blob-navy -left-32 -bottom-32 h-80 w-80 opacity-30" />
@@ -264,10 +253,11 @@ export default function Home() {
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Postup spolupráce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Žádné kouzlení, jen jasný a jednoduchý postup
+                  Žádné kouzlení, jen <span className="text-blue-400">jasný postup</span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-neutral-400">
-                  Tři jednoduché kroky od prvního nápadu k webu, který vám bude sloužit roky.
+                  Tři jednoduché kroky od prvního nápadu k webu, který vám bude{" "}
+                  <span className="text-white font-medium">sloužit roky</span>.
                 </p>
               </div>
             </Reveal>
@@ -331,6 +321,65 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+
+            {/* Doplňkové služby */}
+            <Reveal delay={100}>
+              <div className="mt-10">
+                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-500">Doplňkové služby</p>
+                <div className="grid gap-6 sm:grid-cols-3">
+                  {[
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>
+                      ), title: "SEO optimalizace", desc: "Základní nastavení aby vás Google našel — meta tagy, rychlost, struktura.", price: "od 2 000 Kč" },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      ), title: "Registrace domény", desc: "Vyřídím za vás, ať máte vše na jednom místě.", price: "~300 Kč / rok" },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                      ), title: "Firemní e-mail", desc: "info@vasefirma.cz místo gmailové adresy. Působí profesionálněji.", price: "od 50 Kč / měsíc" },
+                  ].map((item) => (
+                    <div key={item.title} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
+                      <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
+                      <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-400">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Co je součástí každého webu */}
+        <section className="border-b border-white/10 bg-white/[0.01]">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <Reveal>
+              <div className="text-center">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Samozřejmostí každého webu</span>
+                <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Co dostanete s každým webem automaticky</h2>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="5" y="2" width="14" height="20" rx="2"/><path strokeLinecap="round" d="M12 18h.01"/></svg>, title: "Responzivní design", desc: "Web vypadá skvěle na mobilu, tabletu i počítači." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>, title: "Rychlé načítání", desc: "Optimalizovaný kód — stránka se načte okamžitě." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, title: "SSL certifikát (https://)", desc: "Zabezpečené připojení — základní požadavek Googlu." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>, title: "Základní SEO", desc: "Správné meta tagy, nadpisy a struktura pro Google." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>, title: "Moderní design na míru", desc: "Žádná šablona — web navrhnu přesně pro vás." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>, title: "Podpora po spuštění", desc: "Po předání webu jsem stále k dispozici pro dotazy." },
+                ].map((item) => (
+                  <div key={item.title} className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-lg hover:shadow-blue-500/5">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
+                    <div>
+                      <p className="text-sm font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-neutral-400 transition duration-300 group-hover:text-neutral-300">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -407,23 +456,31 @@ export default function Home() {
               {[
                 {
                   q: "Jak dlouho trvá vytvoření webu?",
-                  a: "U jednodušší prezentace obvykle 1–3 týdny od schválení návrhu, u rozsáhlejších projektů domluvíme termín individuálně.",
+                  a: "U jednoduché prezentace obvykle 1–2 týdny od schválení návrhu. U rozsáhlejších projektů termín domluvíme individuálně.",
                 },
                 {
                   q: "Kolik bude stát web pro mě?",
-                  a: "Cena se vždy odvíjí od rozsahu, orientační ceny najdete výše v sekci Služby. Finální nabídku ale rád připravím na míru po krátkém rozhovoru.",
+                  a: "Cena se vždy odvíjí od rozsahu projektu. Orientační ceny najdete výše v sekci Služby. Po krátkém rozhovoru vám rád připravím konkrétní nabídku na míru — zdarma a nezávazně.",
                 },
                 {
                   q: "Bude web fungovat i na mobilu?",
-                  a: "Ano, každý web stavím tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači.",
+                  a: "Ano, každý web stavím tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu, takže to je základ.",
                 },
                 {
                   q: "Pomůžete mi i s texty a obsahem?",
-                  a: "Rád poradím se strukturou a finálním zněním textů tak, aby web dobře komunikoval to, co potřebujete sdělit.",
+                  a: "Rád poradím se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Pokud chcete, připravím texty i kompletně za vás.",
+                },
+                {
+                  q: "Zajistíte mi i doménu a hosting?",
+                  a: "Ano, postarám se o registraci domény i nasazení webu online. Vše zařídím za vás, ať máte vše na jednom místě.",
                 },
                 {
                   q: "Co když budu chtít web později upravit?",
-                  a: "Žádný problém, nabízím i následnou údržbu a drobné úpravy, případně vás naučím spravovat si obsah sami.",
+                  a: "Žádný problém. Nabízím průběžnou údržbu a drobné úpravy, nebo vás naučím spravovat obsah samostatně.",
+                },
+                {
+                  q: "Co když se na webu něco pokazí?",
+                  a: "Ozvěte se mi a problém vyřeším co nejdříve. Protože web znám od základu, oprava je obvykle rychlá.",
                 },
               ].map((item) => (
                 <Reveal key={item.q}>
@@ -466,6 +523,19 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
+
+            {/* Statistiky */}
+            <div className="mt-10 grid divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/[0.02] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              {stats.map((stat, i) => (
+                <Reveal key={stat.label} delay={i * 100}>
+                  <div className="group px-6 py-5 text-center transition duration-300 hover:bg-white/[0.03]">
+                    <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">{stat.value}</p>
+                    <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
+                    <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
 
             <div className="mt-12 grid gap-10 sm:grid-cols-[0.9fr_1.1fr]">
               <Reveal delay={100}>
