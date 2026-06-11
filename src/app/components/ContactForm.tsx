@@ -6,6 +6,7 @@ type ToastState = "hidden" | "visible" | "leaving";
 export default function ContactForm() {
   const [toast, setToast] = useState<ToastState>("hidden");
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const showToast = () => {
     setToast("visible");
@@ -13,16 +14,41 @@ export default function ContactForm() {
     setTimeout(() => setToast("hidden"), 4500);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (sending) return;
     setSending(true);
-    // Simulate send — swap for real API call later
-    setTimeout(() => {
-      setSending(false);
-      (e.target as HTMLFormElement).reset();
+    setError(null);
+
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          phone: data.get("phone"),
+          email: data.get("email"),
+          type: data.get("type"),
+          message: data.get("message"),
+          consent: data.get("consent") === "on",
+        }),
+      });
+
+      if (!res.ok) {
+        const result = await res.json().catch(() => null);
+        throw new Error(result?.error || "Odeslání se nezdařilo. Zkuste to prosím znovu.");
+      }
+
+      form.reset();
       showToast();
-    }, 900);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Odeslání se nezdařilo. Zkuste to prosím znovu.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -117,6 +143,29 @@ export default function ContactForm() {
             />
           </label>
         </div>
+
+        <label className="mt-5 flex items-start gap-3 text-xs text-neutral-400">
+          <input
+            type="checkbox"
+            name="consent"
+            required
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-white/20 bg-white/[0.03] accent-blue-500"
+          />
+          <span>
+            Souhlasím se zpracováním osobních údajů za účelem vyřízení mé poptávky. Více v{" "}
+            <a href="/ochrana-udaju" className="font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
+              zásadách zpracování osobních údajů
+            </a>
+            .
+          </span>
+        </label>
+
+        {error && (
+          <p className="mt-4 rounded-lg border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+            {error}
+          </p>
+        )}
+
         <button
           type="submit"
           disabled={sending}
