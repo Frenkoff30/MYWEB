@@ -130,7 +130,6 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-12 sm:pt-16">
-<span className="bg-grid" />
           <span className="bg-blob bg-blob-blue -left-40 -top-40 h-[28rem] w-[28rem]" />
           <span className="bg-blob bg-blob-red -right-32 top-0 h-96 w-96" />
           <span className="bg-blob bg-blob-navy left-1/2 bottom-0 h-80 w-80 -translate-x-1/2" />
@@ -170,16 +169,6 @@ export default function Home() {
                   >
                     Jak spolupráce probíhá
                   </a>
-                </div>
-              </Reveal>
-              <Reveal delay={400}>
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-300 sm:justify-start">
-                  {["Návrh zdarma", "Odpověď do 24 hodin", "Bez skrytých poplatků"].map((item) => (
-                    <span key={item} className="flex items-center gap-2">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500/10 text-xs text-blue-400">✓</span>
-                      {item}
-                    </span>
-                  ))}
                 </div>
               </Reveal>
             </div>
@@ -320,7 +309,7 @@ export default function Home() {
 
         {/* Jak spolupráce probíhá */}
         <section id="proces" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
-          <span className="bg-blob bg-blob-navy -left-32 -bottom-32 h-80 w-80 opacity-30" />
+          <span className="bg-blob bg-blob-navy -left-32 -bottom-10 h-80 w-80 opacity-30" />
           <div className="relative z-[1] mx-auto max-w-7xl px-6 py-20">
             <Reveal>
               <div className="text-center">
@@ -536,7 +525,7 @@ export default function Home() {
               }),
             }}
           />
-          <span className="bg-blob bg-blob-red left-1/2 -bottom-40 h-72 w-72 -translate-x-1/2 opacity-20" />
+          <span className="bg-blob bg-blob-red left-1/2 bottom-20 h-72 w-72 -translate-x-1/2 opacity-20" />
           <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20">
             <Reveal>
               <div className="text-center">
@@ -610,11 +599,11 @@ export default function Home() {
               <Reveal delay={100}>
                 <div className="space-y-4">
                   {[
-                    { icon: "☎", label: "Telefon", value: "+420 608 462 557", href: "tel:+420608462557" },
+                    { icon: "☎", label: "Telefon", value: "608 462 557", href: "tel:+420608462557" },
                     { icon: "✉", label: "E-mail", value: "info@webo.cz", href: "mailto:info@webo.cz" },
                     { icon: "▣", label: "Instagram", value: "@webo.cz", href: "#" },
-                    { icon: "⚲", label: "Působiště", value: "Pardubice", href: undefined },
-                    { icon: "◷", label: "Dostupnost", value: "Po–Pá, dle telefonické domluvy", href: undefined },
+                    { icon: "⚲", label: "Působiště", value: "Hlinsko,Pardubice", href: undefined },
+                    { icon: "◷", label: "Dostupnost", value: "Po–Pá, 07:00 - 16:00", href: undefined },
                   ].map((item) => (
                     <div
                       key={item.label}

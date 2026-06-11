@@ -2,7 +2,7 @@
 
 :root {
   --background: #000000;
-  --foreground: #e5e7eb;
+  --foreground: #f1f5f9;
 }
 
 @theme inline {
@@ -216,11 +216,11 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 40% at 5% 15%,  rgba(59, 130, 246, 0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 35% at 95% 25%,  rgba(239, 68, 68, 0.14) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 80% 75%,  rgba(59, 130, 246, 0.12) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 35% at 20% 80%,  rgba(239, 68, 68, 0.10) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 30% at 50% 50%,  rgba(37, 99, 235, 0.08) 0%, transparent 65%);
+    radial-gradient(ellipse 55% 40% at 5% 15%,  rgba(59, 130, 246, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 35% at 95% 25%,  rgba(239, 68, 68, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 75%,  rgba(59, 130, 246, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 35% at 20% 80%,  rgba(239, 68, 68, 0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 50% 50%,  rgba(37, 99, 235, 0.05) 0%, transparent 65%);
   animation: aurora-a 14s ease-in-out infinite alternate, aurora-b 22s ease-in-out infinite alternate-reverse;
   filter: blur(40px);
 }
