@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0c10;
+  --background: #000000;
   --foreground: #e5e7eb;
 }
 
@@ -101,11 +101,13 @@ main {
 .bg-blob {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(90px);
+  filter: blur(50px);
   opacity: 0.45;
   pointer-events: none;
   z-index: 0;
   mix-blend-mode: screen;
+  mask-image: radial-gradient(circle, #000 45%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, #000 45%, transparent 75%);
 }
 
 .bg-blob-blue {
@@ -238,6 +240,14 @@ body::before {
 /* Glitch efekt na hero slovu */
 .glitch {
   animation: glitch-anim 6s ease-in-out infinite;
+}
+
+/* Glitch efekt při najetí myší (např. na logo) */
+.glitch-hover {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.glitch-hover:hover {
+  animation: glitch-anim 0.5s ease-in-out;
 }
 
 @keyframes glitch-anim {

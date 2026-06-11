@@ -3,10 +3,11 @@ import Reveal from "./components/Reveal";
 import ScrollProgress from "./components/ScrollProgress";
 import Counter from "./components/Counter";
 import TypingText from "./components/TypingText";
-import ParallaxLogo from "./components/ParallaxLogo";
 import TiltCard from "./components/TiltCard";
 import ContactForm from "./components/ContactForm";
 import MagneticButton from "./components/MagneticButton";
+import ScrollLogo from "./components/ScrollLogo";
+import ScrollHeader from "./components/ScrollHeader";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -104,13 +105,15 @@ export default function Home() {
     <>
       <ScrollProgress />
       <header className="sticky top-0 z-10 bg-neutral-950/60 backdrop-blur-xl" style={{ borderBottom: "1px solid transparent", backgroundImage: "linear-gradient(rgba(10,12,16,0.6), rgba(10,12,16,0.6)), linear-gradient(to right, rgba(96,165,250,0.2), rgba(248,113,113,0.1), rgba(96,165,250,0.05))", backgroundOrigin: "border-box", backgroundClip: "padding-box, border-box" }}>
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <ScrollHeader>
           <a href="#hero" className="group flex items-center gap-3">
-            <Image src="/images/logo/logo.png" alt="Webo logo" width={220} height={72} className="h-20 w-auto transition duration-300 group-hover:scale-105" />
+            <ScrollLogo>
+              <Image src="/images/logo/logoweb.png" alt="Webo logo" width={220} height={72} className="glitch-hover h-10 w-auto transition duration-300 group-hover:scale-105 sm:h-12" />
+            </ScrollLogo>
           </a>
-          <div className="hidden gap-8 text-sm font-medium text-neutral-200 sm:flex">
-            <a href="#o-mne" className="nav-link transition hover:text-white">O mně</a>
-            <a href="#proces" className="nav-link transition hover:text-white">Jak pracuji</a>
+          <div className="hidden gap-8 text-sm font-medium text-neutral-100 sm:flex">
+            <a href="#o-mne" className="nav-link transition hover:text-white">O nás</a>
+            <a href="#proces" className="nav-link transition hover:text-white">Spolupráce</a>
             <a href="#sluzby" className="nav-link transition hover:text-white">Služby</a>
             <a href="#reference" className="nav-link transition hover:text-white">Recenze</a>
             <a href="#faq" className="nav-link transition hover:text-white">Často kladené otázky</a>
@@ -121,7 +124,7 @@ export default function Home() {
           >
             Kontakt
           </a>
-        </nav>
+        </ScrollHeader>
       </header>
 
       <main className="flex-1">
@@ -142,7 +145,7 @@ export default function Home() {
                 </h1>
               </Reveal>
               <Reveal delay={200}>
-                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-300 sm:mx-0">
+                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-200 sm:mx-0">
                   Pomáháme živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
                   <span className="text-white font-semibold">skutečně prodával</span>.{" "}
                   Srozumitelný obsah,{" "}
@@ -163,10 +166,20 @@ export default function Home() {
                   </MagneticButton>
                   <a
                     href="#proces"
-                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-300 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
+                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-200 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
                   >
                     Jak spolupráce probíhá
                   </a>
+                </div>
+              </Reveal>
+              <Reveal delay={400}>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-300 sm:justify-start">
+                  {["Návrh zdarma", "Odpověď do 24 hodin", "Bez skrytých poplatků"].map((item) => (
+                    <span key={item} className="flex items-center gap-2">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500/10 text-xs text-blue-400">✓</span>
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </Reveal>
             </div>
@@ -186,22 +199,26 @@ export default function Home() {
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex items-center gap-3">
-                      <Image src="/images/logo/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-500 to-neutral-700 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                          <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 14l10 5 10-5-10-5Z" />
+                        </svg>
+                      </div>
                       <div className="space-y-1">
                         <p className="text-xs font-semibold text-white">Vaše firma</p>
-                        <p className="text-[10px] text-neutral-400">Web, který zaujme</p>
+                        <p className="text-[10px] text-neutral-300">Web, který zaujme</p>
                       </div>
                     </div>
                     <span className="relative flex h-28 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/25 via-white/[0.03] to-red-500/20 text-center">
                       <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
                       <span className="relative z-[1] text-sm font-bold text-white">Vaše služby na prvním místě</span>
-                      <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-neutral-200">Zobrazit nabídku →</span>
+                      <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-neutral-100">Zobrazit nabídku →</span>
                     </span>
                     <div className="grid grid-cols-3 gap-3">
                       {["O nás", "Galerie", "Kontakt"].map((label, idx) => (
                         <span
                           key={label}
-                          className={`flex h-14 items-center justify-center rounded-lg bg-white/5 text-[10px] font-medium text-neutral-300 transition duration-300 ${
+                          className={`flex h-14 items-center justify-center rounded-lg bg-white/5 text-[10px] font-medium text-neutral-200 transition duration-300 ${
                             idx === 0
                               ? "group-hover:bg-blue-500/10 group-hover:text-blue-300"
                               : idx === 1
@@ -225,26 +242,22 @@ export default function Home() {
         </section>
 
         {/* O mně */}
-        <section id="o-mne" className="relative overflow-hidden border-b border-white/10">
-          <span className="bg-blob bg-blob-blue -left-32 top-1/3 h-80 w-80" />
-          <ParallaxLogo
-            speed={0.25}
-            className="pointer-events-none absolute right-0 top-1/2 z-0 hidden h-[480px] w-[480px] opacity-40 sm:block"
-          />
-          <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20 text-left">
+        <section id="o-mne" className="relative overflow-hidden">
+          <span className="bg-blob bg-blob-blue -left-32 -top-10 h-80 w-80" />
+          <div className="relative z-[1] mx-auto max-w-4xl px-6 py-20 text-left">
             <Reveal>
               <div>
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsme ?</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                <h2 className="mt-2 text-4xl font-bold text-white sm:text-5xl">
                   Jsme <span className="text-gradient glitch">Webo</span>,
                 </h2>
-                <p className="mt-3 text-neutral-300 text-balance">
+                <p className="mt-4 text-lg text-neutral-200 text-balance">
                   navrhujeme a vytváříme weby pro{" "}
                   <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
                   Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
                   <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
                 </p>
-                <p className="mt-4 text-neutral-300 text-balance">
+                <p className="mt-4 text-lg text-neutral-200 text-balance">
                   Náš cíl je vždy stejný. Udělat{" "}
                   <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
                   který návštěvníky zaujme a přivede vám nové zákazníky.
@@ -255,8 +268,8 @@ export default function Home() {
         </section>
 
         {/* Problém */}
-        <section className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
-          <span className="bg-blob bg-blob-red -right-40 -top-24 h-72 w-72 opacity-30" />
+        <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
+          <span className="bg-blob bg-blob-red -right-40 top-1/3 h-72 w-72 opacity-30" />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="mx-auto max-w-2xl text-center">
@@ -264,7 +277,7 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
                   Bez dobrého webu jste pro spoustu lidí prakticky <span className="text-red-400">neviditelní</span>
                 </h2>
-                <p className="mt-4 text-neutral-300">
+                <p className="mt-4 text-neutral-200">
                   Bez kvalitní prezentace na internetu vám dnes lidé jednoduše{" "}
                   <span className="text-white font-semibold">nevěří, že existujete</span>, a tak raději zamíří ke{" "}
                   <span className="text-red-400 font-semibold">konkurenci, která web má</span>.
@@ -292,13 +305,13 @@ export default function Home() {
                       !
                     </span>
                     <h3 className="mt-4 text-base font-semibold text-white transition duration-300 group-hover:text-red-300">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-200">{item.text}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-100">{item.text}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
             <Reveal delay={200}>
-              <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-neutral-200">
+              <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-neutral-100">
                 Pojďme to změnit. Ve Webo stavíme weby, které vypadají skvěle a začnou pro vás reálně pracovat.
               </p>
             </Reveal>
@@ -306,7 +319,7 @@ export default function Home() {
         </section>
 
         {/* Jak spolupráce probíhá */}
-        <section id="proces" className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
+        <section id="proces" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
           <span className="bg-blob bg-blob-navy -left-32 -bottom-32 h-80 w-80 opacity-30" />
           <div className="relative z-[1] mx-auto max-w-7xl px-6 py-20">
             <Reveal>
@@ -315,7 +328,7 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
                   Žádné kouzlení, jen <span className="text-blue-400">jasný postup</span>
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-400">
+                <p className="mx-auto mt-3 max-w-xl text-neutral-300">
                   Pět jednoduchých kroků od prvního nápadu k webu, který vám bude{" "}
                   <span className="text-white font-medium">sloužit roky</span>.
                 </p>
@@ -330,7 +343,7 @@ export default function Home() {
                       {item.step}
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-white transition group-hover:text-blue-400">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-200">{item.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-100">{item.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -339,13 +352,13 @@ export default function Home() {
         </section>
 
         {/* Služby a ceník */}
-        <section id="sluzby" className="border-b border-white/10 bg-white/[0.02]">
+        <section id="sluzby" className="bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízíme</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebujete</h2>
-                <p className="mt-3 text-neutral-400">
+                <p className="mt-3 text-neutral-300">
                   Jde o orientační ceny, finální nabídka se vždy odvíjí od rozsahu a
                   potřeb konkrétního projektu.
                 </p>
@@ -372,7 +385,7 @@ export default function Home() {
                     )}
                     <h3 className="relative z-[1] text-lg font-semibold text-white">{service.title}</h3>
                     <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
-                    <p className="relative z-[1] mt-3 flex-1 text-sm text-neutral-200">{service.description}</p>
+                    <p className="relative z-[1] mt-3 flex-1 text-sm text-neutral-100">{service.description}</p>
                     <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
                     <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
                       Mám zájem <span>→</span>
@@ -385,7 +398,7 @@ export default function Home() {
             {/* Doplňkové služby */}
             <Reveal delay={100}>
               <div className="mt-10">
-                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-500">Doplňkové služby</p>
+                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-400">Doplňkové služby</p>
                 <div className="grid gap-6 sm:grid-cols-3">
                   {[
                     { icon: (
@@ -402,7 +415,7 @@ export default function Home() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
                       <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
                       <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-400">{item.desc}</p>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-300">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -412,7 +425,7 @@ export default function Home() {
         </section>
 
         {/* Co je součástí každého webu */}
-        <section className="border-b border-white/10 bg-white/[0.01]">
+        <section className="bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.01)_64px,rgba(255,255,255,0.01)_calc(100%-64px),transparent)]">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <Reveal>
               <div className="text-center">
@@ -434,7 +447,7 @@ export default function Home() {
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
                     <div>
                       <p className="text-sm font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-neutral-400 transition duration-300 group-hover:text-neutral-300">{item.desc}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-neutral-300 transition duration-300 group-hover:text-neutral-200">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -444,13 +457,13 @@ export default function Home() {
         </section>
 
         {/* Portfolio */}
-        <section id="portfolio" className="border-b border-white/10">
+        <section id="portfolio">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Naše práce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Pár ukázek, jak weby od Webo vypadají v praxi
+                  Pár ukázek, jak weby od <span className="text-gradient glitch">Webo</span> vypadají v praxi
                 </h2>
               </div>
             </Reveal>
@@ -481,24 +494,31 @@ export default function Home() {
         </section>
 
         {/* Reference */}
-        <section id="reference" className="relative overflow-hidden border-b border-white/10">
+        <section id="reference" className="relative overflow-hidden">
           <span className="bg-blob bg-blob-blue -right-40 top-0 h-72 w-72 opacity-25" />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Reference</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Recenze od klientů budou brzy tady</h2>
-                <p className="mt-3 text-neutral-400">
-                  Aktuálně sbírám reference od svých klientů, takže tady už brzy
-                  uvidíte jejich reálné zkušenosti.
-                </p>
               </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <TiltCard className="mx-auto mt-10 max-w-xl">
+                <div data-spotlight className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
+                  <span className="text-4xl">💬</span>
+                  <p className="mt-4 text-neutral-200">
+                    Aktuálně sbíráme reference od svých klientů, takže tady už brzy
+                    uvidíte jejich reálné zkušenosti.
+                  </p>
+                </div>
+              </TiltCard>
             </Reveal>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="relative overflow-hidden border-b border-white/10 bg-white/[0.02]">
+        <section id="faq" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -530,7 +550,7 @@ export default function Home() {
                   <details className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition duration-300 open:border-blue-400/30 open:bg-white/[0.05] hover:border-white/20">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-white transition group-hover:text-blue-300">
                       {item.q}
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-300 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-200 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
                         +
                       </span>
                     </summary>
@@ -540,7 +560,7 @@ export default function Home() {
               ))}
             </div>
             <Reveal delay={100}>
-              <p className="mt-10 text-center text-sm text-neutral-400">
+              <p className="mt-10 text-center text-sm text-neutral-300">
                 Nenašli jste odpověď, kterou jste hledali?{" "}
                 <a href="#kontakt" className="font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
                   Napište nám
@@ -555,13 +575,6 @@ export default function Home() {
         <section id="kontakt" className="relative overflow-hidden">
           <span className="bg-blob bg-blob-blue -left-32 top-1/4 h-80 w-80" />
           <span className="bg-blob bg-blob-red -right-32 bottom-1/4 h-80 w-80" />
-          <Image
-            src="/images/logo/logo.png"
-            alt=""
-            width={520}
-            height={520}
-            className="pointer-events-none absolute -left-56 top-1/2 z-0 hidden -translate-y-1/2 opacity-[0.55] sm:block"
-          />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
@@ -570,7 +583,7 @@ export default function Home() {
                   Napište nám{" "}
                   <span className="text-gradient">ještě dnes</span>
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-400">
+                <p className="mx-auto mt-3 max-w-xl text-neutral-300">
                   Popište nám krátce váš projekt nebo nápad. Ozveme se vám do 24 hodin s návrhem řešení.
                 </p>
               </div>
@@ -587,7 +600,7 @@ export default function Home() {
                       {stat.label === "od nápadu k webu na ostro" && <>1–2<span className="text-2xl"> týdny</span></>}
                     </p>
                     <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
-                    <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
+                    <p className="mt-2 text-sm text-neutral-300">{stat.label}</p>
                   </div>
                 </Reveal>
               ))}
@@ -611,7 +624,7 @@ export default function Home() {
                         {item.icon}
                       </span>
                       <div>
-                        <p className="text-xs uppercase tracking-widest text-neutral-500">{item.label}</p>
+                        <p className="text-xs uppercase tracking-widest text-neutral-400">{item.label}</p>
                         {item.href ? (
                           <a href={item.href} className="font-medium text-white hover:text-blue-400 hover:underline">
                             {item.value}
@@ -636,7 +649,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
           <Image src="/images/logo/logo.png" alt="Webo logo" width={600} height={200} className="w-full max-w-[220px] h-auto" />
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-neutral-300">
             © {new Date().getFullYear()} Webo Studio
           </p>
         </div>

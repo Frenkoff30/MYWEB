@@ -13,6 +13,7 @@ export default function Reveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -35,8 +36,11 @@ export default function Reveal({
   return (
     <div
       ref={ref}
+      onTransitionEnd={() => visible && setSettled(true)}
       className={`transition-all duration-700 ease-out ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+        visible
+          ? `opacity-100 ${settled ? "" : "translate-y-0"}`
+          : "translate-y-6 opacity-0"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
