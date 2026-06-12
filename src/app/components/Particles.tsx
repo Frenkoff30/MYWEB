@@ -14,7 +14,7 @@ interface P {
 // parallax speeds per layer (fraction of scroll delta applied per frame)
 const LAYER_SPEED = [0.08, 0.22, 0.42];
 // base opacity per layer — closer = brighter
-const LAYER_ALPHA = [0.22, 0.35, 0.52];
+const LAYER_ALPHA = [0.32, 0.5, 0.7];
 
 export default function Particles() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -82,7 +82,7 @@ export default function Particles() {
     const drawStar4 = (x: number, y: number, r: number, a: number) => {
       ctx.save();
       const arm = r * 2.4;
-      ctx.strokeStyle = `rgba(226,232,240,${a})`;
+      ctx.strokeStyle = `rgba(255,255,255,${a})`;
       ctx.lineWidth = r * 0.55;
       ctx.lineCap = "round";
       ctx.beginPath(); ctx.moveTo(x - arm, y); ctx.lineTo(x + arm, y); ctx.stroke();
@@ -93,8 +93,8 @@ export default function Particles() {
       ctx.beginPath(); ctx.moveTo(x + d, y - d); ctx.lineTo(x - d, y + d); ctx.stroke();
       // glow core
       const g = ctx.createRadialGradient(x, y, 0, x, y, r * 2);
-      g.addColorStop(0, `rgba(226,232,240,${a * 0.85})`);
-      g.addColorStop(1, "rgba(226,232,240,0)");
+      g.addColorStop(0, `rgba(255,255,255,${a * 0.85})`);
+      g.addColorStop(1, "rgba(255,255,255,0)");
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(x, y, r * 2, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
@@ -102,7 +102,7 @@ export default function Particles() {
 
     const drawCross = (x: number, y: number, r: number, a: number) => {
       ctx.save();
-      ctx.strokeStyle = `rgba(226,232,240,${a * 0.7})`;
+      ctx.strokeStyle = `rgba(255,255,255,${a * 0.7})`;
       ctx.lineWidth = r * 0.4;
       ctx.lineCap = "round";
       const arm = r * 1.6;
@@ -149,14 +149,14 @@ export default function Particles() {
         } else {
           if (p.r > 1.2) {
             const g = ctx.createRadialGradient(p.x, drawY, 0, p.x, drawY, p.r * 3);
-            g.addColorStop(0, `rgba(226,232,240,${alpha * 0.55})`);
-            g.addColorStop(1, "rgba(226,232,240,0)");
+            g.addColorStop(0, `rgba(255,255,255,${alpha * 0.55})`);
+            g.addColorStop(1, "rgba(255,255,255,0)");
             ctx.fillStyle = g;
             ctx.beginPath(); ctx.arc(p.x, drawY, p.r * 3, 0, Math.PI * 2); ctx.fill();
           }
           ctx.beginPath();
           ctx.arc(p.x, drawY, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(226,232,240,${alpha})`;
+          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
           ctx.fill();
         }
       }
