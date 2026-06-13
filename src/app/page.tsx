@@ -233,26 +233,45 @@ export default function Home() {
         {/* O mně */}
         <section id="o-mne" className="relative overflow-hidden">
           <span className="bg-blob bg-blob-blue -left-32 -top-10 h-80 w-80" />
-          <div className="relative z-[1] mx-auto max-w-4xl px-6 py-20 text-left">
+          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20 text-left">
             <Reveal>
-              <div>
+              <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsme ?</span>
-                <h2 className="mt-2 text-4xl font-bold text-white sm:text-5xl">
-                  Jsme <span className="text-gradient glitch">Webo</span>,
-                </h2>
-                <p className="mt-4 text-lg text-neutral-200 text-balance">
-                  navrhujeme a vytváříme weby pro{" "}
-                  <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
-                  Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
-                  <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
-                </p>
-                <p className="mt-4 text-lg text-neutral-200 text-balance">
-                  Náš cíl je vždy stejný. Udělat{" "}
-                  <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
-                  který návštěvníky zaujme a přivede vám nové zákazníky.
-                </p>
               </div>
             </Reveal>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1.4fr] lg:items-start">
+              <Reveal>
+                <div className="text-center lg:sticky lg:top-32">
+                  <h2 className="mt-6 text-5xl font-bold text-white sm:text-6xl">
+                    Jsme <span className="text-gradient glitch">Webo</span>,
+                  </h2>
+                  <Image
+                    src="/images/logo/logo.png"
+                    alt="Webo logo"
+                    width={320}
+                    height={96}
+                    className="float-slow mx-auto mt-10 w-48 sm:w-64"
+                  />
+                </div>
+              </Reveal>
+              <div className="space-y-6 border-l border-white/10 pl-6 sm:pl-10">
+                <Reveal>
+                  <p className="text-xl leading-relaxed text-neutral-200 text-balance sm:text-2xl">
+                    navrhujeme a vytváříme weby pro{" "}
+                    <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
+                    Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
+                    <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
+                  </p>
+                </Reveal>
+                <Reveal delay={100}>
+                  <p className="text-xl leading-relaxed text-neutral-200 text-balance sm:text-2xl">
+                    Náš cíl je vždy stejný. Udělat{" "}
+                    <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
+                    který návštěvníky zaujme a přivede vám nové zákazníky.
+                  </p>
+                </Reveal>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -293,14 +312,14 @@ export default function Home() {
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-red-500/10 text-sm font-bold text-red-400 transition duration-300 group-hover:bg-red-500/20 group-hover:text-red-300">
                       !
                     </span>
-                    <h3 className="mt-4 text-base font-semibold text-white transition duration-300 group-hover:text-red-300">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-100">{item.text}</p>
+                    <h3 className="mt-4 text-xl font-semibold text-red-400 transition duration-300 group-hover:text-red-300">{item.title}</h3>
+                    <p className="mt-2 text-base leading-relaxed text-neutral-200">{item.text}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
             <Reveal delay={200}>
-              <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-neutral-100">
+              <p className="mx-auto mt-10 max-w-xl text-center text-lg font-medium text-white">
                 Pojďme to změnit. Ve Webo stavíme weby, které vypadají skvěle a začnou pro vás reálně pracovat.
               </p>
             </Reveal>
@@ -315,7 +334,7 @@ export default function Home() {
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Postup spolupráce</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Žádné kouzlení, jen <span className="text-blue-400">jasný postup</span>
+                  Spolupráce s námi probíhá v <span className="text-gradient">jasných krocích</span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-neutral-300">
                   Pět jednoduchých kroků od prvního nápadu k webu, který vám bude{" "}
@@ -331,7 +350,7 @@ export default function Home() {
                     <div className="relative z-[1] flex h-12 w-12 items-center justify-center rounded-full bg-white text-sm font-bold text-neutral-950 ring-4 ring-neutral-950 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/30">
                       {item.step}
                     </div>
-                    <h3 className="mt-5 text-lg font-semibold text-white transition group-hover:text-blue-400">{item.title}</h3>
+                    <h3 className="mt-5 text-lg font-semibold text-gradient">{item.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-neutral-100">{item.description}</p>
                   </div>
                 </Reveal>
@@ -374,7 +393,7 @@ export default function Home() {
                     )}
                     <h3 className="relative z-[1] text-lg font-semibold text-white">{service.title}</h3>
                     <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
-                    <p className="relative z-[1] mt-3 flex-1 text-sm text-neutral-100">{service.description}</p>
+                    <p className="relative z-[1] mt-3 flex-1 text-base text-neutral-200">{service.description}</p>
                     <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
                     <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
                       Mám zájem <span>→</span>
@@ -404,7 +423,7 @@ export default function Home() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
                       <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
                       <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-300">{item.desc}</p>
+                      <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-200">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -435,8 +454,8 @@ export default function Home() {
                   <div key={item.title} data-spotlight className="group relative flex items-start gap-4 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-lg hover:shadow-blue-500/5">
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
                     <div>
-                      <p className="text-sm font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-neutral-300 transition duration-300 group-hover:text-neutral-200">{item.desc}</p>
+                      <p className="text-base font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-200 transition duration-300 group-hover:text-white">{item.desc}</p>
                     </div>
                   </div>
                 ))}
