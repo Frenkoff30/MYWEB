@@ -111,7 +111,7 @@ export default function Home() {
               <Image src="/images/logo/logoweb.png" alt="Webo logo" width={220} height={72} className="glitch-hover h-10 w-auto transition duration-300 group-hover:scale-105 sm:h-12" />
             </ScrollLogo>
           </a>
-          <div className="hidden gap-8 text-sm font-medium text-neutral-100 sm:flex">
+          <div className="hidden gap-8 text-sm font-medium text-white sm:flex">
             <a href="#o-mne" className="nav-link transition hover:text-white">O nás</a>
             <a href="#proces" className="nav-link transition hover:text-white">Spolupráce</a>
             <a href="#sluzby" className="nav-link transition hover:text-white">Služby</a>
@@ -144,7 +144,7 @@ export default function Home() {
                 </h1>
               </Reveal>
               <Reveal delay={200}>
-                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-200 sm:mx-0">
+                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-50 sm:mx-0">
                   Pomáháme živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
                   <span className="text-white font-semibold">skutečně prodával</span>.{" "}
                   Srozumitelný obsah,{" "}
@@ -165,7 +165,7 @@ export default function Home() {
                   </MagneticButton>
                   <a
                     href="#proces"
-                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-200 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
+                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-50 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
                   >
                     Jak spolupráce probíhá
                   </a>
@@ -195,19 +195,19 @@ export default function Home() {
                       </div>
                       <div className="space-y-1">
                         <p className="text-xs font-semibold text-white">Vaše firma</p>
-                        <p className="text-[10px] text-neutral-300">Web, který zaujme</p>
+                        <p className="text-[10px] text-white">Web, který zaujme</p>
                       </div>
                     </div>
                     <span className="relative flex h-28 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/25 via-white/[0.03] to-red-500/20 text-center">
                       <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
                       <span className="relative z-[1] text-sm font-bold text-white">Vaše služby na prvním místě</span>
-                      <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-neutral-100">Zobrazit nabídku →</span>
+                      <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-white">Zobrazit nabídku →</span>
                     </span>
                     <div className="grid grid-cols-3 gap-3">
                       {["O nás", "Galerie", "Kontakt"].map((label, idx) => (
                         <span
                           key={label}
-                          className={`flex h-14 items-center justify-center rounded-lg bg-white/5 text-[10px] font-medium text-neutral-200 transition duration-300 ${
+                          className={`flex h-14 items-center justify-center rounded-lg bg-white/5 text-[10px] font-medium text-neutral-50 transition duration-300 ${
                             idx === 0
                               ? "group-hover:bg-blue-500/10 group-hover:text-blue-300"
                               : idx === 1
@@ -256,7 +256,7 @@ export default function Home() {
               </Reveal>
               <div className="space-y-6 border-l border-white/10 pl-6 sm:pl-10">
                 <Reveal>
-                  <p className="text-xl leading-relaxed text-neutral-200 text-balance sm:text-2xl">
+                  <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
                     navrhujeme a vytváříme weby pro{" "}
                     <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
                     Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
@@ -264,7 +264,7 @@ export default function Home() {
                   </p>
                 </Reveal>
                 <Reveal delay={100}>
-                  <p className="text-xl leading-relaxed text-neutral-200 text-balance sm:text-2xl">
+                  <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
                     Náš cíl je vždy stejný. Udělat{" "}
                     <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
                     který návštěvníky zaujme a přivede vám nové zákazníky.
@@ -285,7 +285,7 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
                   Bez dobrého webu jste pro spoustu lidí prakticky <span className="text-red-400">neviditelní</span>
                 </h2>
-                <p className="mt-4 text-neutral-200">
+                <p className="mt-4 text-lg text-white">
                   Bez kvalitní prezentace na internetu vám dnes lidé jednoduše{" "}
                   <span className="text-white font-semibold">nevěří, že existujete</span>, a tak raději zamíří ke{" "}
                   <span className="text-red-400 font-semibold">konkurenci, která web má</span>.
@@ -313,7 +313,7 @@ export default function Home() {
                       !
                     </span>
                     <h3 className="mt-4 text-xl font-semibold text-red-400 transition duration-300 group-hover:text-red-300">{item.title}</h3>
-                    <p className="mt-2 text-base leading-relaxed text-neutral-200">{item.text}</p>
+                    <p className="mt-2 text-base leading-relaxed text-neutral-50">{item.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -336,7 +336,7 @@ export default function Home() {
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
                   Spolupráce s námi probíhá v <span className="text-gradient">jasných krocích</span>
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-300">
+                <p className="mx-auto mt-3 max-w-xl text-white">
                   Pět jednoduchých kroků od prvního nápadu k webu, který vám bude{" "}
                   <span className="text-white font-medium">sloužit roky</span>.
                 </p>
@@ -351,7 +351,7 @@ export default function Home() {
                       {item.step}
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-gradient">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-100">{item.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white">{item.description}</p>
                   </div>
                 </Reveal>
               ))}
@@ -366,7 +366,7 @@ export default function Home() {
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízíme</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebujete</h2>
-                <p className="mt-3 text-neutral-300">
+                <p className="mt-3 text-white">
                   Jde o orientační ceny, finální nabídka se vždy odvíjí od rozsahu a
                   potřeb konkrétního projektu.
                 </p>
@@ -393,7 +393,7 @@ export default function Home() {
                     )}
                     <h3 className="relative z-[1] text-lg font-semibold text-white">{service.title}</h3>
                     <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
-                    <p className="relative z-[1] mt-3 flex-1 text-base text-neutral-200">{service.description}</p>
+                    <p className="relative z-[1] mt-3 flex-1 text-base text-neutral-50">{service.description}</p>
                     <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
                     <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
                       Mám zájem <span>→</span>
@@ -406,7 +406,7 @@ export default function Home() {
             {/* Doplňkové služby */}
             <Reveal delay={100}>
               <div className="mt-10">
-                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-400">Doplňkové služby</p>
+                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-200">Doplňkové služby</p>
                 <div className="grid gap-6 sm:grid-cols-3">
                   {[
                     { icon: (
@@ -423,7 +423,7 @@ export default function Home() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
                       <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
                       <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
-                      <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-200">{item.desc}</p>
+                      <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-50">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -455,7 +455,7 @@ export default function Home() {
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
                     <div>
                       <p className="text-base font-semibold text-white transition duration-300 group-hover:text-blue-300">{item.title}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-neutral-200 transition duration-300 group-hover:text-white">{item.desc}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-50 transition duration-300 group-hover:text-white">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -515,7 +515,7 @@ export default function Home() {
               <TiltCard className="mx-auto mt-10 max-w-xl">
                 <div data-spotlight className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
                   <span className="text-4xl">💬</span>
-                  <p className="mt-4 text-neutral-200">
+                  <p className="mt-4 text-neutral-50">
                     Aktuálně sbíráme reference od svých klientů, takže tady už brzy
                     uvidíte jejich reálné zkušenosti.
                   </p>
@@ -558,7 +558,7 @@ export default function Home() {
                   <details className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition duration-300 open:border-blue-400/30 open:bg-white/[0.05] hover:border-white/20">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-white transition group-hover:text-blue-300">
                       {item.q}
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-200 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-50 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
                         +
                       </span>
                     </summary>
@@ -568,7 +568,7 @@ export default function Home() {
               ))}
             </div>
             <Reveal delay={100}>
-              <p className="mt-10 text-center text-sm text-neutral-300">
+              <p className="mt-10 text-center text-sm text-white">
                 Nenašli jste odpověď, kterou jste hledali?{" "}
                 <a href="#kontakt" className="font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
                   Napište nám
@@ -591,7 +591,7 @@ export default function Home() {
                   Napište nám{" "}
                   <span className="text-gradient">ještě dnes</span>
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-neutral-300">
+                <p className="mx-auto mt-3 max-w-xl text-white">
                   Popište nám krátce váš projekt nebo nápad. Ozveme se vám do 24 hodin s návrhem řešení.
                 </p>
               </div>
@@ -608,7 +608,7 @@ export default function Home() {
                       {stat.label === "od nápadu k webu na ostro" && <>1–2<span className="text-2xl"> týdny</span></>}
                     </p>
                     <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
-                    <p className="mt-2 text-sm text-neutral-300">{stat.label}</p>
+                    <p className="mt-2 text-sm text-white">{stat.label}</p>
                   </div>
                 </Reveal>
               ))}
@@ -620,7 +620,7 @@ export default function Home() {
                   {[
                     { icon: "☎", label: "Telefon", value: "608 462 557", href: "tel:+420608462557" },
                     { icon: "✉", label: "E-mail", value: "info@webo.cz", href: "mailto:info@webo.cz" },
-                    { icon: "▣", label: "Instagram", value: "@webo.cz", href: "#" },
+                    { icon: "▣", label: "Instagram", value: "@webo.cz", href: "https://www.instagram.com/webo.cz" },
                     { icon: "⚲", label: "Působiště", value: "Hlinsko,Pardubice", href: undefined },
                     { icon: "◷", label: "Dostupnost", value: "Po–Pá, 07:00 - 16:00", href: undefined },
                   ].map((item) => (
@@ -632,9 +632,13 @@ export default function Home() {
                         {item.icon}
                       </span>
                       <div>
-                        <p className="text-xs uppercase tracking-widest text-neutral-400">{item.label}</p>
+                        <p className="text-xs uppercase tracking-widest text-neutral-200">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="font-medium text-white hover:text-blue-400 hover:underline">
+                          <a
+                            href={item.href}
+                            {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                            className="font-medium text-white hover:text-blue-400 hover:underline"
+                          >
                             {item.value}
                           </a>
                         ) : (
@@ -657,7 +661,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
           <Image src="/images/logo/logo.png" alt="Webo logo" width={600} height={200} className="w-full max-w-[220px] h-auto" />
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-white">
             © {new Date().getFullYear()} Webo Studio
           </p>
         </div>
