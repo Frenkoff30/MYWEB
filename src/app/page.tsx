@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import MagneticButton from "./components/MagneticButton";
 import ScrollLogo from "./components/ScrollLogo";
 import ScrollHeader from "./components/ScrollHeader";
+import BrowserMockupContent from "./components/BrowserMockupContent";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -165,7 +166,7 @@ export default function Home() {
                   </MagneticButton>
                   <a
                     href="#proces"
-                    className="rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-neutral-50 transition hover:-translate-y-0.5 hover:border-blue-400/40 hover:text-white"
+                    className="rounded-full border border-white/25 bg-white/5 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/10 hover:shadow-blue-500/10"
                   >
                     Jak spolupráce probíhá
                   </a>
@@ -188,7 +189,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-4 p-6">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-500 to-neutral-700 text-white">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-red-500 text-white shadow-lg shadow-blue-500/30">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                           <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 14l10 5 10-5-10-5Z" />
                         </svg>
@@ -198,27 +199,7 @@ export default function Home() {
                         <p className="text-[10px] text-white">Web, který zaujme</p>
                       </div>
                     </div>
-                    <span className="relative flex h-28 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/25 via-white/[0.03] to-red-500/20 text-center">
-                      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
-                      <span className="relative z-[1] text-sm font-bold text-white">Vaše služby na prvním místě</span>
-                      <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-white">Zobrazit nabídku →</span>
-                    </span>
-                    <div className="grid grid-cols-3 gap-3">
-                      {["O nás", "Galerie", "Kontakt"].map((label, idx) => (
-                        <span
-                          key={label}
-                          className={`flex h-14 items-center justify-center rounded-lg bg-white/5 text-[10px] font-medium text-neutral-50 transition duration-300 ${
-                            idx === 0
-                              ? "group-hover:bg-blue-500/10 group-hover:text-blue-300"
-                              : idx === 1
-                              ? "delay-75 group-hover:bg-white/10"
-                              : "delay-150 group-hover:bg-red-500/10 group-hover:text-red-300"
-                          }`}
-                        >
-                          {label}
-                        </span>
-                      ))}
-                    </div>
+                    <BrowserMockupContent />
                     <div className="flex items-center justify-between pt-1">
                       <span className="text-xs font-semibold text-blue-400">od 6 990 Kč</span>
                       <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Mám zájem →</a>

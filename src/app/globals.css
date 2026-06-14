@@ -195,6 +195,28 @@ main {
   animation: spin-slow 9s linear infinite;
 }
 
+.bg-gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+@keyframes content-fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.content-fade {
+  animation: content-fade 0.5s ease-out both;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.08) rotate(3deg); }
+}
+.badge-pulse {
+  animation: badge-pulse 2.6s ease-in-out infinite;
+}
+
+
 .bg-grid {
   position: absolute;
   inset: 0;

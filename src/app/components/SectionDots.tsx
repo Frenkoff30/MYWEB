@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   { id: "hero",      label: "Úvod" },
-  { id: "o-mne",     label: "O mně" },
-  { id: "proces",    label: "Jak pracuji" },
+  { id: "o-mne",     label: "O nás" },
+  { id: "proces",    label: "Jak pracujeme" },
   { id: "sluzby",    label: "Služby" },
   { id: "portfolio", label: "Portfolio" },
   { id: "reference", label: "Recenze" },
