@@ -1,28 +1,39 @@
-# BrandWeb
+# Webo Studio
 
-Prezentační web pro vlastní živnost zaměřenou na tvorbu webových stránek —
-hlavní stránka představuje mě, mou práci, služby a ceník a obsahuje kontaktní
-formulář pro poptávky.
-
-Pracovní název projektu (BrandWeb) bude časem nahrazen finálním názvem značky.
+Prezentační web studia **Webo**, které navrhuje a vytváří moderní webové stránky
+pro živnostníky, řemeslníky a malé provozovny. Web představuje nabídku služeb,
+ceník, postup spolupráce, ukázky a obsahuje kontaktní formulář pro poptávky.
 
 ## Technologie
 
-- [Next.js](https://nextjs.org) (App Router) + TypeScript
-- [Tailwind CSS](https://tailwindcss.com) pro styly
+- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com) pro styly
+- [Resend](https://resend.com) pro odesílání poptávek z kontaktního formuláře
 
 ## Struktura projektu
 
 ```
 src/app/
-  layout.tsx     – základní rozvržení stránky (písmo, pozadí, metadata)
-  page.tsx       – obsah hlavní stránky (hero, o mně, služby, kontakt...)
-  globals.css    – globální styly a barevná paleta
-public/          – statické soubory (obrázky, ikony)
+  layout.tsx          – základní rozvržení stránky (písmo, metadata, globální komponenty)
+  page.tsx            – obsah hlavní stránky (hero, o nás, proces, služby, recenze, FAQ, kontakt)
+  globals.css         – globální styly, animace a barevná paleta
+  ochrana-udaju/      – stránka se zásadami zpracování osobních údajů (GDPR)
+  api/contact/        – API route pro odesílání poptávek přes Resend
+  components/         – znovupoužitelné komponenty (formulář, animace na pozadí, scroll efekty...)
+public/               – statické soubory (loga, ikony, obrázky)
 ```
 
-Web je jednostránkový (sekce hero, statistiky, o mně, jak spolupráce probíhá,
-portfolio, služby a ceník, kontakt) v tmavém, minimalistickém designu.
+Web je jednostránkový (single page) s tmavým, minimalistickým designem,
+animovaným hvězdným pozadím a plynulými scroll efekty. Skládá se z těchto sekcí:
+
+- **Úvod** – hero s hlavní nabídkou a interaktivní ukázkou webu
+- **O nás** – kdo jsme a pro koho weby tvoříme
+- **Jak pracujeme** – průběh spolupráce v krocích
+- **Služby** – ceník a doplňkové služby
+- **Portfolio** – ukázky realizací
+- **Recenze** – hodnocení klientů
+- **FAQ** – často kladené otázky
+- **Kontakt** – formulář pro poptávky
 
 ## Spuštění projektu lokálně
 
@@ -32,7 +43,7 @@ npm run dev
 ```
 
 Web pak poběží na [http://localhost:3000](http://localhost:3000) a při uložení
-změn v kódu se automaticky obnoví v prohlížeči.
+změn v kódu se automaticky obnoví v prohlížeči (Hot Reload).
 
 ## Kontaktní formulář (odesílání e-mailů)
 
@@ -53,3 +64,8 @@ CONTACT_FROM=Webo Studio <onboarding@resend.dev>
 
 Bez nastavených proměnných formulář zobrazí uživateli chybovou hlášku, že není ještě
 nastavený. Stejné proměnné je potřeba doplnit i v nastavení projektu na Vercelu.
+
+## Nasazení
+
+Web je určen pro hosting na [Vercelu](https://vercel.com) – po napojení repozitáře
+se každý push do `main` automaticky nasadí na produkci.
