@@ -21,7 +21,7 @@ const process = [
     step: "01",
     title: "Nezávazná poptávka",
     description:
-      "Napíšete nebo zavoláte a stručně popíšete, co potřebujete a co od webu očekáváte.",
+      "Napíšete nám  nebo zavoláte a stručně vysvětlíte, co potřebujete a co od webu očekáváte.",
   },
   {
     step: "02",
@@ -33,19 +33,19 @@ const process = [
     step: "03",
     title: "Doladíme detaily a domluvíme cenu",
     description:
-      "Návrh si společně projdeme a zapracujeme do něj vaše připomínky. Teprve potom, když budete spokojení, se domluvíme na konečné ceně.",
+      "Návrh si společně projdeme a zapracujeme do něj všechny vaše požadavky. Teprve potom, až budete spokojení, se domluvíme na konečné ceně.",
   },
   {
     step: "04",
     title: "Tvorba webu",
     description:
-      "Pustíme se do vývoje a design, texty i funkčnost dotáhneme do finální podoby podle domluvy.",
+      "Pustíme se do vývoje a designu. Texty i funkčnost dotáhneme do finální podoby dle  naší domluvy.",
   },
   {
     step: "05",
     title: "Spuštění a podpora",
     description:
-      "Web nasadíme naživo a postaráme se, aby od prvního dne fungoval tak, jak má. I po spuštění zůstáváme k dispozici pro případné úpravy.",
+      "Web spustíme a postaráme se, aby od prvního dne fungoval tak, jak má. I po spuštění vám zůstáváme k dispozici pro případné úpravy.",
   },
 ];
 
@@ -55,24 +55,24 @@ const faqs = [
     a: "U jednoduché prezentace obvykle 1–2 týdny od schválení návrhu. U rozsáhlejších projektů termín domluvíme individuálně.",
   },
   {
-    q: "Kolik bude stát web?",
+    q: "Kolik bude web stát?",
     a: "Cena se vždy odvíjí od rozsahu projektu. Orientační ceny najdete výše v sekci Služby. Po krátkém rozhovoru vám rádi připravíme konkrétní nabídku na míru, zdarma a nezávazně.",
   },
   {
     q: "Bude web fungovat i na mobilu?",
-    a: "Ano, každý web stavíme tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu, takže to je základ.",
+    a: "Ano, každý web stavíme tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu a s tím mým počítáme.",
   },
   {
     q: "Pomůžete mi i s texty a obsahem?",
-    a: "Rádi poradíme se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Pokud chcete, připravíme texty i kompletně za vás.",
+    a: "Rádi poradíme se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Na vyžadání připravíme texty kompletně za vás.",
   },
   {
     q: "Zajistíte mi i doménu a hosting?",
-    a: "Ano, postaráme se o registraci domény i nasazení webu online. Vše zařídíme za vás, ať máte vše na jednom místě.",
+    a: "Ano, postaráme se o registraci domény i spuštění webu online. Vše zařídíme za vás..",
   },
   {
     q: "Co když budu chtít web později upravit?",
-    a: "Žádný problém. Nabízíme průběžnou údržbu a drobné úpravy, nebo vás naučíme spravovat obsah samostatně.",
+    a: "Žádný problém. Nabízíme průběžnou údržbu a drobné úpravy.",
   },
   {
     q: "Co když se na webu něco pokazí?",
@@ -85,7 +85,7 @@ const services = [
     title: "Nový web na míru",
     price: "od 8 499 Kč",
     description:
-      "Kompletní návrh a vytvoření webu od první skici až po jeho nasazení online.",
+      "Kompletní návrh a vytvoření webu od první skici až po jeho spuštění.",
   },
   {
     title: "Redesign starého webu",
@@ -146,7 +146,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={200}>
                 <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-50 sm:mx-0">
-                  Pomáháme živnostníkům a malým firmám získat nebo upravit web tak, aby{" "}
+                  Pomáháme živnostníkům a malým firmám vytvořit nebo upravit jejich web tak, aby{" "}
                   <span className="text-white font-semibold">skutečně prodával</span>.{" "}
                   Srozumitelný obsah,{" "}
                   <span className="text-blue-400 font-semibold">rychlé načítání</span>,{" "}
@@ -240,15 +240,15 @@ export default function Home() {
                   <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
                     navrhujeme a vytváříme weby pro{" "}
                     <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
-                    Nejčastěji pomáháme lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
-                    <span className="text-red-400 font-semibold">už neslouží tak, jak by měl</span>.
+                    Náplní naší práce je pomáhat lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
+                    <span className="text-red-400 font-semibold">již neslouží tak, jak by měl</span>.
                   </p>
                 </Reveal>
                 <Reveal delay={100}>
                   <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
                     Náš cíl je vždy stejný. Udělat{" "}
                     <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
-                    který návštěvníky zaujme a přivede vám nové zákazníky.
+                    který dokáže zaujmout a přivést vám nové zákazníky.
                   </p>
                 </Reveal>
               </div>
@@ -268,7 +268,7 @@ export default function Home() {
                 </h2>
                 <p className="mt-4 text-lg text-white">
                   Bez kvalitní prezentace na internetu vám dnes lidé jednoduše{" "}
-                  <span className="text-white font-semibold">nevěří, že existujete</span>, a tak raději zamíří ke{" "}
+                  <span className="text-white font-semibold">nevěří, zda opravdu existujete</span>, a tak raději zamíří ke{" "}
                   <span className="text-red-400 font-semibold">konkurenci, která web má</span>.
                 </p>
               </div>
@@ -277,15 +277,15 @@ export default function Home() {
               {[
                 {
                   title: "Žádný web",
-                  text: "Lidé vás nedohledají na Googlu a vaše služby tak míjí ty, kteří by je nejvíc ocenili.",
+                  text: "Lidé vás nedohledají na internetu a vaše služby jednoduše minou.",
                 },
                 {
                   title: "Zastaralý vzhled",
-                  text: "Starý nebo nepřehledný web spíš odrazuje, než aby budil důvěru a přiváděl zákazníky.",
+                  text: "Starý nebo nepřehledný web spíše odrazuje, než aby budil důvěru a přiváděl zákazníky.",
                 },
                 {
                   title: "Nefunguje na mobilu",
-                  text: "Většina lidí dnes prochází web z telefonu. Pokud tam nevypadá dobře, ztrácíte je hned na startu.",
+                  text: "Většina lidí dnes prochází weby z telefonu. Pokud tam nevypadá dobře, ztrácíte je hned na startu.",
                 },
               ].map((item, i) => (
                 <Reveal key={item.title} delay={i * 100}>
@@ -348,7 +348,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Co nabízíme</span>
                 <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Vyberte si, co přesně potřebujete</h2>
                 <p className="mt-3 text-white">
-                  Jde o orientační ceny, finální nabídka se vždy odvíjí od rozsahu a
+                  Níže uvedené ceny jsou pouze orientační, finální nabídka se vždy odvíjí od rozsahu a
                   potřeb konkrétního projektu.
                 </p>
               </div>
@@ -395,16 +395,16 @@ export default function Home() {
                     {[
                       { icon: (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>
-                        ), title: "SEO optimalizace", desc: "Základní nastavení aby vás Google našel — meta tagy, rychlost, struktura.", price: "od 2 000 Kč" },
+                        ), title: "SEO optimalizace", desc: "Základní nastavení aby vás vyhledávač našel, meta tagy, rychlost, struktura.", price: "od 2 000 Kč" },
                       { icon: (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        ), title: "Registrace domény", desc: "Vyřídím za vás, ať máte vše na jednom místě.", price: "~300 Kč / rok" },
+                        ), title: "Registrace domény", desc: "Vyřídíme za vás, ať máte vše na jednom místě.", price: "~300 Kč / rok" },
                       { icon: (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
-                        ), title: "Webhosting a provoz", desc: "Spolehlivý hosting, SSL a dohled nad tím, že web běží jak má.", price: "od 150 Kč / měsíc" },
+                        ), title: "Webhosting a provoz", desc: "Spolehlivý hosting, SSL a dohled nad tím, že web běží tak jak má.", price: "od 150 Kč / měsíc" },
                       { icon: (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        ), title: "Firemní e-mail", desc: "info@vasefirma.cz místo gmailové adresy. Působí profesionálněji.", price: "od 50 Kč / měsíc" },
+                        ), title: "Firemní e-mail", desc: "Vytvoříme vám firemní mail [info@vasefirma.cz] místo gmailové adresy. Působí to profesionálněji.", price: "od 50 Kč / měsíc" },
                     ].map((item) => (
                       <div key={item.title} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
                         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
@@ -460,11 +460,11 @@ export default function Home() {
               <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="5" y="2" width="14" height="20" rx="2"/><path strokeLinecap="round" d="M12 18h.01"/></svg>, title: "Responzivní design", desc: "Web vypadá skvěle na mobilu, tabletu i počítači." },
-                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>, title: "Rychlé načítání", desc: "Optimalizovaný kód zajišťuje, že stránka se načítá okamžitě." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>, title: "Rychlé načítání", desc: "Optimalizovaný kód zajišťuje, že se stránka načítá okamžitě." },
                   { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, title: "SSL certifikát (https://)", desc: "Zabezpečené připojení splňující základní požadavek Googlu." },
-                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>, title: "Základní SEO", desc: "Správné meta tagy, nadpisy a struktura pro Google." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>, title: "Základní SEO", desc: "Správné meta tagy, nadpisy a struktura pro vyhledávač." },
                   { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>, title: "Moderní design na míru", desc: "Žádné šablony, web navrhujeme přesně podle vašich požadavků." },
-                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>, title: "Podpora po spuštění", desc: "Po předání webu jsem stále k dispozici pro dotazy." },
+                  { icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>, title: "Podpora po spuštění", desc: "Po předání webu jsme stále k dispozici." },
                 ].map((item) => (
                   <div key={item.title} data-spotlight className="group relative flex items-start gap-4 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05] hover:shadow-lg hover:shadow-blue-500/5">
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 transition duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-300 group-hover:scale-110">{item.icon}</span>
@@ -531,7 +531,7 @@ export default function Home() {
                 <div data-spotlight className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
                   <span className="text-4xl">💬</span>
                   <p className="mt-4 text-neutral-50">
-                    Aktuálně sbíráme reference od svých klientů, takže tady už brzy
+                    Aktuálně sbíráme reference od svých klientů, takže zde již brzy
                     uvidíte jejich reálné zkušenosti.
                   </p>
                 </div>
@@ -607,7 +607,7 @@ export default function Home() {
                   <span className="text-gradient">ještě dnes</span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-white">
-                  Popište nám krátce váš projekt nebo nápad. Ozveme se vám do 24 hodin s návrhem řešení.
+                  Představte nám krátce váš projekt nebo nápad. Ozveme se vám do 24 hodin s návrhem řešení.
                 </p>
               </div>
             </Reveal>
