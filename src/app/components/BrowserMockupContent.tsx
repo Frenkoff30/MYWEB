@@ -13,14 +13,25 @@ const ImageIcon = () => (
 
 const PAGES = [
   // Domů
-  <span
+  <div
     key="domu"
-    className="bg-gradient-animate relative flex h-28 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-xl bg-[linear-gradient(120deg,rgba(59,130,246,0.35),rgba(255,255,255,0.05),rgba(239,68,68,0.3),rgba(59,130,246,0.35))] text-center"
+    className="bg-gradient-animate relative flex h-28 w-full flex-col gap-2 overflow-hidden rounded-xl bg-[linear-gradient(120deg,rgba(59,130,246,0.35),rgba(255,255,255,0.05),rgba(239,68,68,0.3),rgba(59,130,246,0.35))] p-3"
   >
     <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full" />
-    <span className="relative z-[1] text-sm font-bold text-white">Vaše služby na prvním místě</span>
-    <span className="relative z-[1] rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-white">Zobrazit nabídku →</span>
-  </span>,
+    <div className="relative z-[1] flex items-center justify-between">
+      <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
+      <div className="flex gap-1.5">
+        <span className="h-1.5 w-6 rounded-full bg-white/20" />
+        <span className="h-1.5 w-6 rounded-full bg-white/20" />
+        <span className="h-1.5 w-6 rounded-full bg-white/20" />
+      </div>
+    </div>
+    <div className="relative z-[1] flex flex-1 flex-col items-center justify-center gap-2 text-center">
+      <span className="text-sm font-bold text-white">Vaše služby na prvním místě</span>
+      <span className="h-1.5 w-32 rounded-full bg-white/15" />
+      <span className="rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium text-white">Zobrazit nabídku →</span>
+    </div>
+  </div>,
   // O nás
   <div key="o-nas" className="flex h-28 w-full gap-3 rounded-xl bg-white/5 p-3">
     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-red-500 text-sm font-bold text-white shadow-lg shadow-blue-500/20">
