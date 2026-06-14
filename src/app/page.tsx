@@ -83,13 +83,13 @@ const faqs = [
 const services = [
   {
     title: "Nový web na míru",
-    price: "od 6 990 Kč",
+    price: "od 8 499 Kč",
     description:
       "Kompletní návrh a vytvoření webu od první skici až po jeho nasazení online.",
   },
   {
     title: "Redesign starého webu",
-    price: "od 4 990 Kč",
+    price: "od 7 499 Kč",
     description:
       "Modernizace vzhledu a funkčnosti webu, který už nesplňuje dnešní standardy.",
   },
@@ -201,7 +201,7 @@ export default function Home() {
                     </div>
                     <BrowserMockupContent />
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs font-semibold text-blue-400">od 6 990 Kč</span>
+                      <span className="text-xs font-semibold text-blue-400">od 8 499 Kč</span>
                       <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Mám zájem →</a>
                     </div>
                   </div>
@@ -386,27 +386,61 @@ export default function Home() {
 
             {/* Doplňkové služby */}
             <Reveal delay={100}>
-              <div className="mt-10">
-                <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-200">Doplňkové služby</p>
-                <div className="grid gap-6 sm:grid-cols-3">
-                  {[
-                    { icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>
-                      ), title: "SEO optimalizace", desc: "Základní nastavení aby vás Google našel — meta tagy, rychlost, struktura.", price: "od 2 000 Kč" },
-                    { icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                      ), title: "Registrace domény", desc: "Vyřídím za vás, ať máte vše na jednom místě.", price: "~300 Kč / rok" },
-                    { icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                      ), title: "Firemní e-mail", desc: "info@vasefirma.cz místo gmailové adresy. Působí profesionálněji.", price: "od 50 Kč / měsíc" },
-                  ].map((item) => (
-                    <div key={item.title} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
-                      <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
-                      <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
-                      <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-50">{item.desc}</p>
-                    </div>
-                  ))}
+              <div className="mt-10 space-y-10">
+                <p className="text-center text-xs font-semibold uppercase tracking-widest text-neutral-200">Doplňkové služby</p>
+
+                <div>
+                  <p className="mb-4 text-center text-[11px] font-semibold uppercase tracking-widest text-neutral-400">Web a provoz</p>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="m21 21-4.35-4.35"/></svg>
+                        ), title: "SEO optimalizace", desc: "Základní nastavení aby vás Google našel — meta tagy, rychlost, struktura.", price: "od 2 000 Kč" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        ), title: "Registrace domény", desc: "Vyřídím za vás, ať máte vše na jednom místě.", price: "~300 Kč / rok" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
+                        ), title: "Webhosting a provoz", desc: "Spolehlivý hosting, SSL a dohled nad tím, že web běží jak má.", price: "od 150 Kč / měsíc" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        ), title: "Firemní e-mail", desc: "info@vasefirma.cz místo gmailové adresy. Působí profesionálněji.", price: "od 50 Kč / měsíc" },
+                    ].map((item) => (
+                      <div key={item.title} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
+                        <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
+                        <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
+                        <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-50">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="mb-4 text-center text-[11px] font-semibold uppercase tracking-widest text-neutral-400">Obsah a marketing</p>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path strokeLinecap="round" strokeLinejoin="round" d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        ), title: "Copywriting textů", desc: "Napíšeme nebo upravíme texty na webu tak, aby lépe prodávaly.", price: "od 1 500 Kč" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 100 20c1.5 0 2-1 2-2s-.5-1.5-1-2 .5-2 2-2h2a4 4 0 004-4 8 8 0 00-9-10z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor"/><circle cx="11" cy="7" r="1" fill="currentColor"/><circle cx="16" cy="10.5" r="1" fill="currentColor"/></svg>
+                        ), title: "Logo a vizuální identita", desc: "Jednoduché logo a základní vizuální styl pro firmy, co ještě nemají brand.", price: "od 1 500 Kč" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path strokeLinecap="round" d="M8.6 13.5 15.4 17.5M15.4 6.5 8.6 10.5"/></svg>
+                        ), title: "Správa sociálních sítí", desc: "Pravidelné příspěvky a správa profilů na Instagramu a Facebooku.", price: "od 800 Kč / měsíc" },
+                      { icon: (
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5" fill="currentColor" stroke="none"/><rect x="12" y="9" width="3" height="9" fill="currentColor" stroke="none"/><rect x="17" y="5" width="3" height="13" fill="currentColor" stroke="none"/></svg>
+                        ), title: "Analytika a reporty", desc: "Napojení Google Analytics a pravidelný přehled návštěvnosti webu.", price: "od 300 Kč / měsíc" },
+                    ].map((item) => (
+                      <div key={item.title} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">{item.icon}</span>
+                        <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
+                        <p className="mt-1 text-lg font-bold text-blue-400">{item.price}</p>
+                        <p className="mt-3 flex-1 text-base leading-relaxed text-neutral-50">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>

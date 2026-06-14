@@ -171,6 +171,8 @@ export default function Particles() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onScroll);
+
+      
     };
   }, []);
 
