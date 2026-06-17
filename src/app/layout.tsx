@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Navrhujeme a vytváříme jednoduché, moderní weby pro živnostníky a malé firmy. Weby, které skutečně prodávají.",
   icons: {
-    icon: "/images/logo/logo.png",
+    icon: "/images/logo/logonakartu.png",
   },
 };
 

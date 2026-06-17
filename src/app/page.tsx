@@ -491,12 +491,12 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="mt-10">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2">
                 <a
                   href="https://frenkoff30.github.io/KAMASTRECHYWEB/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block max-w-sm overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
+                  className="group relative block overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
                 >
                   <div className="relative z-[1] flex h-full flex-col gap-5">
                     <div className="flex items-center justify-between">
@@ -509,6 +509,26 @@ export default function Home() {
                       <Image src="/images/others/ukazkakama.png" alt="KAMA Střechy web" width={800} height={450} className="w-full h-auto" />
                     </div>
                     <p className="text-base font-semibold text-white">KAMA Střechy</p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://truhlarsvisustrweb.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
+                >
+                  <div className="relative z-[1] flex h-full flex-col gap-5">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
+                        Hotová realizace
+                      </span>
+                      <Image src="/images/others/logotruhlarstvi.png" alt="Truhlářství Šustr logo" width={120} height={48} className="h-10 w-auto opacity-90 transition duration-300 group-hover:opacity-100" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/40 transition duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/10">
+                      <Image src="/images/others/ukazkatruhlarstvi.png" alt="Truhlářství Šustr web" width={800} height={450} className="w-full h-auto" />
+                    </div>
+                    <p className="text-base font-semibold text-white">Truhlářství Šustr</p>
                   </div>
                 </a>
               </div>
