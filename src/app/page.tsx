@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import MagneticButton from "./components/MagneticButton";
 import ScrollLogo from "./components/ScrollLogo";
 import ScrollHeader from "./components/ScrollHeader";
+import PortfolioCarousel from "./components/PortfolioCarousel";
 import BrowserMockupContent from "./components/BrowserMockupContent";
 
 const stats = [
@@ -80,12 +81,24 @@ const faqs = [
   },
 ];
 
-const services = [
+const services: {
+  title: string;
+  price: string;
+  description: string;
+  featured?: boolean;
+}[] = [
+  {
+    title: "E-shop na míru",
+    price: "od 14 999 Kč",
+    description:
+      "Vlastní internetový obchod s košíkem, platbami a správou produktů. Připravený prodávat.",
+  },
   {
     title: "Nový web na míru",
     price: "od 8 499 Kč",
     description:
       "Kompletní návrh a vytvoření webu od první skici až po jeho spuštění.",
+    featured: true,
   },
   {
     title: "Redesign starého webu",
@@ -353,21 +366,21 @@ export default function Home() {
                 </p>
               </div>
             </Reveal>
-            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((service, i) => (
                 <Reveal key={service.title} delay={i * 100}>
                   <a
                     href="#kontakt"
                     className={`group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-1.5 ${
-                      i === 0
+                      service.featured
                         ? "border border-blue-400/30 bg-gradient-to-b from-blue-500/[0.08] to-white/[0.02] shadow-xl shadow-blue-500/10 ring-1 ring-blue-400/20"
                         : "border border-white/10 bg-white/[0.03] hover:border-blue-400/30 hover:bg-white/[0.05]"
                     }`}
                   >
-                    {i === 0 && (
+                    {service.featured && (
                       <span className="bg-blob bg-blob-blue -right-14 -top-14 h-40 w-40 opacity-30" />
                     )}
-                    {i === 0 && (
+                    {service.featured && (
                       <span className="relative z-[1] mb-3 inline-block w-fit rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white">
                         Nejoblíbenější
                       </span>
@@ -376,7 +389,7 @@ export default function Home() {
                     <p className="relative z-[1] mt-1 text-xl font-bold text-blue-400">{service.price}</p>
                     <p className="relative z-[1] mt-3 flex-1 text-base text-neutral-50">{service.description}</p>
                     <span className="relative z-[1] mt-4 block h-px w-full bg-white/10" />
-                    <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${i === 0 ? "text-red-400" : "text-blue-400"}`}>
+                    <span className={`relative z-[1] mt-4 inline-flex items-center gap-1.5 text-sm font-medium transition group-hover:gap-2.5 ${service.featured ? "text-red-400" : "text-blue-400"}`}>
                       Mám zájem <span>→</span>
                     </span>
                   </a>
@@ -491,46 +504,8 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                <a
-                  href="https://frenkoff30.github.io/KAMASTRECHYWEB/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
-                >
-                  <div className="relative z-[1] flex h-full flex-col gap-5">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
-                        Hotová realizace
-                      </span>
-                      <Image src="/images/others/KAMASTRECHYLOGO.png" alt="KAMA Střechy logo" width={120} height={48} className="h-10 w-auto opacity-90 transition duration-300 group-hover:opacity-100" />
-                    </div>
-                    <div className="overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/40 transition duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/10">
-                      <Image src="/images/others/ukazkakama.png" alt="KAMA Střechy web" width={800} height={450} className="w-full h-auto" />
-                    </div>
-                    <p className="text-base font-semibold text-white">KAMA Střechy</p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://truhlarsvisustrweb.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block overflow-hidden rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-white/[0.05]"
-                >
-                  <div className="relative z-[1] flex h-full flex-col gap-5">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white">
-                        Hotová realizace
-                      </span>
-                      <Image src="/images/others/logotruhlarstvi.png" alt="Truhlářství Šustr logo" width={120} height={48} className="h-10 w-auto opacity-90 transition duration-300 group-hover:opacity-100" />
-                    </div>
-                    <div className="overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/40 transition duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/10">
-                      <Image src="/images/others/ukazkatruhlarstvi.png" alt="Truhlářství Šustr web" width={800} height={450} className="w-full h-auto" />
-                    </div>
-                    <p className="text-base font-semibold text-white">Truhlářství Šustr</p>
-                  </div>
-                </a>
+              <div className="mt-10">
+                <PortfolioCarousel />
               </div>
             </Reveal>
           </div>

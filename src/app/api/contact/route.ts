@@ -42,6 +42,7 @@ export async function POST(request: Request) {
   const typeLabels: Record<string, string> = {
     "novy-web": "Nový web na míru",
     redesign: "Redesign stávajícího webu",
+    eshop: "E-shop na míru",
     udrzba: "Údržba a úpravy",
     jine: "Jiné / nevím přesně",
   };

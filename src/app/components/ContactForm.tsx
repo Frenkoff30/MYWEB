@@ -129,6 +129,7 @@ export default function ContactForm() {
               <option value="" disabled>Vyberte…</option>
               <option value="novy-web">Nový web na míru</option>
               <option value="redesign">Redesign stávajícího webu</option>
+              <option value="eshop">E-shop na míru</option>
               <option value="udrzba">Údržba a úpravy</option>
               <option value="jine">Jiné / nevím přesně</option>
             </select>
