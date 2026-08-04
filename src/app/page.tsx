@@ -674,6 +674,14 @@ export default function Home() {
           <p className="text-sm text-white">
             © {new Date().getFullYear()} Webo Studio
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400">
+            <a href="/obchodni-podminky" className="transition hover:text-blue-300 hover:underline">
+              Obchodní podmínky
+            </a>
+            <a href="/ochrana-udaju" className="transition hover:text-blue-300 hover:underline">
+              Ochrana osobních údajů
+            </a>
+          </div>
         </div>
       </footer>
     </>
