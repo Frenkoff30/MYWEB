@@ -11,12 +11,15 @@ export default function NavLink({
   className = "",
   activeClassName = "",
   ariaLabel,
+  onNavigate,
 }: {
   href: string;
   children: ReactNode;
   className?: string;
   activeClassName?: string;
   ariaLabel?: string;
+  /** Zavolá se po kliknutí – používá mobilní menu, aby se zavřelo. */
+  onNavigate?: () => void;
 }) {
   const pathname = usePathname();
   const isActive = !href.includes("#") && href === pathname;
@@ -28,6 +31,7 @@ export default function NavLink({
       aria-current={isActive ? "page" : undefined}
       className={`${className} ${isActive ? activeClassName : ""}`}
       onClick={(e) => {
+        onNavigate?.();
         if (!isActive) return;
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });

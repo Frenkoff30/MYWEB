@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Ochrana osobních údajů | Webo Studio",
@@ -8,12 +10,10 @@ export const metadata: Metadata = {
 
 export default function OchranaUdajuPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-24">
-      <Link href="/" className="text-sm font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
-        ← Zpět na web
-      </Link>
-
-      <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+    <>
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-20">
+      <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
         Zpracování osobních údajů
       </h1>
 
@@ -60,7 +60,15 @@ export default function OchranaUdajuPage() {
             .
           </p>
         </section>
+
+        <p className="pt-4">
+          <Link href="/" className="font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
+            ← Zpět na úvod
+          </Link>
+        </p>
       </div>
-    </main>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

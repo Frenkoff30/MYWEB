@@ -3,6 +3,7 @@ import ScrollLogo from "./ScrollLogo";
 import ScrollHeader from "./ScrollHeader";
 import ScrollProgress from "./ScrollProgress";
 import NavLink from "./NavLink";
+import MobileMenu from "./MobileMenu";
 
 /** Navigace = stránky. Sekce úvodní stránky (Spolupráce, Služby) tu nejsou
  *  schválně – jinak by odkaz z podstránky házel doprostřed jiné stránky. */
@@ -54,12 +55,15 @@ export default function SiteHeader() {
             ))}
           </div>
 
-          <NavLink
-            href="/#kontakt"
-            className="rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-blue-500 hover:text-white"
-          >
-            Kontakt
-          </NavLink>
+          <div className="flex items-center gap-3">
+            <NavLink
+              href="/#kontakt"
+              className="hidden rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-blue-500 hover:text-white sm:inline-block"
+            >
+              Kontakt
+            </NavLink>
+            <MobileMenu links={NAV_LINKS} />
+          </div>
         </ScrollHeader>
       </header>
     </>
