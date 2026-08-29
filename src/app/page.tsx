@@ -1,15 +1,12 @@
-import Image from "next/image";
 import Reveal from "./components/Reveal";
-import ScrollProgress from "./components/ScrollProgress";
 import Counter from "./components/Counter";
 import TypingText from "./components/TypingText";
 import TiltCard from "./components/TiltCard";
 import ContactForm from "./components/ContactForm";
 import MagneticButton from "./components/MagneticButton";
-import ScrollLogo from "./components/ScrollLogo";
-import ScrollHeader from "./components/ScrollHeader";
-import PortfolioCarousel from "./components/PortfolioCarousel";
 import BrowserMockupContent from "./components/BrowserMockupContent";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -50,37 +47,6 @@ const process = [
   },
 ];
 
-const faqs = [
-  {
-    q: "Jak dlouho trvá vytvoření webu?",
-    a: "U jednoduché prezentace obvykle 1–2 týdny od schválení návrhu. U rozsáhlejších projektů termín domluvíme individuálně.",
-  },
-  {
-    q: "Kolik bude web stát?",
-    a: "Cena se vždy odvíjí od rozsahu projektu. Orientační ceny najdete výše v sekci Služby. Po krátkém rozhovoru vám rádi připravíme konkrétní nabídku na míru, zdarma a nezávazně.",
-  },
-  {
-    q: "Bude web fungovat i na mobilu?",
-    a: "Ano, každý web stavíme tak, aby skvěle vypadal a fungoval na mobilu, tabletu i počítači. Dnes přichází většina návštěvníků z telefonu a s tím mým počítáme.",
-  },
-  {
-    q: "Pomůžete mi i s texty a obsahem?",
-    a: "Rádi poradíme se strukturou a zněním textů tak, aby web jasně sděloval to, co potřebujete. Na vyžadání připravíme texty kompletně za vás.",
-  },
-  {
-    q: "Zajistíte mi i doménu a hosting?",
-    a: "Ano, postaráme se o registraci domény i spuštění webu online. Vše zařídíme za vás..",
-  },
-  {
-    q: "Co když budu chtít web později upravit?",
-    a: "Žádný problém. Nabízíme průběžnou údržbu a drobné úpravy.",
-  },
-  {
-    q: "Co když se na webu něco pokazí?",
-    a: "Ozvěte se nám a problém vyřešíme co nejdříve. Protože web známe od základu, oprava je obvykle rychlá.",
-  },
-];
-
 const services: {
   title: string;
   price: string;
@@ -117,36 +83,11 @@ const services: {
 export default function Home() {
   return (
     <>
-      <ScrollProgress />
-      <header className="sticky top-0 z-10 bg-neutral-950/60 backdrop-blur-xl" style={{ borderBottom: "1px solid transparent", backgroundImage: "linear-gradient(rgba(10,12,16,0.6), rgba(10,12,16,0.6)), linear-gradient(to right, rgba(96,165,250,0.2), rgba(248,113,113,0.1), rgba(96,165,250,0.05))", backgroundOrigin: "border-box", backgroundClip: "padding-box, border-box" }}>
-        <ScrollHeader>
-          <a href="#hero" className="group flex items-center gap-3">
-            <ScrollLogo>
-              <Image src="/images/logo/logoweb.png" alt="Webo logo" width={220} height={72} className="glitch-hover h-10 w-auto transition duration-300 group-hover:scale-105 sm:h-12" />
-            </ScrollLogo>
-          </a>
-          <div className="hidden gap-8 text-sm font-medium text-white sm:flex">
-            <a href="#o-mne" className="nav-link transition hover:text-white">O nás</a>
-            <a href="#proces" className="nav-link transition hover:text-white">Spolupráce</a>
-            <a href="#sluzby" className="nav-link transition hover:text-white">Služby</a>
-            <a href="#reference" className="nav-link transition hover:text-white">Recenze</a>
-            <a href="#faq" className="nav-link transition hover:text-white">Často kladené otázky</a>
-          </div>
-          <a
-            href="#kontakt"
-            className="rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-blue-500 hover:text-white"
-          >
-            Kontakt
-          </a>
-        </ScrollHeader>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1">
         {/* Hero */}
         <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-12 sm:pt-16">
-          <span className="bg-blob bg-blob-blue -left-40 -top-40 h-[28rem] w-[28rem]" />
-          <span className="bg-blob bg-blob-red -right-32 top-0 h-96 w-96" />
-          <span className="bg-blob bg-blob-navy left-1/2 bottom-0 h-80 w-80 -translate-x-1/2" />
           <div className="relative z-[1] mx-auto grid max-w-6xl gap-16 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
             <div className="text-center sm:text-left">
               <Reveal delay={100}>
@@ -189,34 +130,21 @@ export default function Home() {
 
             <Reveal delay={250}>
               <TiltCard className="relative mx-auto w-full max-w-md float-slow">
-                <span className="bg-blob bg-blob-blue -right-12 -top-12 h-56 w-56 opacity-50" />
-                <span className="bg-blob bg-blob-red -left-12 -bottom-12 h-56 w-56 opacity-40" />
                 <div className="group relative z-[1] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:shadow-blue-500/10">
                   <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
                     <span className="ml-3 flex h-5 flex-1 max-w-[60%] items-center rounded-full bg-white/5 px-3">
-                      <TypingText text="webo.cz" startDelay={1200} />
+                      <TypingText text="vasefirma.cz" startDelay={1200} />
                     </span>
                   </div>
-                  <div className="space-y-4 p-6">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-red-500 text-white shadow-lg shadow-blue-500/30">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-                          <path d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 14l10 5 10-5-10-5Z" />
-                        </svg>
-                      </div>
-                      <div className="space-y-1">
-                        <p className="text-xs font-semibold text-white">Vaše firma</p>
-                        <p className="text-[10px] text-white">Web, který zaujme</p>
-                      </div>
-                    </div>
+                  <div className="p-5">
                     <BrowserMockupContent />
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs font-semibold text-blue-400">od 8 499 Kč</span>
-                      <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Mám zájem →</a>
-                    </div>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 border-t border-white/10 bg-white/[0.03] px-5 py-3">
+                    <span className="text-xs font-semibold text-blue-400">od 8 499 Kč</span>
+                    <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Mám zájem →</a>
                   </div>
                 </div>
               </TiltCard>
@@ -224,54 +152,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* O mně */}
-        <section id="o-mne" className="relative overflow-hidden">
-          <span className="bg-blob bg-blob-blue -left-32 -top-10 h-80 w-80" />
-          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20 text-left">
-            <Reveal>
-              <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Kdo jsme ?</span>
-              </div>
-            </Reveal>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1.4fr] lg:items-start">
-              <Reveal>
-                <div className="text-center lg:sticky lg:top-32">
-                  <h2 className="mt-6 text-5xl font-bold text-white sm:text-6xl">
-                    Jsme <span className="text-gradient glitch">Webo</span>,
-                  </h2>
-                  <Image
-                    src="/images/logo/logo.png"
-                    alt="Webo logo"
-                    width={320}
-                    height={96}
-                    className="float-slow mx-auto mt-10 w-48 sm:w-64"
-                  />
-                </div>
-              </Reveal>
-              <div className="space-y-6 border-l border-white/10 pl-6 sm:pl-10">
-                <Reveal>
-                  <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
-                    navrhujeme a vytváříme weby pro{" "}
-                    <span className="text-white font-semibold">živnostníky, řemeslníky a malé provozovny</span>.{" "}
-                    Náplní naší práce je pomáhat lidem, kteří ještě žádný web nemají, nebo jim ten současný{" "}
-                    <span className="text-red-400 font-semibold">již neslouží tak, jak by měl</span>.
-                  </p>
-                </Reveal>
-                <Reveal delay={100}>
-                  <p className="text-xl leading-relaxed text-neutral-50 text-balance sm:text-2xl">
-                    Náš cíl je vždy stejný. Udělat{" "}
-                    <span className="text-blue-400 font-semibold">jednoduchý, přehledný a moderní web</span>,{" "}
-                    který dokáže zaujmout a přivést vám nové zákazníky.
-                  </p>
-                </Reveal>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Problém */}
-        <section className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
-          <span className="bg-blob bg-blob-red -right-40 top-1/3 h-72 w-72 opacity-30" />
+        <section id="problem" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="mx-auto max-w-2xl text-center">
@@ -322,7 +204,6 @@ export default function Home() {
 
         {/* Jak spolupráce probíhá */}
         <section id="proces" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
-          <span className="bg-blob bg-blob-navy -left-32 -bottom-10 h-80 w-80 opacity-30" />
           <div className="relative z-[1] mx-auto max-w-7xl px-6 py-20">
             <Reveal>
               <div className="text-center">
@@ -377,9 +258,6 @@ export default function Home() {
                         : "border border-white/10 bg-white/[0.03] hover:border-blue-400/30 hover:bg-white/[0.05]"
                     }`}
                   >
-                    {service.featured && (
-                      <span className="bg-blob bg-blob-blue -right-14 -top-14 h-40 w-40 opacity-30" />
-                    )}
                     {service.featured && (
                       <span className="relative z-[1] mb-3 inline-block w-fit rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white">
                         Nejoblíbenější
@@ -492,107 +370,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio */}
-        <section id="portfolio">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <Reveal>
-              <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Naše práce</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
-                  Pár ukázek, jak weby od <span className="text-gradient glitch">Webo</span> vypadají v praxi
-                </h2>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="mt-10">
-                <PortfolioCarousel />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* Reference */}
-        <section id="reference" className="relative overflow-hidden">
-          <span className="bg-blob bg-blob-blue -right-40 top-0 h-72 w-72 opacity-25" />
-          <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
-            <Reveal>
-              <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Reference</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Recenze od klientů budou brzy tady</h2>
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              <TiltCard className="mx-auto mt-10 max-w-xl">
-                <div data-spotlight className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
-                  <span className="text-4xl">💬</span>
-                  <p className="mt-4 text-neutral-50">
-                    Aktuálně sbíráme reference od svých klientů, takže zde již brzy
-                    uvidíte jejich reálné zkušenosti.
-                  </p>
-                </div>
-              </TiltCard>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section id="faq" className="relative overflow-hidden bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02)_64px,rgba(255,255,255,0.02)_calc(100%-64px),transparent)]">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: faqs.map((item) => ({
-                  "@type": "Question",
-                  name: item.q,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: item.a,
-                  },
-                })),
-              }),
-            }}
-          />
-          <span className="bg-blob bg-blob-red left-1/2 bottom-20 h-72 w-72 -translate-x-1/2 opacity-20" />
-          <div className="relative z-[1] mx-auto max-w-3xl px-6 py-20">
-            <Reveal>
-              <div className="text-center">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500 before:inline-block before:h-px before:w-6 before:bg-gradient-to-r before:from-blue-500 before:to-red-500">Často kladené otázky</span>
-                <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Možná tu odpověď už je</h2>
-              </div>
-            </Reveal>
-            <div className="mt-10 space-y-4">
-              {faqs.map((item) => (
-                <Reveal key={item.q}>
-                  <details className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition duration-300 open:border-blue-400/30 open:bg-white/[0.05] hover:border-white/20">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-white transition group-hover:text-blue-300">
-                      {item.q}
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm text-neutral-50 transition duration-300 group-open:rotate-45 group-open:border-blue-400/50 group-open:bg-blue-500/10 group-open:text-blue-400">
-                        +
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm leading-relaxed text-white">{item.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal delay={100}>
-              <p className="mt-10 text-center text-sm text-white">
-                Nenašli jste odpověď, kterou jste hledali?{" "}
-                <a href="#kontakt" className="font-semibold text-blue-400 transition hover:text-blue-300 hover:underline">
-                  Napište nám
-                </a>
-                .
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
         {/* Kontakt */}
         <section id="kontakt" className="relative overflow-hidden">
-          <span className="bg-blob bg-blob-blue -left-32 top-1/4 h-80 w-80" />
-          <span className="bg-blob bg-blob-red -right-32 bottom-1/4 h-80 w-80" />
           <div className="relative z-[1] mx-auto max-w-6xl px-6 py-20">
             <Reveal>
               <div className="text-center">
@@ -668,22 +447,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
-          <Image src="/images/logo/logo.png" alt="Webo logo" width={600} height={200} className="w-full max-w-[220px] h-auto" />
-          <p className="text-sm text-white">
-            © {new Date().getFullYear()} Webo Studio
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400">
-            <a href="/obchodni-podminky" className="transition hover:text-blue-300 hover:underline">
-              Obchodní podmínky
-            </a>
-            <a href="/ochrana-udaju" className="transition hover:text-blue-300 hover:underline">
-              Ochrana osobních údajů
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
