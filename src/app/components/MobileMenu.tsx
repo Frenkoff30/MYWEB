@@ -80,15 +80,15 @@ export default function MobileMenu({ links }: { links: NavItem[] }) {
           onNavigate={close}
           className="btn-glow mt-4 rounded-full bg-blue-500 px-6 py-4 text-center text-lg font-semibold text-white transition hover:bg-blue-400"
         >
-          Domluvit konzultaci
+          Kontakt
         </NavLink>
 
         <div className="mt-auto flex flex-col gap-1 pt-10 text-sm text-neutral-400">
           <a href="tel:+420608462557" className="transition hover:text-blue-300">
-            ☎ 608 462 557
+            608 462 557
           </a>
-          <a href="mailto:info@webo.cz" className="transition hover:text-blue-300">
-            ✉ info@webo.cz
+          <a href="mailto:info@webostudio.cz" className="transition hover:text-blue-300">
+            info@webostudio.cz
           </a>
         </div>
       </nav>

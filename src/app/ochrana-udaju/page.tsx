@@ -54,8 +54,8 @@ export default function OchranaUdajuPage() {
           <p className="mt-2">
             Máte právo na přístup ke svým osobním údajům, jejich opravu či výmaz, omezení zpracování a právo
             vznést námitku proti zpracování. Pro uplatnění těchto práv nás kontaktujte na e-mailu{" "}
-            <a href="mailto:info@webo.cz" className="font-semibold text-blue-400 hover:underline">
-              info@webo.cz
+            <a href="mailto:info@webostudio.cz" className="font-semibold text-blue-400 hover:underline">
+              info@webostudio.cz
             </a>
             .
           </p>

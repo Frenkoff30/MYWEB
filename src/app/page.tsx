@@ -408,7 +408,7 @@ export default function Home() {
                 <div className="space-y-4">
                   {[
                     { icon: "☎", label: "Telefon", value: "608 462 557", href: "tel:+420608462557" },
-                    { icon: "✉", label: "E-mail", value: "info@webo.cz", href: "mailto:info@webo.cz" },
+                    { icon: "✉", label: "E-mail", value: "info@webostudio.cz", href: "mailto:info@webostudio.cz" },
                     { icon: "▣", label: "Instagram", value: "@webo.cz", href: "https://www.instagram.com/webo.cz" },
                     { icon: "⚲", label: "Působiště", value: "Hlinsko,Pardubice", href: undefined },
                     { icon: "◷", label: "Dostupnost", value: "Po–Pá, 07:00 - 16:00", href: undefined },
