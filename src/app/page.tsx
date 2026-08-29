@@ -407,11 +407,21 @@ export default function Home() {
               <Reveal delay={100}>
                 <div className="space-y-4">
                   {[
-                    { icon: "☎", label: "Telefon", value: "608 462 557", href: "tel:+420608462557" },
-                    { icon: "✉", label: "E-mail", value: "info@webostudio.cz", href: "mailto:info@webostudio.cz" },
-                    { icon: "▣", label: "Instagram", value: "@webo.cz", href: "https://www.instagram.com/webo.cz" },
-                    { icon: "⚲", label: "Působiště", value: "Hlinsko,Pardubice", href: undefined },
-                    { icon: "◷", label: "Dostupnost", value: "Po–Pá, 07:00 - 16:00", href: undefined },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 0 1 2-2h2.6a1 1 0 0 1 1 .76l1 4a1 1 0 0 1-.3 1L7.8 10.4a13 13 0 0 0 5.8 5.8l1.66-1.5a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .74 1V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg>
+                      ), label: "Telefon", value: "608 462 557", href: "tel:+420608462557" },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="2" y="4" width="20" height="16" rx="2"/><path strokeLinecap="round" strokeLinejoin="round" d="m22 6-10 7L2 6"/></svg>
+                      ), label: "E-mail", value: "info@webostudio.cz", href: "mailto:info@webostudio.cz" },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+                      ), label: "Instagram", value: "@webo.cz", href: "https://www.instagram.com/webo.cz" },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                      ), label: "Působiště", value: "Hlinsko,Pardubice", href: undefined },
+                    { icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="9"/><path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3 2"/></svg>
+                      ), label: "Dostupnost", value: "Po–Pá, 07:00 - 16:00", href: undefined },
                   ].map((item) => (
                     <div
                       key={item.label}

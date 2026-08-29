@@ -166,8 +166,11 @@ export default function BrowserMockupContent() {
             <span className="block text-[8px] leading-tight text-neutral-400">Web, který zaujme</span>
           </span>
         </div>
-        <span className="rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[7.5px] font-semibold text-white">
-          ☎ 777 123 456
+        <span className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[7.5px] font-semibold text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-2 w-2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 0 1 2-2h2.6a1 1 0 0 1 1 .76l1 4a1 1 0 0 1-.3 1L7.8 10.4a13 13 0 0 0 5.8 5.8l1.66-1.5a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .74 1V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z" />
+          </svg>
+          777 123 456
         </span>
       </div>
 
