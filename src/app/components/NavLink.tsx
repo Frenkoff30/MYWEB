@@ -3,24 +3,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
-/** Logo v hlavičce. Na podstránce vede na úvodní stránku, na úvodní stránce
- *  vyroluje nahoru – jinak by kliknutí nedělalo nic, protože se nenaviguje. */
-export default function LogoLink({
+/** Odkaz v navigaci. Když už na dané stránce jsme, kliknutí vyroluje nahoru –
+ *  jinak by se nestalo nic, protože není kam navigovat. */
+export default function NavLink({
+  href,
   children,
   className = "",
+  activeClassName = "",
+  ariaLabel,
 }: {
+  href: string;
   children: ReactNode;
   className?: string;
+  activeClassName?: string;
+  ariaLabel?: string;
 }) {
   const pathname = usePathname();
+  const isActive = !href.includes("#") && href === pathname;
 
   return (
     <Link
-      href="/"
-      aria-label="Webo – zpět na úvod"
-      className={className}
+      href={href}
+      aria-label={ariaLabel}
+      aria-current={isActive ? "page" : undefined}
+      className={`${className} ${isActive ? activeClassName : ""}`}
       onClick={(e) => {
-        if (pathname !== "/") return;
+        if (!isActive) return;
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
         if (window.location.hash) {

@@ -1,15 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import ScrollLogo from "./ScrollLogo";
 import ScrollHeader from "./ScrollHeader";
 import ScrollProgress from "./ScrollProgress";
-import LogoLink from "./LogoLink";
+import NavLink from "./NavLink";
 
-/** Odkazy sdílené hlavičkou i patičkou – jediné místo, kde se navigace udržuje. */
+/** Navigace = stránky. Sekce úvodní stránky (Spolupráce, Služby) tu nejsou
+ *  schválně – jinak by odkaz z podstránky házel doprostřed jiné stránky. */
 export const NAV_LINKS = [
+  { href: "/", label: "Domů" },
   { href: "/o-nas", label: "O nás" },
-  { href: "/#proces", label: "Spolupráce" },
-  { href: "/#sluzby", label: "Služby" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/recenze", label: "Recenze" },
   { href: "/faq", label: "FAQ" },
@@ -30,7 +29,7 @@ export default function SiteHeader() {
         }}
       >
         <ScrollHeader>
-          <LogoLink className="group flex items-center gap-3">
+          <NavLink href="/" ariaLabel="Webo – zpět na úvod" className="group flex items-center gap-3">
             <ScrollLogo>
               <Image
                 src="/images/logo/logoweb.png"
@@ -40,20 +39,27 @@ export default function SiteHeader() {
                 className="glitch-hover h-10 w-auto transition duration-300 group-hover:scale-105 sm:h-12"
               />
             </ScrollLogo>
-          </LogoLink>
-          <div className="hidden gap-6 text-sm font-medium text-white md:flex lg:gap-8">
+          </NavLink>
+
+          <div className="hidden gap-6 text-sm font-medium md:flex lg:gap-8">
             {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link transition hover:text-white">
+              <NavLink
+                key={link.href}
+                href={link.href}
+                className="nav-link text-white transition hover:text-blue-300"
+                activeClassName="!text-blue-400"
+              >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
-          <Link
+
+          <NavLink
             href="/#kontakt"
             className="rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-blue-500 hover:text-white"
           >
             Kontakt
-          </Link>
+          </NavLink>
         </ScrollHeader>
       </header>
     </>

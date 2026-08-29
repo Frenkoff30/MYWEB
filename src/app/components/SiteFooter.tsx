@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavLink from "./NavLink";
 import { NAV_LINKS } from "./SiteHeader";
 
 export default function SiteFooter() {
@@ -16,13 +17,18 @@ export default function SiteFooter() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white">
           {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="transition hover:text-blue-300 hover:underline">
+            <NavLink
+              key={link.href}
+              href={link.href}
+              className="transition hover:text-blue-300 hover:underline"
+              activeClassName="!text-blue-400"
+            >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
-          <Link href="/#kontakt" className="transition hover:text-blue-300 hover:underline">
+          <NavLink href="/#kontakt" className="transition hover:text-blue-300 hover:underline">
             Kontakt
-          </Link>
+          </NavLink>
         </div>
 
         <p className="text-sm text-white">© {new Date().getFullYear()} Webo Studio</p>
