@@ -6,8 +6,9 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Recenze | Webo Studio",
+  title: "Recenze",
   description: "Reference a zkušenosti klientů se spoluprací s Webo Studio.",
+  alternates: { canonical: "/recenze" },
 };
 
 export default function RecenzePage() {

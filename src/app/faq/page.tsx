@@ -5,9 +5,10 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Časté otázky | Webo Studio",
+  title: "Časté otázky",
   description:
     "Odpovědi na nejčastější otázky ohledně tvorby webů – ceny, termíny, mobilní verze, doména a hosting.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [

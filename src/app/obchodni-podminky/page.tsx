@@ -4,8 +4,9 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Obchodní podmínky | Webo Studio",
+  title: "Obchodní podmínky",
   description: "Obchodní podmínky pro poskytování služeb tvorby a správy webových stránek Webo Studio.",
+  alternates: { canonical: "/obchodni-podminky" },
 };
 
 export default function ObchodniPodminkyPage() {

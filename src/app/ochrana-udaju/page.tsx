@@ -4,8 +4,9 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Ochrana osobních údajů | Webo Studio",
+  title: "Ochrana osobních údajů",
   description: "Informace o zpracování osobních údajů zaslaných prostřednictvím kontaktního formuláře Webo Studio.",
+  alternates: { canonical: "/ochrana-udaju" },
 };
 
 export default function OchranaUdajuPage() {

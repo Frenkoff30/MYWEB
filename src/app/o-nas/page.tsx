@@ -5,9 +5,10 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "O nás | Webo Studio",
+  title: "O nás",
   description:
     "Kdo jsme? Navrhujeme a vytváříme jednoduché, moderní weby pro živnostníky, řemeslníky a malé provozovny.",
+  alternates: { canonical: "/o-nas" },
 };
 
 export default function ONasPage() {

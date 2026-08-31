@@ -7,6 +7,61 @@ import MagneticButton from "./components/MagneticButton";
 import BrowserMockupContent from "./components/BrowserMockupContent";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, CONTACT } from "./site";
+
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
+/** Strukturovaná data pro vyhledávače – kdo jsme, kde působíme, jak nás kontaktovat. */
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#business`,
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo/logo.png`,
+  image: `${SITE_URL}/opengraph-image`,
+  email: CONTACT.email,
+  telephone: CONTACT.phone,
+  priceRange: "8499 - 25000 CZK",
+  currenciesAccepted: "CZK",
+  paymentAccepted: "Bankovní převod",
+  founder: { "@type": "Person", name: CONTACT.owner },
+  identifier: { "@type": "PropertyValue", name: "IČO", value: CONTACT.ico },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: CONTACT.street,
+    addressLocality: CONTACT.city,
+    postalCode: CONTACT.zip,
+    addressCountry: "CZ",
+  },
+  areaServed: [
+    { "@type": "City", name: "Hlinsko" },
+    { "@type": "City", name: "Pardubice" },
+    { "@type": "Country", name: "Česko" },
+  ],
+  sameAs: [CONTACT.instagram],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "07:00",
+      closes: "16:00",
+    },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Tvorba webových stránek",
+    itemListElement: [
+      { "@type": "Offer", name: "Nový web na míru", price: "8499", priceCurrency: "CZK" },
+      { "@type": "Offer", name: "Redesign starého webu", price: "7499", priceCurrency: "CZK" },
+      { "@type": "Offer", name: "E-shop na míru", price: "14999", priceCurrency: "CZK" },
+      { "@type": "Offer", name: "Údržba a úpravy", price: "490", priceCurrency: "CZK" },
+    ],
+  },
+};
 
 const stats = [
   { value: "100 %", label: "spokojenost klientů" },
@@ -83,6 +138,10 @@ const services: {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
       <SiteHeader />
 
       <main className="flex-1">

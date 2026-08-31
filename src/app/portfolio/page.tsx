@@ -6,9 +6,10 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Webo Studio",
+  title: "Portfolio",
   description:
     "Ukázky hotových webů od Webo Studio. Podívejte se, jak naše weby vypadají v praxi.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {
