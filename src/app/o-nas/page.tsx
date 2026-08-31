@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import SiteHeader from "../components/SiteHeader";
@@ -27,20 +26,11 @@ export default function ONasPage() {
               </div>
             </Reveal>
 
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1.4fr] lg:items-start">
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_1.4fr] lg:items-center">
               <Reveal>
-                <div className="text-center lg:sticky lg:top-32">
-                  <h1 className="mt-6 text-5xl font-bold text-white sm:text-6xl">
-                    Jsme <span className="text-gradient glitch">Webo</span>,
-                  </h1>
-                  <Image
-                    src="/images/logo/logo.png"
-                    alt="Webo logo"
-                    width={320}
-                    height={96}
-                    className="float-slow mx-auto mt-10 w-48 sm:w-64"
-                  />
-                </div>
+                <h1 className="text-center text-5xl font-bold text-white sm:text-6xl">
+                  Jsme <span className="text-gradient glitch">Webo</span>,
+                </h1>
               </Reveal>
 
               <div className="space-y-6 border-l border-white/10 pl-6 sm:pl-10">
