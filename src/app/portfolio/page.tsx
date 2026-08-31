@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import PortfolioCarousel from "../components/PortfolioCarousel";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Portfolio",
   description:
     "Ukázky hotových webů od Webo Studio. Podívejte se, jak naše weby vypadají v praxi.",
-  alternates: { canonical: "/portfolio" },
-};
+  path: "/portfolio",
+});
 
 export default function PortfolioPage() {
   return (

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Ochrana osobních údajů",
-  description: "Informace o zpracování osobních údajů zaslaných prostřednictvím kontaktního formuláře Webo Studio.",
-  alternates: { canonical: "/ochrana-udaju" },
-};
+  description:
+    "Informace o zpracování osobních údajů zaslaných prostřednictvím kontaktního formuláře Webo Studio.",
+  path: "/ochrana-udaju",
+});
 
 export default function OchranaUdajuPage() {
   return (

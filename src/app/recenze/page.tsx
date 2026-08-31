@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import TiltCard from "../components/TiltCard";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Recenze",
-  description: "Reference a zkušenosti klientů se spoluprací s Webo Studio.",
-  alternates: { canonical: "/recenze" },
-};
+  description:
+    "Reference a zkušenosti klientů se spoluprací s Webo Studio.",
+  path: "/recenze",
+});
 
 export default function RecenzePage() {
   return (

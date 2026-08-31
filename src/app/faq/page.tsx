@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Časté otázky",
   description:
     "Odpovědi na nejčastější otázky ohledně tvorby webů – ceny, termíny, mobilní verze, doména a hosting.",
-  alternates: { canonical: "/faq" },
-};
+  path: "/faq",
+});
 
 const faqs = [
   {

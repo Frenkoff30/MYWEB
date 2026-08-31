@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Obchodní podmínky",
-  description: "Obchodní podmínky pro poskytování služeb tvorby a správy webových stránek Webo Studio.",
-  alternates: { canonical: "/obchodni-podminky" },
-};
+  description:
+    "Obchodní podmínky pro poskytování služeb tvorby a správy webových stránek Webo Studio.",
+  path: "/obchodni-podminky",
+});
 
 export default function ObchodniPodminkyPage() {
   return (

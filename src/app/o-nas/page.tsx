@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "../site";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "O nás",
   description:
     "Kdo jsme? Navrhujeme a vytváříme jednoduché, moderní weby pro živnostníky, řemeslníky a malé provozovny.",
-  alternates: { canonical: "/o-nas" },
-};
+  path: "/o-nas",
+});
 
 export default function ONasPage() {
   return (
