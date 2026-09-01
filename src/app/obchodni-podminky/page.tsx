@@ -60,6 +60,12 @@ export default function ObchodniPodminkyPage() {
             v dohodnutých intervalech. Platba probíhá na základě vystavené faktury bankovním převodem,
             není-li dohodnuto jinak. Poskytovatel není plátcem DPH; uvedené ceny jsou konečné.
           </p>
+          <p className="mt-2">
+            U pravidelných služeb <strong className="text-white">neprobíhá automatické strhávání plateb</strong>{" "}
+            z platební karty – každé období je vyúčtováno samostatnou fakturou. Objednatel může pravidelnou
+            službu kdykoli ukončit oznámením e-mailem, a to ke konci již uhrazeného období; za neodebrané
+            období se platba nevrací pouze tehdy, byla-li služba v jeho průběhu poskytována.
+          </p>
         </section>
 
         <section>

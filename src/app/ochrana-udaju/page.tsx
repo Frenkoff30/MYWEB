@@ -46,9 +46,34 @@ export default function OchranaUdajuPage() {
         <section>
           <h2 className="text-lg font-bold text-white">Předávání třetím stranám</h2>
           <p className="mt-2">
-            Vaše údaje nepředáváme třetím stranám pro marketingové účely. Pro doručení zprávy z kontaktního
-            formuláře využíváme technického poskytovatele e-mailových služeb, který se zprávou nakládá pouze
-            za účelem jejího doručení.
+            Vaše údaje <strong className="text-white">nepředáváme třetím stranám pro marketingové účely</strong>{" "}
+            ani je nikomu neprodáváme. Na zajištění provozu webu a doručení vaší zprávy však využíváme
+            následující technické poskytovatele (zpracovatele), kteří s údaji nakládají výhradně na základě
+            našich pokynů:
+          </p>
+          <ul className="mt-3 space-y-2 pl-5 list-disc marker:text-blue-400">
+            <li>
+              <strong className="text-white">Resend</strong> (Resend, Inc., USA) – doručení zprávy odeslané
+              z kontaktního formuláře na náš e-mail. Zpracovává údaje, které ve formuláři vyplníte.
+            </li>
+            <li>
+              <strong className="text-white">Vercel</strong> (Vercel, Inc., USA) – hosting webových stránek.
+              V provozních záznamech serveru se krátkodobě zpracovává vaše IP adresa a technické údaje
+              o prohlížeči, což je nezbytné pro provoz a zabezpečení webu.
+            </li>
+          </ul>
+          <p className="mt-3">
+            Oba poskytovatelé sídlí mimo Evropskou unii. Předání údajů se opírá o standardní smluvní doložky
+            schválené Evropskou komisí, případně o další záruky podle kapitoly V GDPR.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-bold text-white">Cookies a měření návštěvnosti</h2>
+          <p className="mt-2">
+            Náš web <strong className="text-white">nepoužívá žádné analytické ani reklamní cookies</strong>{" "}
+            a nesledujeme vaše chování na webu. Nenajdete tu Google Analytics, reklamní pixely ani jiné
+            sledovací nástroje. Z toho důvodu vás neobtěžujeme ani lištou se souhlasem s cookies.
           </p>
         </section>
 
