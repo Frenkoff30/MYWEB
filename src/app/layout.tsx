@@ -66,10 +66,8 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/images/logo/logonakartu.png",
-    apple: "/images/logo/logonakartu.png",
-  },
+  // Ikony se neuvádějí ručně – Next je bere ze souborů favicon.ico,
+  // icon.png a apple-icon.png ve složce app a sám doplní rozměry i typ.
 };
 
 export const viewport: Viewport = {
