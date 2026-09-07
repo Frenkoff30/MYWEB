@@ -11,6 +11,17 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: "RACCOONS Hlinsko",
+    href: "https://raccoonweb.vercel.app/",
+    logo: "/images/others/raccoon-full.png",
+    shot: "/images/others/raccoonportfolio.png",
+  },
+  {
+    name: "Lom Srní",
+    href: "https://lomweb.vercel.app/",
+    shot: "/images/others/lomportfolio.png",
+  },
+  {
     name: "KAMA Střechy",
     href: "https://frenkoff30.github.io/KAMASTRECHYWEB/",
     logo: "/images/others/KAMASTRECHYLOGO.png",
