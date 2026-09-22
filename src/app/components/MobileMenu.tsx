@@ -87,8 +87,8 @@ export default function MobileMenu({ links }: { links: NavItem[] }) {
           <a href="tel:+420608462557" className="transition hover:text-blue-300">
             608 462 557
           </a>
-          <a href="mailto:info@webostudio.cz" className="transition hover:text-blue-300">
-            info@webostudio.cz
+          <a href="mailto:webostudio@seznam.cz" className="transition hover:text-blue-300">
+            webostudio@seznam.cz
           </a>
         </div>
       </nav>

@@ -27,8 +27,8 @@ export default function ObchodniPodminkyPage() {
             Poskytovatelem služeb je Jiří Švec, IČO 29639107, se sídlem Rokycanova 908, 539 01 Hlinsko
             (dále jen „poskytovatel“). Poskytovatel podniká na základě živnostenského oprávnění.
             Kontaktní e-mail:{" "}
-            <a href="mailto:info@webostudio.cz" className="font-semibold text-blue-400 hover:underline">
-              info@webostudio.cz
+            <a href="mailto:webostudio@seznam.cz" className="font-semibold text-blue-400 hover:underline">
+              webostudio@seznam.cz
             </a>
             .
           </p>

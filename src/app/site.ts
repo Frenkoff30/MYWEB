@@ -36,7 +36,7 @@ export function pageMetadata({
 }
 
 export const CONTACT = {
-  email: "info@webostudio.cz",
+  email: "webostudio@seznam.cz",
   phone: "+420608462557",
   phoneDisplay: "608 462 557",
   instagram: "https://www.instagram.com/webo.cz",

@@ -27,7 +27,7 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL;
+  const to = process.env.CONTACT_EMAIL || "webostudio@seznam.cz";
 
   if (!apiKey || !to) {
     console.error("Chybí RESEND_API_KEY nebo CONTACT_EMAIL v prostředí.");
