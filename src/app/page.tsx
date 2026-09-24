@@ -138,7 +138,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section id="hero" className="relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-center overflow-hidden px-6 pb-10 pt-4 sm:min-h-0 sm:pb-14 sm:pt-6">
+        <section id="hero" className="relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-center overflow-hidden px-6 pb-6 pt-2 sm:min-h-0 sm:pb-14 sm:pt-6">
           {/* Měkká záře za logem – dává heru hloubku místo mřížky */}
           <span
             aria-hidden
@@ -149,11 +149,11 @@ export default function Home() {
               {/* Značka vysázená písmem podle loga: lomené závorky,
                   pod slovem červený a modrý pruh. */}
               <div className="flex items-center justify-center gap-2 sm:gap-5">
-                <span className="wordmark text-4xl leading-none text-white/70 sm:text-7xl lg:text-8xl">
+                <span className="wordmark text-[clamp(1.75rem,8vw,2.75rem)] leading-none text-white/70 sm:text-7xl lg:text-8xl">
                   &#8249;
                 </span>
                 <span className="flex flex-col items-stretch">
-                  <span className="wordmark wordmark-shine text-7xl leading-none tracking-[-0.03em] drop-shadow-[0_0_18px_rgba(255,255,255,0.10)] sm:text-8xl sm:drop-shadow-[0_0_45px_rgba(255,255,255,0.18)] lg:text-9xl">
+                  <span className="wordmark wordmark-shine text-[clamp(4.5rem,24vw,7rem)] leading-none tracking-[-0.03em] drop-shadow-[0_0_18px_rgba(255,255,255,0.10)] sm:text-8xl sm:drop-shadow-[0_0_45px_rgba(255,255,255,0.18)] lg:text-9xl">
                     webo
                   </span>
                   <span className="mt-2 flex gap-2 sm:mt-3 sm:gap-3">
@@ -161,13 +161,13 @@ export default function Home() {
                     <span className="h-[4px] flex-1 rounded-full bg-blue-500 sm:h-[6px]" />
                   </span>
                 </span>
-                <span className="wordmark text-4xl leading-none text-white/70 sm:text-7xl lg:text-8xl">
+                <span className="wordmark text-[clamp(1.75rem,8vw,2.75rem)] leading-none text-white/70 sm:text-7xl lg:text-8xl">
                   &#8250;
                 </span>
               </div>
             </Reveal>
             <Reveal delay={150}>
-              <h1 className="mx-auto mt-5 max-w-2xl text-balance text-xl font-bold leading-snug tracking-tight text-white sm:mt-6 sm:text-3xl">
+              <h1 className="mx-auto mt-6 max-w-2xl text-balance text-base font-bold leading-snug tracking-tight text-white sm:mt-6 sm:text-3xl">
                 Weby, co <span className="text-gradient">prodávají</span>.{" "}
                 <span className="block text-neutral-400 sm:inline sm:text-white">
                   Ne jen visí na internetu.
@@ -175,11 +175,11 @@ export default function Home() {
               </h1>
             </Reveal>
             <Reveal delay={250}>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-8 sm:gap-4">
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-8 sm:gap-4">
                 <MagneticButton>
                   <Link
                     href="/portfolio"
-                    className="btn-glow inline-flex items-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-400 sm:px-8 sm:py-4 sm:text-base"
+                    className="btn-glow inline-flex items-center gap-2 rounded-full bg-blue-500 px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-blue-400 sm:px-8 sm:py-4 sm:text-base"
                   >
                     Prohlédnout portfolio
                     <span aria-hidden>→</span>
@@ -187,7 +187,7 @@ export default function Home() {
                 </MagneticButton>
                 <a
                   href="#kontakt"
-                  className="rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/10 hover:shadow-blue-500/10 sm:px-8 sm:py-4 sm:text-base"
+                  className="rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-[13px] font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/10 hover:shadow-blue-500/10 sm:px-8 sm:py-4 sm:text-base"
                 >
                   Nezávazná poptávka
                 </a>
