@@ -11,6 +11,12 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: "FC Hlinsko",
+    href: "https://fchlinsko.cz/",
+    logo: "/images/others/znak-fchlinsko.png",
+    shot: "/images/others/hlinskoportfolio.png",
+  },
+  {
     name: "RACCOONS Hlinsko",
     href: "https://raccoonweb.vercel.app/",
     logo: "/images/others/raccoon-full.png",
