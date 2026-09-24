@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Archivo_Black } from "next/font/google";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "./site";
 import "./globals.css";
 import Particles from "./components/Particles";
@@ -10,6 +10,15 @@ import BackToTop from "./components/BackToTop";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+/* Jen pro velké „webo" v heru – geometrický grotesk s kruhovým „o"
+   jako v logu. Zbytek webu zůstává na Geistu. */
+const wordmark = Archivo_Black({
+  variable: "--font-wordmark",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -83,9 +92,9 @@ export default function RootLayout({
   return (
     <html
       lang="cs"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${wordmark.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-950 text-white">
+      <body className="min-h-full flex flex-col bg-background text-white">
         <Particles />
         <SectionDots />
         <CardSpotlightGlobal />

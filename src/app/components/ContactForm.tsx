@@ -86,7 +86,7 @@ export default function ContactForm() {
       {/* ── Form ── */}
       <form
         onSubmit={handleSubmit}
-        className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/10 sm:p-8"
+        className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/10 sm:p-8"
       >
         <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-white to-red-500" />
         <div className="grid gap-5 sm:grid-cols-2">

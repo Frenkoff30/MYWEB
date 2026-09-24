@@ -1,51 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import Image from "next/image";
-
-type Project = {
-  name: string;
-  href: string;
-  shot: string;
-  logo?: string;
-};
-
-const projects: Project[] = [
-  {
-    name: "FC Hlinsko",
-    href: "https://fchlinsko.cz/",
-    logo: "/images/others/znak-fchlinsko.png",
-    shot: "/images/others/hlinskoportfolio.png",
-  },
-  {
-    name: "RACCOONS Hlinsko",
-    href: "https://raccoonweb.vercel.app/",
-    logo: "/images/others/raccoon-full.png",
-    shot: "/images/others/raccoonportfolio.png",
-  },
-  {
-    name: "Lom Srní",
-    href: "https://lomweb.vercel.app/",
-    shot: "/images/others/lomportfolio.png",
-  },
-  {
-    name: "KAMA Střechy",
-    href: "https://frenkoff30.github.io/KAMASTRECHYWEB/",
-    logo: "/images/others/KAMASTRECHYLOGO.png",
-    shot: "/images/others/ukazkakama.png",
-  },
-  {
-    name: "Truhlářství Šustr",
-    href: "https://truhlarsvisustrweb.vercel.app",
-    logo: "/images/others/logotruhlarstvi.png",
-    shot: "/images/others/ukazkatruhlarstvi.png",
-  },
-  {
-    name: "GRAVIX",
-    href: "https://www.gravixstore.cz/",
-    logo: "/images/others/gravix-logo2.webp",
-    shot: "/images/others/gravixukazka.png",
-  },
-];
+import { PROJECTS as projects, type Project } from "../projects";
 
 /**
  * Geometrie kolotoče. Hodnoty jsou zvolené tak, aby se boční karty

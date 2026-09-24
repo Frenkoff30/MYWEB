@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #05070c;
   --foreground: #f1f5f9;
 }
 
@@ -16,6 +16,35 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Písmo výhradně pro velké „webo" v heru. Ve fallbacku musí být
+   skutečné názvy písem – proměnné z @theme inline v běhu neexistují
+   a celá deklarace by tím propadla. */
+.wordmark {
+  font-family: var(--font-wordmark), "Segoe UI", system-ui, sans-serif;
+}
+
+/* Pomalý přejezd světla přes značku */
+@keyframes wordmark-shine {
+  0%   { background-position: 130% 0; }
+  100% { background-position: -30% 0; }
+}
+.wordmark-shine {
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 42%,
+    rgba(255, 255, 255, 0.74) 50%,
+    #ffffff 58%,
+    #ffffff 100%
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: wordmark-shine 7s ease-in-out infinite;
 }
 
 html {
@@ -323,4 +352,55 @@ body::after {
 .btn-glow:hover {
   box-shadow: 0 0 28px rgba(59,130,246,0.55), 0 0 60px rgba(59,130,246,0.25);
   transform: translateY(-2px);
+}
+
+/* Okraje nekonečného pásu realizací se plynule ztrácejí do pozadí */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Rampa realizací: najetí na jednu ukázku ztlumí ostatní */
+.shot {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.rail:hover .shot {
+  opacity: 0.35;
+}
+.rail .shot:hover {
+  opacity: 1;
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Viditelné zaměření klávesnicí – :where drží nulovou specificitu,
+   takže vlastní styly komponent zůstávají v platnosti. */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+/* Kdo má v systému omezený pohyb, dostane web bez animací */
+@media (prefers-reduced-motion: reduce) {
+  main,
+  .float-slow,
+  .glitch,
+  .glitch-hover:hover,
+  .text-gradient,
+  .marquee-track,
+  .badge-pulse,
+  .ring-gradient,
+  .bg-gradient-animate,
+  .wordmark-shine,
+  .content-fade {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

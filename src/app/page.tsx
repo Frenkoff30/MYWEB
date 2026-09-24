@@ -1,10 +1,8 @@
+import Link from "next/link";
 import Reveal from "./components/Reveal";
-import Counter from "./components/Counter";
-import TypingText from "./components/TypingText";
-import TiltCard from "./components/TiltCard";
 import ContactForm from "./components/ContactForm";
 import MagneticButton from "./components/MagneticButton";
-import BrowserMockupContent from "./components/BrowserMockupContent";
+import ProjectsMarquee from "./components/ProjectsMarquee";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, CONTACT } from "./site";
@@ -62,12 +60,6 @@ const businessSchema = {
     ],
   },
 };
-
-const stats = [
-  { value: "100 %", label: "spokojenost klientů" },
-  { value: "< 24 h", label: "reakce na Vaši zprávu" },
-  { value: "1–2 týdny", label: "od nápadu k webu na ostro" },
-];
 
 const process = [
   {
@@ -146,69 +138,69 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section id="hero" className="relative overflow-hidden px-6 pb-24 pt-12 sm:pt-16">
-          <div className="relative z-[1] mx-auto grid max-w-6xl gap-16 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
-            <div className="text-center sm:text-left">
-              <Reveal delay={100}>
-                <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-                  Weby, co{" "}
-                  <span className="text-gradient glitch">prodávají</span>.{" "}
-                  <br className="hidden sm:block" />
+        <section id="hero" className="relative overflow-hidden px-6 pb-14 pt-4 sm:pt-6">
+          {/* Měkká záře za logem – dává heru hloubku místo mřížky */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[980px] max-w-[130%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.13),rgba(255,255,255,0.05)_38%,transparent_72%)]"
+          />
+          <div className="relative z-[1] mx-auto max-w-3xl text-center">
+            <Reveal delay={50}>
+              {/* Značka vysázená písmem podle loga: lomené závorky,
+                  pod slovem červený a modrý pruh. */}
+              <div className="flex items-center justify-center gap-3 sm:gap-5">
+                <span className="wordmark text-5xl leading-none text-white/70 sm:text-7xl lg:text-8xl">
+                  &#8249;
+                </span>
+                <span className="flex flex-col items-stretch">
+                  <span className="wordmark wordmark-shine text-6xl leading-none tracking-[-0.03em] drop-shadow-[0_0_45px_rgba(255,255,255,0.18)] sm:text-8xl lg:text-9xl">
+                    webo
+                  </span>
+                  <span className="mt-2 flex gap-2 sm:mt-3 sm:gap-3">
+                    <span className="h-[4px] flex-1 rounded-full bg-red-500 sm:h-[6px]" />
+                    <span className="h-[4px] flex-1 rounded-full bg-blue-500 sm:h-[6px]" />
+                  </span>
+                </span>
+                <span className="wordmark text-5xl leading-none text-white/70 sm:text-7xl lg:text-8xl">
+                  &#8250;
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <h1 className="mx-auto mt-6 max-w-2xl text-balance text-2xl font-bold leading-snug tracking-tight text-white sm:text-3xl">
+                Weby, co <span className="text-gradient">prodávají</span>.{" "}
+                <span className="block text-neutral-400 sm:inline sm:text-white">
                   Ne jen visí na internetu.
-                </h1>
-              </Reveal>
-              <Reveal delay={200}>
-                <p className="mx-auto mt-8 max-w-xl text-xl leading-relaxed text-neutral-50 sm:mx-0">
-                  Pomáháme živnostníkům a malým firmám vytvořit nebo upravit jejich web tak, aby{" "}
-                  <span className="text-white font-semibold">skutečně prodával</span>.{" "}
-                  Srozumitelný obsah,{" "}
-                  <span className="text-blue-400 font-semibold">rychlé načítání</span>,{" "}
-                  moderní vzhled a tlačítko, na které lidé{" "}
-                  <span className="text-white font-semibold">opravdu kliknou</span>.
-                </p>
-              </Reveal>
-              <Reveal delay={300}>
-                <div className="mt-12 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-                  <MagneticButton>
-                    <a
-                      href="#kontakt"
-                      className="btn-glow rounded-full bg-blue-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-blue-400"
-                    >
-                      Domluvit konzultaci zdarma
-                    </a>
-                  </MagneticButton>
-                  <a
-                    href="#proces"
-                    className="rounded-full border border-white/25 bg-white/5 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/10 hover:shadow-blue-500/10"
-                  >
-                    Jak spolupráce probíhá
-                  </a>
-                </div>
-              </Reveal>
-            </div>
-
+                </span>
+              </h1>
+            </Reveal>
             <Reveal delay={250}>
-              <TiltCard className="relative mx-auto w-full max-w-md float-slow">
-                <div className="group relative z-[1] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/40 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:border-blue-400/30 hover:shadow-blue-500/10">
-                  <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-3">
-                    <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/60" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
-                    <span className="ml-3 flex h-5 flex-1 max-w-[60%] items-center rounded-full bg-white/5 px-3">
-                      <TypingText text="vasefirma.cz" startDelay={1200} />
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <BrowserMockupContent />
-                  </div>
-                  <div className="flex items-center justify-between gap-3 border-t border-white/10 bg-white/[0.03] px-5 py-3">
-                    <span className="text-xs font-semibold text-blue-400">od 8 499 Kč</span>
-                    <a href="#sluzby" className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-neutral-950 transition hover:-translate-y-0.5 group-hover:bg-blue-500 group-hover:text-white">Mám zájem →</a>
-                  </div>
-                </div>
-              </TiltCard>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <MagneticButton>
+                  <Link
+                    href="/portfolio"
+                    className="btn-glow inline-flex items-center gap-2 rounded-full bg-blue-500 px-8 py-4 text-base font-semibold text-white transition hover:bg-blue-400"
+                  >
+                    Prohlédnout portfolio
+                    <span aria-hidden>→</span>
+                  </Link>
+                </MagneticButton>
+                <a
+                  href="#kontakt"
+                  className="rounded-full border border-white/25 bg-white/5 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/10 hover:shadow-blue-500/10"
+                >
+                  Nezávazná poptávka
+                </a>
+              </div>
             </Reveal>
           </div>
+
+          {/* Nekonečný pás hotových realizací – vidět hned v heru */}
+          <Reveal delay={350}>
+            <div className="relative z-[1] -mx-6 mt-10">
+              <ProjectsMarquee />
+            </div>
+          </Reveal>
         </section>
 
         {/* Problém */}
@@ -445,26 +437,9 @@ export default function Home() {
               </div>
             </Reveal>
 
-            {/* Statistiky */}
-            <div className="mt-10 grid divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/[0.02] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-              {stats.map((stat, i) => (
-                <Reveal key={stat.label} delay={i * 100}>
-                  <div className="group px-6 py-5 text-center transition duration-300 hover:bg-white/[0.03]">
-                    <p className="text-4xl font-bold text-white transition duration-300 group-hover:text-gradient group-hover:scale-110">
-                      {stat.label === "spokojenost klientů" && <Counter to={100} suffix=" %" />}
-                      {stat.label === "reakce na Vaši zprávu" && <><span className="text-2xl">{"< "}</span><Counter to={24} suffix=" h" /></>}
-                      {stat.label === "od nápadu k webu na ostro" && <>1–2<span className="text-2xl"> týdny</span></>}
-                    </p>
-                    <span className="mx-auto mt-3 block h-0.5 w-10 bg-red-500 transition-all duration-300 group-hover:w-16 group-hover:bg-blue-400" />
-                    <p className="mt-2 text-sm text-white">{stat.label}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-12 grid gap-10 sm:grid-cols-[0.9fr_1.1fr]">
-              <Reveal delay={100}>
-                <div className="space-y-4">
+            <div className="mt-12 grid items-stretch gap-8 sm:grid-cols-2">
+              <Reveal delay={100} className="h-full">
+                <div className="flex h-full flex-col gap-4">
                   {[
                     { icon: (
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 0 1 2-2h2.6a1 1 0 0 1 1 .76l1 4a1 1 0 0 1-.3 1L7.8 10.4a13 13 0 0 0 5.8 5.8l1.66-1.5a1 1 0 0 1 1-.25l4 1a1 1 0 0 1 .74 1V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg>
@@ -484,7 +459,7 @@ export default function Home() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-blue-400/30 hover:bg-white/[0.05]"
+                      className="group flex flex-1 items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-blue-400/30 hover:bg-white/[0.05]"
                     >
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg text-blue-400 transition group-hover:border-blue-400/40 group-hover:bg-blue-500/10 group-hover:text-blue-300">
                         {item.icon}
@@ -508,7 +483,7 @@ export default function Home() {
                 </div>
               </Reveal>
 
-              <Reveal delay={200}>
+              <Reveal delay={200} className="h-full">
                 <ContactForm />
               </Reveal>
             </div>

@@ -16,7 +16,24 @@ const LAYER_SPEED = [0.08, 0.22, 0.42];
 // base opacity per layer — closer = brighter
 const LAYER_ALPHA = [0.32, 0.5, 0.7];
 
-export default function Particles() {
+export default function Particles({
+  rgb = "255,255,255",
+  fixed = true,
+  alpha = 1,
+  density = 1,
+  glow = true,
+}: {
+  /** Barva částic jako "r,g,b" – světlá do tmavých sekcí, tmavá do světlých. */
+  rgb?: string;
+  /** true = přes celé okno, false = jen přes rodičovský prvek (sekci). */
+  fixed?: boolean;
+  /** Násobič průhlednosti – pro jemnější pole. */
+  alpha?: number;
+  /** Násobič počtu částic. Méně = levnější vykreslování. */
+  density?: number;
+  /** Záře kolem větších částic. Na světlém pozadí se nehodí a stojí výkon. */
+  glow?: boolean;
+} = {}) {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -25,21 +42,28 @@ export default function Particles() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let W = window.innerWidth;
-    let H = window.innerHeight; // viewport height — canvas is fixed
+    const box = () =>
+      fixed
+        ? { w: window.innerWidth, h: window.innerHeight }
+        : {
+            w: canvas.parentElement?.clientWidth ?? window.innerWidth,
+            h: canvas.parentElement?.clientHeight ?? window.innerHeight,
+          };
+
+    let { w: W, h: H } = box();
     canvas.width  = W;
     canvas.height = H;
 
     const onResize = () => {
-      W = window.innerWidth;
-      H = window.innerHeight;
+      const next = box();
+      W = next.w;
+      H = next.h;
       canvas.width  = W;
       canvas.height = H;
     };
 
     // track scroll with lerp for smooth motion
-    let scrollY    = window.scrollY;
-    let targetScrollY = scrollY;
+    let scrollY = window.scrollY;
     // per-layer current offset (y px offset applied to drawing)
     const layerOffset = [0, 0, 0];
     // per-layer lerp target
@@ -55,7 +79,7 @@ export default function Particles() {
       }
     };
 
-    const COUNT = Math.min(Math.floor((W * H) / 3200), 380);
+    const COUNT = Math.min(Math.floor(((W * H) / 3200) * density), 380);
 
     const particles: P[] = Array.from({ length: COUNT }, () => {
       const roll  = Math.random();
@@ -71,7 +95,7 @@ export default function Particles() {
           : layer === 1
           ? sizeRoll * 1.0 + 0.7
           : sizeRoll * 1.4 + 1.4,
-        baseAlpha: (Math.random() * 0.35 + 0.18) * LAYER_ALPHA[layer],
+        baseAlpha: (Math.random() * 0.35 + 0.18) * LAYER_ALPHA[layer] * alpha,
         type: roll < 0.78 ? "dot" : roll < 0.93 ? "star" : "cross",
         twinkleSpeed: Math.random() * 0.014 + 0.004,
         twinklePhase: Math.random() * Math.PI * 2,
@@ -82,7 +106,7 @@ export default function Particles() {
     const drawStar4 = (x: number, y: number, r: number, a: number) => {
       ctx.save();
       const arm = r * 2.4;
-      ctx.strokeStyle = `rgba(255,255,255,${a})`;
+      ctx.strokeStyle = `rgba(${rgb},${a})`;
       ctx.lineWidth = r * 0.55;
       ctx.lineCap = "round";
       ctx.beginPath(); ctx.moveTo(x - arm, y); ctx.lineTo(x + arm, y); ctx.stroke();
@@ -91,18 +115,19 @@ export default function Particles() {
       ctx.lineWidth = r * 0.3;
       ctx.beginPath(); ctx.moveTo(x - d, y - d); ctx.lineTo(x + d, y + d); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(x + d, y - d); ctx.lineTo(x - d, y + d); ctx.stroke();
-      // glow core
-      const g = ctx.createRadialGradient(x, y, 0, x, y, r * 2);
-      g.addColorStop(0, `rgba(255,255,255,${a * 0.85})`);
-      g.addColorStop(1, "rgba(255,255,255,0)");
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(x, y, r * 2, 0, Math.PI * 2); ctx.fill();
+      if (glow) {
+        const g = ctx.createRadialGradient(x, y, 0, x, y, r * 2);
+        g.addColorStop(0, `rgba(${rgb},${a * 0.85})`);
+        g.addColorStop(1, `rgba(${rgb},0)`);
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(x, y, r * 2, 0, Math.PI * 2); ctx.fill();
+      }
       ctx.restore();
     };
 
     const drawCross = (x: number, y: number, r: number, a: number) => {
       ctx.save();
-      ctx.strokeStyle = `rgba(255,255,255,${a * 0.7})`;
+      ctx.strokeStyle = `rgba(${rgb},${a * 0.7})`;
       ctx.lineWidth = r * 0.4;
       ctx.lineCap = "round";
       const arm = r * 1.6;
@@ -112,9 +137,18 @@ export default function Particles() {
     };
 
     let raf: number;
+    let visible = true;
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+    });
+    io.observe(canvas);
     const LERP = 0.09; // smoothing factor
 
     const draw = () => {
+      if (!visible) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
       ctx.clearRect(0, 0, W, H);
 
       // lerp layer offsets toward targets
@@ -147,16 +181,16 @@ export default function Particles() {
         } else if (p.type === "cross") {
           drawCross(p.x, drawY, p.r, alpha);
         } else {
-          if (p.r > 1.2) {
+          if (glow && p.r > 1.2) {
             const g = ctx.createRadialGradient(p.x, drawY, 0, p.x, drawY, p.r * 3);
-            g.addColorStop(0, `rgba(255,255,255,${alpha * 0.55})`);
-            g.addColorStop(1, "rgba(255,255,255,0)");
+            g.addColorStop(0, `rgba(${rgb},${alpha * 0.55})`);
+            g.addColorStop(1, `rgba(${rgb},0)`);
             ctx.fillStyle = g;
             ctx.beginPath(); ctx.arc(p.x, drawY, p.r * 3, 0, Math.PI * 2); ctx.fill();
           }
           ctx.beginPath();
           ctx.arc(p.x, drawY, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+          ctx.fillStyle = `rgba(${rgb},${alpha})`;
           ctx.fill();
         }
       }
@@ -169,18 +203,21 @@ export default function Particles() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       cancelAnimationFrame(raf);
+      io.disconnect();
       window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onScroll);
-
-      
     };
-  }, []);
+  }, [rgb, fixed, alpha, density, glow]);
 
   return (
     <canvas
       ref={ref}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0"
+      className={
+        fixed
+          ? "pointer-events-none fixed inset-0 z-0"
+          : "pointer-events-none absolute inset-0 z-0"
+      }
     />
   );
 }
